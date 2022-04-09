@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class TravelTipsServiceImpl implements TravelTipsService {
+
     private final TravelTipsRepository repos;
 
     public TravelTipsServiceImpl(TravelTipsRepository repos) {

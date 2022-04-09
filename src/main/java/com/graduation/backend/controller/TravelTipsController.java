@@ -19,13 +19,13 @@ public class TravelTipsController {
         this.service = service;
     }
 
-    @GetMapping("/traveltips")
-    public ResponseEntity<Object> getTrips() {
+    @GetMapping("/travel-tips")
+    public ResponseEntity<Object> getTravelTips() {
         List<TravelTipsDto> ld = service.getTravelTips();
         return new ResponseEntity<>(ld, HttpStatus.OK);
     }
 
-    @PostMapping("/traveltips")
+    @PostMapping("/travel-tips")
     public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdto, BindingResult br)  {
         if (br.hasErrors()) {
             StringBuilder sb = new StringBuilder();
