@@ -16,7 +16,7 @@ public class TravelTips {
 
     String city;
 
-    String remark;
+    String description;
 
     // hier moet nog een upload functie komen
 
@@ -56,8 +56,8 @@ public class TravelTips {
         this.city = city;
     }
 
-    public String getRemark() { return remark; }
+    public String getDescription() { return description; }
 
-    public void setRemark(String remark) { this.remark = remark; }
+    public void setDescription(String remark) { this.description = description; }
 
 }
