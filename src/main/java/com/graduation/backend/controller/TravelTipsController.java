@@ -1,6 +1,7 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.TravelTipsDto;
+import com.graduation.backend.service.TravelTipsService;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +19,13 @@ public class TravelTipsController {
         this.service = service;
     }
 
-    @GetMapping("/trips")
+    @GetMapping("/traveltips")
     public ResponseEntity<Object> getTrips() {
         List<TravelTipsDto> ld = service.getTravelTips();
         return new ResponseEntity<>(ld, HttpStatus.OK);
     }
 
-    @PostMapping("/trips")
+    @PostMapping("/traveltips")
     public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdto, BindingResult br)  {
         if (br.hasErrors()) {
             StringBuilder sb = new StringBuilder();
