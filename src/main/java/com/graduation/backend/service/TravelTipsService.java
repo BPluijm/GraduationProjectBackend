@@ -5,7 +5,7 @@ import com.graduation.backend.model.TravelTips;
 
 import java.util.List;
 
-public class TravelTipsService {
+public interface TravelTipsService {
     List<TravelTipsDto> getTravelTips();
     TravelTips createTravelTips(TravelTipsDto travelTipsDto);
 }

@@ -1,7 +1,5 @@
 package com.graduation.backend.model;
 
-import com.graduation.backend.dto.TravelTipsDto;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -26,9 +24,6 @@ public class TravelTips {
     @OneToMany(mappedBy = "travelTips")
     List<TravelTips> travelTips;
 
-//    public static void add(TravelTipsDto ttdto) {
-//    }
-
     public Long getId() {
         return id;
     }
@@ -42,7 +37,7 @@ public class TravelTips {
     }
 
     public void setName(String name) {
-        this.name = country;
+        this.name = name;
     }
 
     public String getCountry() {
