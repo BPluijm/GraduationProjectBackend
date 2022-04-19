@@ -23,7 +23,7 @@ public class TravelsServiceImpl {
         List<TravelsDto> trips = new ArrayList<>();
 
         for (Travels tr : ld) {
-            TravelsDto trdto = new TravelsDto(tr.getId(), tr.getCountry(), tr.getCity(), tr.getTravelType(), tr.getDescription(), tr.getTravelTime());
+            TravelsDto trdto = new TravelsDto(tr.getId(), tr.getStartYear(), tr.getCountry(), tr.getCity(), tr.getTravelType(), tr.getDescription(), tr.getTravelTime());
             trips.add(trdto);
         }
 
@@ -33,6 +33,7 @@ public class TravelsServiceImpl {
 //   @Override
     public Travels createTravels(TravelsDto travelsDto) {
         Travels tr = new Travels();
+        tr.setStartYear(travelsDto.getStartYear());
         tr.setCountry(travelsDto.getCountry());
         tr.setCity(travelsDto.getCity());
         tr.setTravelType(travelsDto.getTravelType());

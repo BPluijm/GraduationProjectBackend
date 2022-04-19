@@ -9,6 +9,8 @@ public class Travels {
     @GeneratedValue
     Long id;
 
+    int startYear;
+
     String country;
 
     String city;
@@ -17,7 +19,6 @@ public class Travels {
 
     String description;
 
-    // duration
     int travelTime;
 
     @OneToMany(mappedBy ="travels")
@@ -29,6 +30,14 @@ public class Travels {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(int startYear) {
+        this.startYear = startYear;
     }
 
     public String getCity() {

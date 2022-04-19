@@ -36,7 +36,7 @@ public class TravelTipsController {
             return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
         } else {
             service.createTravelTips(ttdto);
-            return new ResponseEntity<>("Tip added!", HttpStatus.CREATED);
+            return new ResponseEntity<>("Trip added!", HttpStatus.CREATED);
         }
     }
 }
