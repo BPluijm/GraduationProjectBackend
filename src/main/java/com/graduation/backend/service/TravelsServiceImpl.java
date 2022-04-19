@@ -23,7 +23,7 @@ public class TravelsServiceImpl {
         List<TravelsDto> trips = new ArrayList<>();
 
         for (Travels tr : ld) {
-            TravelsDto trdto = new TravelsDto(tr.getId(), tr.getCountry(), tr.getTravelType(), tr.getTravelTime());
+            TravelsDto trdto = new TravelsDto(tr.getId(), tr.getCountry(), tr.getCity(), tr.getTravelType(), tr.getDescription(), tr.getTravelTime());
             trips.add(trdto);
         }
 
@@ -34,7 +34,9 @@ public class TravelsServiceImpl {
     public Travels createTravels(TravelsDto travelsDto) {
         Travels tr = new Travels();
         tr.setCountry(travelsDto.getCountry());
+        tr.setCity(travelsDto.getCity());
         tr.setTravelType(travelsDto.getTravelType());
+        tr.setDescription(travelsDto.getDescription());
         tr.setTravelTime(travelsDto.getTravelTime());
         return this.repos.save(tr);
     }

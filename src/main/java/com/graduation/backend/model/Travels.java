@@ -11,7 +11,11 @@ public class Travels {
 
     String country;
 
+    String city;
+
     String travelType;
+
+    String description;
 
     // duration
     int travelTime;
@@ -25,6 +29,14 @@ public class Travels {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getCountry() {
@@ -41,6 +53,14 @@ public class Travels {
 
     public void setTravelType(String travelType) {
         this.travelType = travelType;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getTravelTime() {

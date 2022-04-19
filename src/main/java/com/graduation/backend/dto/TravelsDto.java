@@ -11,8 +11,14 @@ public class TravelsDto {
     @NotBlank
     private final String country;
 
-    @NotBlank(message = "please select one of the following: ....")
+    @NotBlank
+    private final String city;
+
+    @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
     private final String travelType;
+
+    @NotBlank(message = "short description")
+    private final String description;
 
     @NotEmpty
     @Max(value = 365, message = "travel time must be less than or equal to 365 days")
