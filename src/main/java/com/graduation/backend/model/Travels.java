@@ -11,15 +11,10 @@ public class Travels {
     Long id;
 
     int startYear;
-
     String country;
-
     String city;
-
     String travelType;
-
     String description;
-
     int travelTime;
 
     @OneToMany(mappedBy ="travels")

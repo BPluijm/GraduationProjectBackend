@@ -46,24 +46,24 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
 
 
 
---INSERT INTO users (id, username, password, enabled, email, name, street, postalcode, city)
+--INSERT INTO users (id, username, password, enabled, email, name, street, postal_code, city)
 --VALUES (1001, 'TravelNerd', 'user', TRUE, 'info@travelnerd.com',  'Bas', 'Pietjepukweg 71', '1234AA', 'Groningen'),
---       (1002, 'Kasper', 'user', TRUE, 'info@kasper.nl', 'Kasper', 'Puinhoop 5', '8008SS', 'Ijmuiden'),
+--       (1002, 'Kasper', 'user', TRUE, 'info@kasper.nl', 'Kasper', 'Puinhoop 5', '8008SS', 'IJmuiden'),
 --       (1003, 'Manou',  'user', TRUE, 'info@manou.com',  'Manou', 'Kampweg 71', '6666CA', 'Swalmen');
 
 --UPDATE users
 --SET username = 'Frits',
---WHERE CustomerID = 1001;
+--WHERE UsersID = 1001;
 
 
 --INSERT INTO authorities (username, authority)
---VALUES ('gebruiker', 'ROLE_USER'),
---       ('itiskevin', 'ROLE_USER'),
---       ('lmnadora', 'ROLE_USER'),
---       ('mengelmoestuintje', 'ROLE_USER'),
---       ('vivalanouk', 'ROLE_USER'),
---       ('mengelmoestuintje', 'ROLE_MODERATOR'),
---       ('vivalanouk', 'ROLE_MODERATOR'),
---       ('vivalanouk', 'ROLE_ADMIN');
+--VALUES ('', 'ROLE_USER'),
+--       ('', 'ROLE_USER'),
+--       ('', 'ROLE_USER'),
+--       ('', 'ROLE_USER'),
+--       ('', 'ROLE_USER'),
+--       ('', 'ROLE_MODERATOR'),
+--       ('', 'ROLE_MODERATOR'),
+--       ('', 'ROLE_ADMIN');
 
 
