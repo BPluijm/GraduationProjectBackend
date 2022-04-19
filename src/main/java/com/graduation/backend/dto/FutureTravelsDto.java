@@ -7,20 +7,20 @@ import javax.validation.constraints.*;
 public class FutureTravelsDto {
     private final Long id;
 
-    @NotBlank
+    @NotBlank(message = "please enter a country")
     private final String country;
 
-    @NotBlank
+    @NotBlank(message = "enter a city or area in selected country")
     private final String cities;
 
-    @NotBlank(message = "please select one of the following: ....")
+    @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
     private final String travelType;
 
     @NotEmpty
-    @Max(value = 365, message = "travel time must be less than or equal to 365 days")
+    @Max(value = 90, message = "travel time must be less than or equal to 90 days")
     private final int travelTime;
 
-    @NotEmpty
+    @NotEmpty(message = "enter the expected costs")
     private final int expectedCosts;
 
 

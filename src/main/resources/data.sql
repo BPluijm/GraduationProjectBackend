@@ -3,15 +3,22 @@ VALUES (1001, 'France', 'Lons Le Saunier' 'Summer holiday', '17 day tour by car 
        (1002, 'Estonia', 'Talinn', 'City Trip', 'Visited friends and Talinn', 4),
        (1003, 'USA', 'Los Angeles', 'School Trip', 'School visit to the United States of America' 7);
 
---INSERT INTO Future_Travels (id, country, areas, travelType, travelTime, expectedCosts)
---VALUES (1001, 'USA', 'Los Angeles', 'road trip', 21, 5000),
---       (1002, 'Lutjebroek', 'darmstad', 'sun trip', 4, 50),
---       (1003, 'China', 'Beijing', 'asian trip', 15, 3700);
+INSERT INTO Future_Travels (id, country, area, travelType, travelTime, expectedCosts)
+VALUES (1001, 'USA', 'West Coast', 'road trip', 21, 5000),
+       (1002, 'Lutjebroek', 'darmstad', 'sun trip', 4, 50),
+       (1003, 'China', 'Beijing', 'asian trip', 15, 3700);
 --
 --INSERT INTO Travel_Tips (id, name, country, city, description)
 --VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Ik denk dat mijn tomatenplant een ziekte heeft opgelopen'),
 --       (1002, 'Frikandellen', 'Australia', 'Melbourne', 'Ik wil graag nog 3 verschillende soorten dahlias, korenbloemen en wat opvulling voor in de border'),
 --       (1003, 'Linkerknipperlichtkapje', 'België', 'Gent', 'GIVE-AWAY van heerlijke huisjes');
+
+
+
+
+
+
+
 
 --INSERT INTO users (id, username, password, enabled, email, name, street, postalcode, city)
 --VALUES (1001, 'TravelNerd', 'user', TRUE, 'info@travelnerd.com',  'Bas', 'Pietjepukweg 71', '1234AA', 'Groningen'),
