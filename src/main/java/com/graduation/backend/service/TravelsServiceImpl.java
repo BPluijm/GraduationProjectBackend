@@ -20,14 +20,14 @@ public class TravelsServiceImpl {
 //    @Override
     public List<TravelsDto> getTravels() {
         List<Travels> ld = this.repos.findAll();
-        List<TravelsDto> trips = new ArrayList<>();
+        List<TravelsDto> travels = new ArrayList<>();
 
         for (Travels tr : ld) {
             TravelsDto trdto = new TravelsDto(tr.getId(), tr.getStartYear(), tr.getCountry(), tr.getCity(), tr.getTravelType(), tr.getDescription(), tr.getTravelTime());
-            trips.add(trdto);
+            travels.add(trdto);
         }
 
-        return trips;
+        return travels;
     }
 
 //   @Override

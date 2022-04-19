@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+//@Table(name = "future_travels")
 public class FutureTravels {
     @Id
     @GeneratedValue

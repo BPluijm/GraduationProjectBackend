@@ -24,18 +24,20 @@ VALUES (1001, 'France', 2010, 'Lons Le Saunier', 'Summer holiday', '8 day tour b
        (1023, 'Luxembourg', 2021, 'Luxembourg', 'Day trip', 'Hiking in the bush', 1),
        (1024, 'Tanzania', 2021, 'Dar es Salaam', 'Summer holiday', 'First time Africa and Safari tour', 12),
        (1025, 'France', 2022, 'Paris', 'City trip', 'City trip to Paris', 3),
-       (1026, 'France', 2022, 'Marseille to Monaco', 'Sun trip', 'Road trip to Marseille, St Tropes and Monaco, along the south cost of France ', 5);
+       (1026, 'France', 2022, 'Marseille to Monaco', 'Road trip', 'Road trip to Marseille, St Tropes and Monaco, along the south cost of France ', 5);
 
 
---INSERT INTO Future_Travels (id, country, area, travelType, travelTime, expectedCosts)
---VALUES (1001, 'USA', 'West Coast', 'road trip', 21, 5000),
---       (1002, 'Lutjebroek', 'darmstad', 'sun trip', 4, 50),
---       (1003, 'China', 'Beijing', 'asian trip', 15, 3700);
+INSERT INTO future_travels (id, country, area, travelType, travelTime, expectedCosts)
+VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
+       (1002, 'USA', 'West Coast', 'Road trip', 21, 6000),
+       (1003, 'Spain', 'Barcelona', 'City trip', 4, 500),
+       (1004, 'China', 'Beijing', 'Summer holiday', 14, 4000);
 
---INSERT INTO travel_tips (id, name, country, city, description)
---VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Ik denk dat mijn tomatenplant een ziekte heeft opgelopen'),
---       (1002, 'Frikandellen', 'Australia', 'Melbourne', 'Ik wil graag nog 3 verschillende soorten dahlias, korenbloemen en wat opvulling voor in de border'),
---       (1003, 'Linkerknipperlichtkapje', 'België', 'Gent', 'GIVE-AWAY van heerlijke huisjes');
+
+INSERT INTO travel_tips (id, name, country, city, description)
+VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'),
+       (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
+       (1003, 'Angkor Wat', 'Colombia', 'Siem Reap area', 'Amazing temples taken over by the jungle');
 
 
 

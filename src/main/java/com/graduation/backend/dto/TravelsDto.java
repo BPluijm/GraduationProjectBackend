@@ -24,7 +24,7 @@ public class TravelsDto {
     private final String description;
 
     @NotEmpty
-    @Max(value = 365, message = "travel time must be less than or equal to 365 days")
+    @Max(value = 750, message = "travel time must be less than or equal to 750 days")
     private final int travelTime;
 }
 
