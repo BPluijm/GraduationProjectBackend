@@ -5,6 +5,7 @@ import com.graduation.backend.dto.UsersDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.UsersRepository;
+import org.jetbrains.annotations.NotNull;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,8 @@ public class UsersServiceimpl implements UsersService {
     @Autowired
     UsersRepository usersRepository;
 
-//    @Autowired
-//    FavoritesRepository FavoritesRepository;
+    @Autowired
+    FavoritesRepository FavoritesRepository;
 
     @Override
     public UsersDto createUsers(@Valid UsersDto usersDto) {
@@ -72,7 +73,7 @@ public class UsersServiceimpl implements UsersService {
     }
 
     @Override
-    public UsersDto updateUsers( UsersDto usersDto, Long id) {
+    public UsersDto updateUsers(@NotNull UsersDto usersDto, Long id) {
         Users users = usersRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("user not found"));
         users.setFirstname(usersDto.getFirstname());
         users.setLastname(usersDto.getLastname());
