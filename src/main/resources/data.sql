@@ -46,8 +46,8 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
 
 
 
---INSERT INTO users (id, username, password, enabled, email, name, street, postal_code, city)
---VALUES (1001, 'TravelNerd', 'user', TRUE, 'info@travelnerd.com',  'Bas', 'Pietjepukweg 71', '1234AA', 'Groningen'),
+--INSERT INTO users (id, username, password, enabled, email, name, street, houseNumber, zipcode, city, preferences)
+--VALUES (1001, 'TravelNerd', 'user', TRUE, 'info@travelnerd.com',  'Bas', 'Pietjepukweg, 71, '1234AA', 'Groningen', 'Road trip'),
 --       (1002, 'Kasper', 'user', TRUE, 'info@kasper.nl', 'Kasper', 'Puinhoop 5', '8008SS', 'IJmuiden'),
 --       (1003, 'Manou',  'user', TRUE, 'info@manou.com',  'Manou', 'Kampweg 71', '6666CA', 'Swalmen');
 

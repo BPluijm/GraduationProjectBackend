@@ -2,9 +2,7 @@ package com.graduation.backend.dto;
 
 import com.graduation.backend.model.Users;
 import lombok.*;
-
 import javax.validation.constraints.*;
-
 import java.util.List;
 
 @Data
@@ -14,8 +12,8 @@ public class UsersDto {
 
     private Long id;
 
-    @NotNull(message = "firstname cant be null")
-    @NotBlank(message = "firstname cant be blank")
+    @NotNull(message = "firstname can't be null")
+    @NotBlank(message = "firstname can't be blank")
     private String firstname;
 
     @NotNull(message = "lastname cant be null")
@@ -45,7 +43,7 @@ public class UsersDto {
 
     @NotNull(message = "preferences cant be null")
     @NotBlank(message = "preferences cant be blank")
-    private String preferences;
+    private String favorites;
 
     private List<Users> users;
 
