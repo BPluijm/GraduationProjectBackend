@@ -2,6 +2,7 @@ package com.graduation.backend.service;
 
 
 import com.graduation.backend.dto.UsersDto;
+import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.UsersRepository;
 import org.modelmapper.ModelMapper;
