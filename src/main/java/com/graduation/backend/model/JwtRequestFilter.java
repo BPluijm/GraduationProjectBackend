@@ -1,7 +1,6 @@
 package com.graduation.backend.model;
 
 import com.graduation.backend.service.JwtService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

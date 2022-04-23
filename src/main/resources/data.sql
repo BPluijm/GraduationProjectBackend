@@ -40,8 +40,24 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
        (1003, 'Angkor Wat', 'Colombia', 'Siem Reap area', 'Amazing temples taken over by the jungle');
 
 
+
+
+--INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1005, 'Hans', '$2y$10$iuI2WO1n2GEQxQrME8/bp.Q6gp5aK2rYz/csUJFCABLZk7LRDIQcK', 'true' , 'de Sleutelaar', 'MECHANIC');
+--INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1006, 'Jan', '$2y$10$XO2b/1YUiMcFdbRHhxl54OZV.BWPHp/FqVWlPipceAncU84JKahOy', 'true' , 'de Admin', 'ADMIN');
+--INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1007, 'ADMIN', '$2y$10$anxu85ksALH4vrX3wEBY/ed3BoAc/nlRatMe.ptGzkFBFLU2jMxhe', 'true' , 'de Admin', 'SUPERUSER');
+
+--INSERT INTO customers (id, firstname, lastname, email, street, house_number, zipcode, city) VALUES (1001, 'harry', 'henkst', 'harry@henkst.com', 'mooieweg', 6, '5435ws', 'Oss');
+--INSERT INTO customers (id, firstname, lastname, email, street, house_number, zipcode, city) VALUES (1002, 'frits', 'jansen', 'frits@jansen.com', 'kiviet', 25, '5254dr', 'Oss');
+--
+--INSERT INTO cars(id,brand, type, license_plate, customer_id) VALUES (1003, 'Seat', 'Leon', '3-srp-wx', '1001');
+--INSERT INTO cars(id,brand, type, license_plate, customer_id) VALUES (1004, 'Ford', 'Focus', '22-ll-sp', '1002');
+
+--INSERT INTO maintenances(id, car_id) VALUES (4001, 1003);
+--INSERT INTO maintenances(id, car_id) VALUES (4002, 1004);
+
+
 --INSERT INTO users (id, username, password, enabled, email, name, street, houseNumber, zipcode, city, preferences)
---VALUES (1001, 'TravelNerd', 'user', TRUE, 'info@travelnerd.com',  'Bas', 'Pietjepukweg, 71, '1234AA', 'Groningen', 'Road trip'),
+--VALUES (1001, 'TravelNerd', 'admin', TRUE, 'info@travelnerd.com',  'Bas', 'Pietjepukweg, 71, '1234AA', 'Groningen', 'Road trip'),
 --       (1002, 'Kasper', 'user', TRUE, 'info@kasper.nl', 'Kasper', 'Puinhoop 5', '8008SS', 'IJmuiden'),
 --       (1003, 'Manou',  'user', TRUE, 'info@manou.com',  'Manou', 'Kampweg 71', '6666CA', 'Swalmen');
 
@@ -51,13 +67,14 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
 
 
 --INSERT INTO authorities (username, authority)
---VALUES ('', 'ROLE_USER'),
+--VALUES ('Kasper', 'ROLE_USER'),
 --       ('', 'ROLE_USER'),
 --       ('', 'ROLE_USER'),
 --       ('', 'ROLE_USER'),
 --       ('', 'ROLE_USER'),
---       ('', 'ROLE_MODERATOR'),
---       ('', 'ROLE_MODERATOR'),
 --       ('TravelNerd', 'ROLE_ADMIN');
+--       ('', 'ROLE_MODERATOR'),
+--       ('', 'ROLE_MODERATOR'),
+
 
 

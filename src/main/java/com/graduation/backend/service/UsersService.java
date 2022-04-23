@@ -1,14 +1,16 @@
-//package com.graduation.backend.service;
-//
-//import com.graduation.backend.dto.UsersDto;
-//
-//import java.util.List;
-//
-//public interface UsersService {
-//    UsersDto createUsers(UsersDto usersDto);
-//    List<UsersDto> findAllUsers();
-//    UsersDto findUsersById (Long id);
-//    List<UsersDto> findFavorites (Long id);
-//    UsersDto updateUsers (UsersDto usersDto, Long id);
-//    UsersDto deleteUsers(Long id);
-//}
+package com.graduation.backend.service;
+
+import com.graduation.backend.dto.UsersDto;
+
+import java.util.List;
+
+public interface UsersService {
+    List<UsersDto> findAllUsers();
+    UsersDto createUsers(UsersDto usersDto);
+    UsersDto findByUserId(Long id);
+    UsersDto updateUsers(UsersDto userDto, Long id);
+    UsersDto deleteUsers(Long id);
+}
+
+//    List<TravelTipsDto> getTravelTips();
+//    TravelTips createTravelTips(TravelTipsDto travelTipsDto);
