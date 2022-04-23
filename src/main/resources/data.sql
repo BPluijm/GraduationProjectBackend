@@ -1,4 +1,4 @@
---INSERT INTO travels (id, country, startyear, city, travelType, description, travelTime)
+--INSERT INTO travels (id, country, startYear, city, travelType, description, travelTime)
 --VALUES (1001, 'France', 2010, 'Lons Le Saunier', 'Summer holiday', '8 day tour by car through the Jura in France', 8),
 --       (1002, 'Czech Republic', 2011, 'Prague and Cheb', 'Summer holiday', 'Visited Prague, Cheb and surrounding area', 12),
 --       (1003, 'Netherlands', 2011, 'Groenlo', 'Weekend trip', 'Visited Groenlo', 4),
@@ -26,8 +26,9 @@
 --       (1025, 'France', 2022, 'Paris', 'City trip', 'City trip to Paris', 3),
 --       (1026, 'France', 2022, 'Marseille to Monaco', 'Road trip', 'Road trip to Marseille, St Tropes and Monaco, along the south cost of France ', 5);
 
---
-INSERT INTO future_travels (id, country, area, travelType, travelTime, expectedCosts)
+
+
+INSERT INTO future_travels (id, country, area, category, duration, costs)
 VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
        (1002, 'USA', 'West Coast', 'Road trip', 21, 6000),
        (1003, 'Spain', 'Barcelona', 'City trip', 4, 500),

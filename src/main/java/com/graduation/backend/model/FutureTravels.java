@@ -13,11 +13,11 @@ public class FutureTravels {
 
     String area;
 
-    String travelType;
+    String category;
 
-    int travelTime;
+    int duration;
 
-    int expectedCosts;
+    int costs;
 
 
     @OneToMany(mappedBy = "FutureTravels")
@@ -47,28 +47,28 @@ public class FutureTravels {
         this.area = area;
     }
 
-    public String getTravelType() {
-        return travelType;
+    public String getCategory() {
+        return category;
     }
 
-    public void setTravelType(String travelType) {
-        this.travelType = travelType;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public int getTravelTime() {
-        return travelTime;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setTravelTime(int travelTime) {
-        this.travelTime = travelTime;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
-    public int getExpectedCosts() {
-        return expectedCosts;
+    public int getCosts() {
+        return costs;
     }
 
-    public void setExpectedCosts(int expectedCosts) {
-        this.expectedCosts = expectedCosts;
+    public void setCosts(int costs) {
+        this.costs = costs;
     }
 
 }

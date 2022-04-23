@@ -14,14 +14,14 @@ public class FutureTravelsDto {
     private final String area;
 
     @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
-    private final String travelType;
+    private final String category;
 
     @NotEmpty
     @Max(value = 90, message = "travel time must be less than or equal to 90 days")
-    private final int travelTime;
+    private final int duration;
 
     @NotEmpty(message = "enter the expected costs")
-    private final int expectedCosts;
+    private final int costs;
 
 
 }

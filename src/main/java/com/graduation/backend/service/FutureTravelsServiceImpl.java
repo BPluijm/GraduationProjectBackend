@@ -23,7 +23,7 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         List<FutureTravelsDto> futureTravels = new ArrayList<>();
 
         for (FutureTravels ft : ld) {
-            FutureTravelsDto ftdto = new FutureTravelsDto(ft.getId(), ft.getCountry(), ft.getArea(), ft.getTravelType(), ft.getTravelTime(), ft.getExpectedCosts());
+            FutureTravelsDto ftdto = new FutureTravelsDto(ft.getId(), ft.getCountry(), ft.getArea(), ft.getCategory(), ft.getDuration(), ft.getCosts());
             futureTravels.add(ftdto);
         }
 
@@ -35,9 +35,9 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         FutureTravels ft = new FutureTravels();
         ft.setCountry(futureTravelsDto.getCountry());
         ft.setArea(futureTravelsDto.getArea());
-        ft.setTravelType(futureTravelsDto.getTravelType());
-        ft.setTravelTime(futureTravelsDto.getTravelTime());
-        ft.setExpectedCosts(futureTravelsDto.getExpectedCosts());
+        ft.setCategory(futureTravelsDto.getCategory());
+        ft.setDuration(futureTravelsDto.getDuration());
+        ft.setCosts(futureTravelsDto.getCosts());
         return this.repos.save(ft);
     }
 }
