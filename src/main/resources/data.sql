@@ -58,6 +58,6 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
 --       ('', 'ROLE_USER'),
 --       ('', 'ROLE_MODERATOR'),
 --       ('', 'ROLE_MODERATOR'),
---       ('', 'ROLE_ADMIN');
+--       ('TravelNerd', 'ROLE_ADMIN');
 
 
