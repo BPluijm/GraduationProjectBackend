@@ -2,16 +2,16 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.TravelsDto;
 //import com.graduation.backend.dto.UsersDto;
-//import com.graduation.backend.exceptions.RecordNotFoundException;
+import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Travels;
 //import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.TravelsRepository;
-//import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-//import java.util.Optional;
+import java.util.Optional;
 
 @Service
 public class TravelsServiceImpl implements TravelsService {
@@ -46,7 +46,7 @@ public class TravelsServiceImpl implements TravelsService {
         tr.setDuration(travelsDto.getDuration());
         return this.repos.save(tr);
     }
-//
+
 //    @Override
 //    public UsersDto findTravelsById(Long id) {
 //        Optional<Travels> travels =  repos.findById(id);
@@ -59,21 +59,21 @@ public class TravelsServiceImpl implements TravelsService {
 //        }
 //    }
 //
-////    @Override
-////    public List<FavoritesDto> findFavorites(Long id) {
-////        Optional<Users> users = usersRepository.findById(id);
-////        List<UsersDto> usersDto = new ArrayList<>();
-////        if(users.isPresent()) {
-////            List<Favorites> favorites =  users.get().getUsers();
-////            for(Users us : users){
-////                UsersDto usersDto = modelMapper.map(us, UsersDto.class);
-////                usersDto.add(usersDto);
-////            }
-////            return usersDto;
-////        } else {
-////            throw new RecordNotFoundException("No favorites found");
-////        }
-////    }
+//    @Override
+//    public List<FavoritesDto> findFavorites(Long id) {
+//        Optional<Users> users = usersRepository.findById(id);
+//        List<UsersDto> usersDto = new ArrayList<>();
+//        if(users.isPresent()) {
+//            List<Favorites> favorites =  users.get().getUsers();
+//            for(Users us : users){
+//                UsersDto usersDto = modelMapper.map(us, UsersDto.class);
+//                usersDto.add(usersDto);
+//            }
+//            return usersDto;
+//        } else {
+//            throw new RecordNotFoundException("No favorites found");
+//        }
+//    }
 //
 //    @Override
 //    public UsersDto updateTravels(@NotNull TravelsDto travelsDto, Long id) {

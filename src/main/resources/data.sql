@@ -27,7 +27,6 @@ VALUES (1001, 'France', 2010, 'Lons Le Saunier', 'Summer holiday', '8 day tour b
        (1026, 'France', 2022, 'Marseille to Monaco', 'Road trip', 'Road trip to Marseille, St Tropes and Monaco, along the south cost of France ', 5);
 
 
-
 INSERT INTO future_travels (id, country, area, category, duration, costs)
 VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
        (1002, 'USA', 'West Coast', 'Road trip', 21, 6000),
@@ -39,12 +38,6 @@ INSERT INTO travel_tips (id, name, country, city, description)
 VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'),
        (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
        (1003, 'Angkor Wat', 'Colombia', 'Siem Reap area', 'Amazing temples taken over by the jungle');
-
-
-
-
-
-
 
 
 --INSERT INTO users (id, username, password, enabled, email, name, street, houseNumber, zipcode, city, preferences)
