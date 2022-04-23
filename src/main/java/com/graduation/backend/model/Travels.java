@@ -12,15 +12,15 @@ public class Travels {
 
     String country;
 
-    int startYear;
+    int years;
 
     String city;
 
-    String travelType;
+    String category;
 
     String description;
 
-    int travelTime;
+    int duration;
 
     @OneToMany(mappedBy ="Travels")
     List<Travels> Travels;
@@ -39,11 +39,11 @@ public class Travels {
         this.country = country;
     }
 
-    public int getStartYear() {
-        return startYear;
+    public int getYears() {
+        return years;
     }
-    public void setStartYear(int startYear) {
-        this.startYear = startYear;
+    public void setYears(int years) {
+        this.years = years;
     }
 
     public String getCity() {
@@ -53,11 +53,11 @@ public class Travels {
         this.city = city;
     }
 
-    public String getTravelType() {
-        return travelType;
+    public String getCategory() {
+        return category;
     }
-    public void setTravelType(String travelType) {
-        this.travelType = travelType;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDescription() {
@@ -67,10 +67,10 @@ public class Travels {
         this.description = description;
     }
 
-    public int getTravelTime() {
-        return travelTime;
+    public int getDuration() {
+        return duration;
     }
-    public void setTravelTime(int travelTime) {
-        this.travelTime = travelTime;
+    public void setDuration(int travelTime) {
+        this.duration = duration;
     }
 }

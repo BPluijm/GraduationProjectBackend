@@ -28,7 +28,7 @@ public class TravelsServiceImpl implements TravelsService {
         List<TravelsDto> travels = new ArrayList<>();
 
         for (Travels tr : ld) {
-            TravelsDto trdto = new TravelsDto(tr.getId(), tr.getCountry(), tr.getStartYear(), tr.getCity(), tr.getTravelType(), tr.getDescription(), tr.getTravelTime());
+            TravelsDto trdto = new TravelsDto(tr.getId(), tr.getCountry(), tr.getYears(), tr.getCity(), tr.getCategory(), tr.getDescription(), tr.getDuration());
             travels.add(trdto);
         }
 
@@ -39,11 +39,11 @@ public class TravelsServiceImpl implements TravelsService {
     public Travels createTravels(TravelsDto travelsDto) {
         Travels tr = new Travels();
         tr.setCountry(travelsDto.getCountry());
-        tr.setStartYear(travelsDto.getStartYear());
+        tr.setYears(travelsDto.getYears());
         tr.setCity(travelsDto.getCity());
-        tr.setTravelType(travelsDto.getTravelType());
+        tr.setCategory(travelsDto.getCategory());
         tr.setDescription(travelsDto.getDescription());
-        tr.setTravelTime(travelsDto.getTravelTime());
+        tr.setDuration(travelsDto.getDuration());
         return this.repos.save(tr);
     }
 //
