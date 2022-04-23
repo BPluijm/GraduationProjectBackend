@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@RestController
 public class FutureTravelsController {
     private final FutureTravelsService service;
 
@@ -18,9 +19,9 @@ public class FutureTravelsController {
     }
 
     @GetMapping("/future-travels")
-    public ResponseEntity<Object> getTrips() {
-        List<FutureTravelsDto> ld = service.getFutureTravels();
-        return new ResponseEntity<>(ld, HttpStatus.OK);
+    public ResponseEntity<Object> getFutureTravels() {
+        List<FutureTravelsDto> fd = service.getFutureTravels();
+        return new ResponseEntity<>(fd, HttpStatus.OK);
     }
 
     @PostMapping("/future-travels")

@@ -8,11 +8,11 @@ import javax.validation.constraints.*;
 public class TravelsDto {
     private final Long id;
 
-    @NotBlank(message = "enter the year you were there")
-    private final int startYear;
-
     @NotBlank
     private final String country;
+
+    @NotBlank(message = "enter the year you were there")
+    private final int startYear;
 
     @NotBlank
     private final String city;

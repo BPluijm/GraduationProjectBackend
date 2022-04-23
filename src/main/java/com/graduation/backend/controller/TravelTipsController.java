@@ -6,8 +6,7 @@ import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
 
-
-import javax.validation.Valid;
+import javax.validation.*;
 import java.util.List;
 
 @RestController
@@ -36,7 +35,7 @@ public class TravelTipsController {
             return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
         } else {
             service.createTravelTips(ttdto);
-            return new ResponseEntity<>("Trip added!", HttpStatus.CREATED);
+            return new ResponseEntity<>("Tip added!", HttpStatus.CREATED);
         }
     }
 }

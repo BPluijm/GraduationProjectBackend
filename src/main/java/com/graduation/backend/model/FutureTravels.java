@@ -1,11 +1,9 @@
 package com.graduation.backend.model;
 
-import com.graduation.backend.dto.FutureTravelsDto;
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-//@Table(name = "future_travels")
 public class FutureTravels {
     @Id
     @GeneratedValue
@@ -13,7 +11,7 @@ public class FutureTravels {
 
     String country;
 
-    String cities;
+    String area;
 
     String travelType;
 
@@ -21,11 +19,9 @@ public class FutureTravels {
 
     int expectedCosts;
 
+
     @OneToMany(mappedBy = "FutureTravels")
     List<FutureTravels> FutureTravels;
-
-    public static void add(FutureTravelsDto ftdto) {
-    }
 
     public Long getId() {
         return id;
@@ -43,12 +39,12 @@ public class FutureTravels {
         this.country = country;
     }
 
-    public String getCities() {
-        return cities;
+    public String getArea() {
+        return area;
     }
 
-    public void setCities(String travelType) {
-        this.cities = travelType;
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public String getTravelType() {

@@ -10,8 +10,8 @@ public class FutureTravelsDto {
     @NotBlank(message = "please enter a country")
     private final String country;
 
-    @NotBlank(message = "enter a city or area in selected country")
-    private final String cities;
+    @NotBlank(message = "enter an area in this country")
+    private final String area;
 
     @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
     private final String travelType;

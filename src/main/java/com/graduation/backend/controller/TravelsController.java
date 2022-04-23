@@ -5,6 +5,7 @@ import com.graduation.backend.service.TravelsService;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.*;
 import java.util.List;
 
@@ -20,8 +21,8 @@ public class TravelsController {
 
     @GetMapping("/travels")
     public ResponseEntity<Object> getTravels() {
-        List<TravelsDto> ld = service.getTravels();
-        return new ResponseEntity<>(ld, HttpStatus.OK);
+        List<TravelsDto> td = service.getTravels();
+        return new ResponseEntity<>(td, HttpStatus.OK);
     }
 
     @PostMapping("/travels")

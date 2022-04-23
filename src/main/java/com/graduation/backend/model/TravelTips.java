@@ -21,8 +21,8 @@ public class TravelTips {
     // hier moet nog een upload functie komen
 
 
-    @OneToMany(mappedBy = "travelTips")
-    List<TravelTips> travelTips;
+    @OneToMany(mappedBy = "TravelTips")
+    List<TravelTips> TravelTips;
 
     public Long getId() {
         return id;
