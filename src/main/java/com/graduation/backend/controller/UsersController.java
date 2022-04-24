@@ -7,6 +7,7 @@ import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.*;
+import java.util.List;
 
 @RestController
 public class UsersController {
@@ -18,10 +19,11 @@ public class UsersController {
 
     @GetMapping("/users")
     ResponseEntity<Object> getUsers () {
-        return new ResponseEntity<>(service.findAllUsers(), HttpStatus.OK);
+        List<UsersDto> ud = service.getUsers();
+        return new ResponseEntity<>(ud, HttpStatus.OK);
     }
     @GetMapping("/users/{id}")
-    ResponseEntity<Object> getUsersById (@PathVariable Long id) {
+    ResponseEntity<Object> findUsersById (@PathVariable Long id) {
         return new ResponseEntity<>(service.findByUserId(id), HttpStatus.OK);
     }
 
@@ -36,7 +38,7 @@ public class UsersController {
 
 
     @PostMapping("users")
-    ResponseEntity<Object> createUsers (@Valid @RequestBody UsersDto udto, BindingResult br) {
+    ResponseEntity<Object> createUsers (@Valid @RequestBody UsersDto cdto, BindingResult br) {
         if (br.hasErrors()) {
             StringBuilder sb = new StringBuilder();
             for (FieldError error : br.getFieldErrors()) {
@@ -45,7 +47,7 @@ public class UsersController {
             }
             return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
         } else {
-            service.createUsers(udto);
+            service.createUsers(cdto);
             return new ResponseEntity<>("User created", HttpStatus.CREATED);
         }
     }
@@ -61,9 +63,9 @@ public class UsersController {
             }
             return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(service.updateUsers(udto, id), HttpStatus.OK);
+            service.updateUsers(udto, id);
+            return new ResponseEntity<>("User updated", HttpStatus.OK);
         }
-
     }
 
 

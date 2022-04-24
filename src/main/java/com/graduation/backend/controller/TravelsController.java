@@ -15,7 +15,6 @@ public class TravelsController {
     private final TravelsService service;
 
     public TravelsController(TravelsService service) {
-
         this.service = service;
     }
 

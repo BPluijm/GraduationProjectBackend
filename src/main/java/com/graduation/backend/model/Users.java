@@ -61,7 +61,7 @@ public class Users {
     public void setStreet(String street) { this.street = street; }
 
     public Integer getHousenumber() { return housenumber; }
-    public void setHousenumber(Integer houseNumber) { this.housenumber = housenumber; }
+    public void setHousenumber(Integer housenumber) { this.housenumber = housenumber; }
 
     public String getZipcode() { return zipcode; }
     public void setZipcode(String zipcode) { this.zipcode = zipcode; }

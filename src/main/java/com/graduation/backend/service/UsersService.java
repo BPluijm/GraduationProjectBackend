@@ -5,7 +5,7 @@ import com.graduation.backend.dto.UsersDto;
 import java.util.List;
 
 public interface UsersService {
-    List<UsersDto> findAllUsers();
+    List<UsersDto> getUsers();
     UsersDto createUsers(UsersDto usersDto);
     UsersDto findByUserId(Long id);
     UsersDto updateUsers(UsersDto userDto, Long id);
