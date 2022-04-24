@@ -25,6 +25,12 @@ public class Travels {
     @OneToMany(mappedBy ="Travels")
     List<Travels> Travels;
 
+//    @OneToMany(mappedBy = "travels")
+//    @JsonManagedReference(value = "travels-favorites")
+//    private List<Favorites> favorites;
+
+
+
     public Long getId() {
         return id;
     }
@@ -70,7 +76,7 @@ public class Travels {
     public int getDuration() {
         return duration;
     }
-    public void setDuration(int travelTime) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 }

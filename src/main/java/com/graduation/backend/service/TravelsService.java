@@ -8,15 +8,12 @@ import java.util.List;
 public interface TravelsService {
     List<TravelsDto> getTravels();
     Travels createTravels(TravelsDto travelsDto);
-//    TravelsDto findTravelById(Long id);
-//    TravelsDto updateTravel(TravelsDto travelsDto, Long id);
-//    TravelsDto deleteTravel(Long id);
+//    List<TravelsDto> getTravelsById(Long id);
 
-
-//    FavoriteDto findCarByLicensePlate (String licensePlate);
-//
-//    String addCarPapersToCar(Long carId, MultipartFile carPapers) throws IOException;
-
+//    TravelsDto getByTravelsId(Long id);
+////    List<TravelsDto> getTravels();
+//    TravelsDto updateTravels(TravelsDto travelsDto, Long id);
+//    TravelsDto deleteTravels(Long id);
 }
 
 

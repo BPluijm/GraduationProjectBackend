@@ -47,65 +47,94 @@ public class TravelsServiceImpl implements TravelsService {
         return this.repos.save(tr);
     }
 
-//    @Override
-//    public UsersDto findTravelsById(Long id) {
-//        Optional<Travels> travels =  repos.findById(id);
-//        if (travels.isPresent()){
-//            UsersDto uDto = modelMapper.map(travels.get(), UsersDto.class);
-//            return uDto;
+//    @Autowired
+//    private ModelMapper modelMapper;
 //
+//    @Autowired
+//    CustomerRepo customerRepo;
+//
+//    @Autowired
+//    CarRepo carRepo;
+//
+//    // CREATE
+//    @Override
+//    public CustomerDTO createCustomer(@Valid CustomerDTO customerDTO) {
+//        Customer newCustomer = modelMapper.map(customerDTO, Customer.class);
+//        Customer savedCustomer = customerRepo.save(newCustomer);
+//        return modelMapper.map(savedCustomer, CustomerDTO.class);
+//    }
+//
+//    // READ
+//    @Override
+//    public List<CustomerDTO> findAllCustomers() {
+//        List<Customer> customers =  customerRepo.findAll();
+//        List<CustomerDTO> customerDTOS = new ArrayList<>();
+//
+//        for(Customer customer : customers) {
+//            CustomerDTO customerDTO = modelMapper.map(customer, CustomerDTO.class);
+//            customerDTOS.add(customerDTO);
+//        }
+//        return customerDTOS;
+//    }
+//
+//    @Override
+//    public CustomerDTO findCustomerById(Long id) {
+//        Optional<Customer> customer =  customerRepo.findById(id);
+//        if (customer.isPresent()){
+//            CustomerDTO customerDTO = modelMapper.map(customer.get(), CustomerDTO.class);
+//            return customerDTO;
 //        } else {
-//            throw new RecordNotFoundException("Trip not found");
+//            throw new RecordNotFoundException("customer not found");
 //        }
 //    }
 //
 //    @Override
-//    public List<FavoritesDto> findFavorites(Long id) {
-//        Optional<Users> users = usersRepository.findById(id);
-//        List<UsersDto> usersDto = new ArrayList<>();
-//        if(users.isPresent()) {
-//            List<Favorites> favorites =  users.get().getUsers();
-//            for(Users us : users){
-//                UsersDto usersDto = modelMapper.map(us, UsersDto.class);
-//                usersDto.add(usersDto);
+//    public List<CarDTO> findCustomerCars(Long id) {
+//        Optional<Customer> customer = customerRepo.findById(id);
+//        List<CarDTO> carDTOS = new ArrayList<>();
+//        if(customer.isPresent()) {
+//            List<Car> cars =  customer.get().getCars();
+//            for(Car car : cars){
+//                CarDTO carDTO = modelMapper.map(car, CarDTO.class);
+//                carDTOS.add(carDTO);
 //            }
-//            return usersDto;
+//            return carDTOS;
 //        } else {
-//            throw new RecordNotFoundException("No favorites found");
+//            throw new RecordNotFoundException("no car found");
 //        }
 //    }
 //
+//    // UPDATE
 //    @Override
-//    public UsersDto updateTravels(@NotNull TravelsDto travelsDto, Long id) {
-//        Travels trip = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("user not found"));
-//        trip.setFirstname(travelsDto.getFirstname());
-//        trip.setLastname(travelsDto.getLastname());
-//        trip.setStreet(travelsDto.getStreet());
-//        trip.setZipcode(travelsDto.getZipcode());
-//        trip.setEmail(travelsDto.getEmail());
-//        trip.setHouseNumber(travelsDto.getHouseNumber());
-//        trip.setCity(travelsDto.getCity());
-//        trip.setFavorites(travelsDto.getFavorites());
-//        usersRepository.save(users);
-//        return modelMapper.map(users, UsersDto.class);
+//    public CustomerDTO updateCustomer( CustomerDTO customerDTO, Long id) {
+//        Customer customer = customerRepo.findById(id).orElseThrow(() -> new RecordNotFoundException("customer not found"));
+//        customer.setFirstname(customerDTO.getFirstname());
+//        customer.setLastname(customerDTO.getLastname());
+//        customer.setStreet(customerDTO.getStreet());
+//        customer.setZipcode(customerDTO.getZipcode());
+//        customer.setEmail(customerDTO.getEmail());
+//        customer.setHouseNumber(customerDTO.getHouseNumber());
+//        customer.setCity(customerDTO.getCity());
+//        customer.setCars(customerDTO.getCars());
+//        customerRepo.save(customer);
+//        return modelMapper.map(customer, CustomerDTO.class);
 //    }
 //
+//    // DELETE
 //    @Override
-//    public UsersDto deleteUsers(Long id) {
-//        Optional<Users> users = repos.findById(id);
-//        if(users.isPresent()){
-//            if(users.get().getFavorites() != null){
-//                for (Favorites favorites : users.get().getFavorites()){
-//                    Long usersId = users.getId();
-//                    repos.deleteById(usersId);
+//    public CustomerDTO deleteCustomer(Long id) {
+//        Optional<Customer> customer = customerRepo.findById(id);
+//        if(customer.isPresent()){
+//            if(customer.get().getCars() != null){
+//                for (Car car : customer.get().getCars()){
+//                    Long carId = car.getId();
+//                    carRepo.deleteById(carId);
 //                }
 //            }
-//            UsersDto usersDto = modelMapper.map(users.get(), UsersDto.class);
-//            usersRepository.deleteById(id);
-//            return usersDto;
+//            CustomerDTO customerDTO = modelMapper.map(customer.get(), CustomerDTO.class);
+//            customerRepo.deleteById(id);
+//            return customerDTO;
 //        } else {
 //            throw new RecordNotFoundException("unable to find customer");
 //        }
-//
-//    }
 }
