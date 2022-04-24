@@ -30,11 +30,23 @@
 //        return super.userDetailsService();
 //    }
 //
+////    @Autowired
+////    private PasswordEncoder passwordEncoder;
+////
+////    @Autowired
+////    private DataSource dataSource;
+//
 //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        auth
 //                .inMemoryAuthentication()
 //                .withUser("karel").password("{noop}appel").roles("ARTIST");
+//
+////                .jdbcAuthentication()
+////                .passwordEncoder(passwordEncoder)
+////                .dataSource(dataSource)
+////                .usersByUsernameQuery("select username, password, enabled from employees where username=?")
+////                .authoritiesByUsernameQuery("select username, role from employees where username=?");
 //    }
 //
 //    @Override
@@ -53,4 +65,27 @@
 //                .csrf().disable();
 //    }
 //}
+//
+////             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+////                .and()
+////                .authorizeRequests()
+////                .antMatchers(HttpMethod.POST, "/auth").permitAll()
+////                .antMatchers(HttpMethod.GET,"/**").authenticated()
+////                .antMatchers("/appointments/**").hasAnyAuthority("ADMIN", "SUPERUSER")
+////                .antMatchers("/cars/**").hasAnyAuthority("ADMIN", "SUPERUSER")
+////                .antMatchers("/car-papers/**").hasAnyAuthority("ADMIN", "SUPERUSER")
+////                .antMatchers("/customers/**").hasAnyAuthority("ADMIN", "SUPERUSER")
+////                .antMatchers("/employees/**").hasAnyAuthority("ADMIN", "SUPERUSER")
+////                .antMatchers("/invoices/**").hasAnyAuthority("ADMIN", "SUPERUSER")
+////                .antMatchers("/maintenances/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
+////                .antMatchers("/maintenance-items/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
+////                .antMatchers("/parts/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
+////                .antMatchers("/repair-operations/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
+////                .and()
+////                .authorizeRequests().anyRequest().authenticated()
+////                .and()
+////                .addFilterBefore(new JwtRequestFilter(jwtService, userDetailsService()), UsernamePasswordAuthenticationFilter.class)
+////            .csrf().disable();
+//
+//
 //

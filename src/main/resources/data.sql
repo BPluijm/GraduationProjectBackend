@@ -40,10 +40,10 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
        (1003, 'Angkor Wat', 'Colombia', 'Siem Reap area', 'Amazing temples taken over by the jungle');
 
 
-INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)
-VALUES (1001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com' 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
-       (1002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
-       (1003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
+--INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)
+--VALUES (1001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com' 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
+--       (1002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
+--       (1003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
 
 --INSERT INTO users (id,username, password, enabled, lastname, role) VALUES (1005, 'Hans', '$2y$10$iuI2WO1n2GEQxQrME8/bp.Q6gp5aK2rYz/csUJFCABLZk7LRDIQcK', 'true' , 'de Sleutelaar', 'MECHANIC');
 --INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1006, 'Jan', '$2y$10$XO2b/1YUiMcFdbRHhxl54OZV.BWPHp/FqVWlPipceAncU84JKahOy', 'true' , 'de Admin', 'ADMIN');
