@@ -12,13 +12,13 @@ VALUES (1001, 'France', 2010, 'Lons Le Saunier', 'Summer holiday', '8 day tour b
        (1011, 'Latvia', 2014, 'Riga', 'City trip', 'City trip to Riga', 4),
        (1012, 'Belgium', 2015, 'Atlantic Wall', 'Day trip', 'Day trip to the Atlantic wall in Belgium', 1),
        (1013, 'Belgium', 2015, 'Chateau Mirinda', 'Day trip', 'Urbex to one of the best spooky castles', 1),
-       (1014, 'Czech Republic', 2015, 'Brno and Cheb and Bratislava', 'Summer trip', 'Road trip trough Czech Republic and visited Bratislava, Slovakia', 16),
+       (1014, 'Czech Republic', 2015, 'Brno and Cheb and Bratislava', 'Summer trip', 'Road trip through Czech Republic and visited Bratislava, Slovakia', 16),
        (1015, 'Germany', 2015, 'Cologne', 'City trip', 'City trip to Cologne', 3),
        (1016, 'Germany', 2016, 'Monschau', 'Road trip', 'Escaped carnaval only to find out they also celebrate carnaval', 7),
        (1017, 'Germany', 2016, 'Berlin', 'City trip', 'Party weekend Berlin', 2),
        (1018, 'Italy', 2016, 'Rome', 'City trip', 'Moms birthday surprise', 5),
        (1019, 'Austria and Slovenia and Croatia and Germany', 2016, 'multiple', 'Summer holiday', 'Road trip and overnights in Saint Gilgen, Portoroz, Umag, Porec and Dachau', 16),
-       (1020, 'Australia and Asia', 2017, 'multiple', 'Backpacking', 'Worked and travelled through the whole of Australia and went on holiday to: Indonesia, Singapore, Malaysia, Thailand and Japan', 741),
+       (1020, 'Australia and Asia', 2017-2019, 'multiple', 'Backpacking', 'Worked and travelled through the whole of Australia and went on holiday to: Indonesia, Singapore, Malaysia, Thailand and Japan', 741),
        (1021, 'Estonia', 2019, 'Talinn', 'City trip', 'Visited friends and the beautiful Talinn', 4),
        (1022, 'Malta', 2020, 'St Pauls Bay', 'Spring break', 'Toured around the whole island', 8),
        (1023, 'Luxembourg', 2021, 'Luxembourg', 'Day trip', 'Hiking in the bush', 1),
@@ -49,11 +49,13 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'
 --INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1006, 'Jan', '$2y$10$XO2b/1YUiMcFdbRHhxl54OZV.BWPHp/FqVWlPipceAncU84JKahOy', 'true' , 'de Admin', 'ADMIN');
 --INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1007, 'ADMIN', '$2y$10$anxu85ksALH4vrX3wEBY/ed3BoAc/nlRatMe.ptGzkFBFLU2jMxhe', 'true' , 'de Admin', 'SUPERUSER');
 
+
+--
+--INSERT INTO favorites(id,brand, type, license_plate, customer_id) VALUES (1003, 'Seat', 'Leon', '3-srp-wx', '1001');
+--INSERT INTO favorites(id,brand, type, license_plate, customer_id) VALUES (1004, 'Ford', 'Focus', '22-ll-sp', '1002');
+
 --INSERT INTO customers (id, firstname, lastname, email, street, house_number, zipcode, city) VALUES (1001, 'harry', 'henkst', 'harry@henkst.com', 'mooieweg', 6, '5435ws', 'Oss');
 --INSERT INTO customers (id, firstname, lastname, email, street, house_number, zipcode, city) VALUES (1002, 'frits', 'jansen', 'frits@jansen.com', 'kiviet', 25, '5254dr', 'Oss');
---
---INSERT INTO cars(id,brand, type, license_plate, customer_id) VALUES (1003, 'Seat', 'Leon', '3-srp-wx', '1001');
---INSERT INTO cars(id,brand, type, license_plate, customer_id) VALUES (1004, 'Ford', 'Focus', '22-ll-sp', '1002');
 
 --INSERT INTO maintenances(id, car_id) VALUES (4001, 1003);
 --INSERT INTO maintenances(id, car_id) VALUES (4002, 1004);

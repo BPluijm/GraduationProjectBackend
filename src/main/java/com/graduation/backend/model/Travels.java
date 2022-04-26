@@ -1,82 +1,31 @@
 package com.graduation.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+@Data
 @Entity
-//@Table(name = "travels")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "travels")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Travels {
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
-    String country;
+    private String country;
+    private int years;
+    private String city;
+    private String category;
+    private String description;
+    private int duration;
 
-    int years;
+    @OneToMany(mappedBy = "travels")
+    @JsonManagedReference(value = "travels-favorites")
+    private List<Favorites> favorites;
 
-    String city;
-
-    String category;
-
-    String description;
-
-    int duration;
-
-    @OneToMany(mappedBy ="Travels")
-    List<Travels> Travels;
-
-//    @OneToMany(mappedBy = "travels")
-//    @JsonManagedReference(value = "travels-favorites")
-//    private List<Favorites> favorites;
-
-
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public int getYears() {
-        return years;
-    }
-    public void setYears(int years) {
-        this.years = years;
-    }
-
-    public String getCity() {
-        return city;
-    }
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
 }

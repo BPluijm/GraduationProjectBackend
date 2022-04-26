@@ -9,4 +9,6 @@ import java.util.List;
 public interface FavoritesService {
     FavoritesDto createFavorites(FavoritesDto favoritesDto);
     List<FavoritesDto> getFavorites ();
+    FavoritesDto getFavoritesById(Long id);
+    FavoritesDto deleteFavorites(Long id);
 }

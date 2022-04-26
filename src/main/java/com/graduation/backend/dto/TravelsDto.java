@@ -1,32 +1,41 @@
 package com.graduation.backend.dto;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.graduation.backend.model.Favorites;
+import lombok.*;
+
 import javax.validation.constraints.*;
+import java.util.List;
+
 
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TravelsDto {
-    private final Long id;
+    private Long id;
 
     @NotBlank
-    private final String country;
+    private String country;
 
     @NotBlank(message = "enter the year you were there")
-    private final int years;
+    private int years;
 
     @NotBlank
-    private final String city;
+    private String city;
 
     @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
-    private final String category;
+    private String category;
 
     @NotBlank(message = "short description")
-    private final String description;
+    private String description;
 
     @NotEmpty
     @Max(value = 750, message = "travel time must be less than or equal to 750 days")
-    private final int duration;
+    private int duration;
 
-//    private List<Favorites> favorites;
+    private List<Favorites> favorites;
+
 }
 
