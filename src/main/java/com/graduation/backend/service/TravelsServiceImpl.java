@@ -8,9 +8,8 @@ import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
+
 import java.util.*;
 
 
@@ -56,12 +55,12 @@ public class TravelsServiceImpl implements TravelsService {
     }
 
     @Override
-    public String addFavorites(Long travelsId, MultipartFile favorites) throws IOException {
-        Travels travels = repos.findById(travelsId).get();
-        Favorites favorite =  service.createFavorites(favorites);
-        favorites.setTravels(travels);
-        travels.setFavorites(favorite);
-        repos.save(travels);
+    public String addFavorites(Long travelsId) {
+        Travels trad = repos.findById(travelsId).get();
+        Favorites favorite =  service.createFavorites(travelsId);
+        favorite.setTravels(trad);
+        trad.setFavorites(favorite);
+        repos.save(trad);
         return "Added to your favorites";
     }
 
@@ -73,17 +72,17 @@ public class TravelsServiceImpl implements TravelsService {
         tl.setCity(tvl.getCity());
         tl.setCategory(tvl.getCategory());
         tl.setDescription(tvl.getDescription());
-        tl.setFavorites(tvl.getFavorites());
+        tl.setFavorites(tvl.getFavorite());
         repos.save(tl);
         return mapper.map(tl, TravelsDto.class);
     }
-
+6
     @Override
     public TravelsDto deleteTravels(Long id) {
         Optional<Travels> tra = repos.findById(id);
         if(tra.isPresent()){
             TravelsDto trav = mapper.map(tra.get(), TravelsDto.class);
-            TravelsDto.deleteById(id);
+            repos.deleteById(id);
             return trav;
         } else {
             throw new RecordNotFoundException("Unable to find trip");

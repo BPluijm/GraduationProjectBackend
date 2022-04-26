@@ -1,7 +1,7 @@
 package com.graduation.backend.service;
 
 import com.graduation.backend.dto.FavoritesDto;
-import com.graduation.backend.service.FavoritesService;
+import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Favorites;
 import com.graduation.backend.repository.FavoritesRepository;
 import org.modelmapper.ModelMapper;
@@ -33,11 +33,30 @@ public class FavoritesServiceImpl implements FavoritesService {
     }
 
     @Override
-    public FavoritesDto createFavorites(FavoritesDto favoritesDto) {
-        Favorites favo = mapper.map(favoritesDto, Favorites.class);
+    public FavoritesDto getFavoritesById(Long id) {
+        Optional<Favorites> f = repos.findById(id);
+        if (f.isPresent()) {
+            Favorites ft = f.get();
+            return mapper.map(ft, FavoritesDto.class);
+        } else {
+            throw new RecordNotFoundException("Trip not found");
+        }
+    }
+
+    @Override
+    public FavoritesDto createFavorites(FavoritesDto fdto) {
+        Favorites favo = mapper.map(fdto, Favorites.class);
         Favorites favorite = repos.save(favo);
         return mapper.map(favorite, FavoritesDto.class);
     }
 
+
+    @Override
+    public String deleteFavorites(Long id) {
+        Favorites favorite = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Favorite not found"));
+        repos.deleteById(id);
+        return "Favorite deleted";
+
+    }
 
 }

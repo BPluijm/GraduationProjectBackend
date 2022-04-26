@@ -1,10 +1,7 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.FavoritesDto;
-import com.graduation.backend.model.Favorites;
-import com.graduation.backend.repository.FavoritesRepository;
 import com.graduation.backend.service.FavoritesService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.validation.*;
@@ -17,13 +14,9 @@ import java.util.List;
 @RestController
 public class FavoritesController {
 
-//    @Autowired
-//    FavoritesRepository repos;
     @Autowired
     FavoritesService service;
 
-//    @Autowired
-//    private ModelMapper mapper;
 
     @GetMapping("/favorites")
     public ResponseEntity<Object> getFavorites() {
@@ -37,27 +30,18 @@ public class FavoritesController {
         return new ResponseEntity<>(favos, HttpStatus.OK);
     }
 
-//    @Override
-//    public FavoritesDto createFavorites(FavoritesDto favoritesDto) {
-//        Favorites newFavo = modelMapper.map(favoritesDto, Favorites.class);
-//        Favorites favo = repos.save(newFavo);
-//        return mapper.map(favo, FavoritesDto.class);
-//    }
-
-
-
         @PostMapping("/favorites")
-        ResponseEntity<Object> createFavorites (@Valid @RequestBody FavoritesDto fDto, BindingResult bindingResult) throws IOException {
-            if(bindingResult.hasErrors()){
+        ResponseEntity<Object> createFavorites (@Valid @RequestBody FavoritesDto fDto, BindingResult br) throws IOException {
+            if(br.hasErrors()){
                 StringBuilder sb = new StringBuilder();
-                for (FieldError error : bindingResult.getFieldErrors()){
+                for (FieldError error : br.getFieldErrors()){
                     sb.append(error);
                     sb.append("\n");
                 }
                 return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
             } else {
-                FavoritesDto newFavorites = service.createFavorites(fDto);
-                return new ResponseEntity<>(newFavorites, HttpStatus.CREATED);
+                FavoritesDto newFavo = service.createFavorites(fDto);
+                return new ResponseEntity<>(newFavo, HttpStatus.CREATED);
             }
 
         }
@@ -66,8 +50,6 @@ public class FavoritesController {
     ResponseEntity<Object> deleteFavorites (@PathVariable Long id) {
         return new ResponseEntity<>(service.deleteFavorites(id), HttpStatus.OK);
     }
-
-
 
 }
 

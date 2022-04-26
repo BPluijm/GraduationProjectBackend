@@ -1,14 +1,14 @@
 package com.graduation.backend.model;
 
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 
 import javax.persistence.*;
 
 
-
+@Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,10 +19,8 @@ public class Favorites {
         @GeneratedValue
         private Long id;
 
-        private Boolean add;
-
-        private Boolean remove;
-
-
-
+        @OneToOne
+        @JoinColumn(name = "favorites-id")
+        @JsonManagedReference(value = "travels")
+        private Travels travels;
 }

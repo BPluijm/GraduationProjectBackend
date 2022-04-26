@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import javax.validation.*;
 import java.io.IOException;
@@ -46,9 +46,8 @@ public class TravelsController {
     }
 
     @PostMapping("/travels/{id}/favorites")
-    ResponseEntity<Object> createTravels(@PathVariable Long id, @RequestBody MultipartFile file) throws IOException {
-        String message = service.addFavorites(id, file);
-        return new ResponseEntity<>(message, HttpStatus.CREATED);
+    ResponseEntity<Object> createTravels(@PathVariable Long id) {
+        return new ResponseEntity<>(service.addFavorites(id), HttpStatus.CREATED);
     }
 
     @PutMapping("travels/{id}")
