@@ -2,7 +2,7 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
-import com.graduation.backend.model.Favorites;
+//import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
@@ -20,7 +20,7 @@ public class TravelsServiceImpl implements TravelsService {
     TravelsRepository repos;
 
     @Autowired
-    FavoritesService = service;
+    FavoritesService service;
 
     @Autowired
     private ModelMapper mapper;
@@ -54,15 +54,15 @@ public class TravelsServiceImpl implements TravelsService {
         return mapper.map(trav, TravelsDto.class);
     }
 
-    @Override
-    public String addFavorites(Long travelsId) {
-        Travels trad = repos.findById(travelsId).get();
-        Favorites favorite =  service.createFavorites(travelsId);
-        favorite.setTravels(trad);
-        trad.setFavorites(favorite);
-        repos.save(trad);
-        return "Added to your favorites";
-    }
+//    @Override
+//    public String addFavorites(Long id) {
+//        Travels trad = repos.findById(id).get();
+//        Favorites favorite =  service.createFavorites(Travels);
+//        favorite.setTravels(trad);
+//        trad.setFavorites(favorite);
+//        repos.save(trad);
+//        return "Added to your favorites";
+//    }
 
     @Override
     public TravelsDto updateTravels(TravelsDto tvl, Long id) {
@@ -76,7 +76,7 @@ public class TravelsServiceImpl implements TravelsService {
         repos.save(tl);
         return mapper.map(tl, TravelsDto.class);
     }
-6
+
     @Override
     public TravelsDto deleteTravels(Long id) {
         Optional<Travels> tra = repos.findById(id);
