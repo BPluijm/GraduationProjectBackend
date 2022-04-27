@@ -3,6 +3,7 @@ package com.graduation.backend.service;
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 //import com.graduation.backend.model.Favorites;
+import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
@@ -54,15 +55,15 @@ public class TravelsServiceImpl implements TravelsService {
         return mapper.map(trav, TravelsDto.class);
     }
 
-//    @Override
-//    public String addFavorites(Long id) {
-//        Travels trad = repos.findById(id).get();
-//        Favorites favorite =  service.createFavorites(Travels);
-//        favorite.setTravels(trad);
-//        trad.setFavorites(favorite);
-//        repos.save(trad);
-//        return "Added to your favorites";
-//    }
+    @Override
+    public String addFavorites(Long id) {
+        Travels trad = repos.findById(id).get();
+        Favorites favorite =  service.createFavorites(Travels);
+        favorite.setTravels(trad);
+        trad.setFavorites(favorite);
+        repos.save(trad);
+        return "Added to your favorites";
+    }
 
     @Override
     public TravelsDto updateTravels(TravelsDto tvl, Long id) {

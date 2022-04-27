@@ -46,12 +46,12 @@ public class TravelTipsServiceImpl implements TravelTipsService {
     }
 
     @Override
-    public TravelTips createTravelTips(TravelTipsDto tipsd,MultipartFile file) throws IOException {
+    public TravelTips createTravelTips(TravelTipsDto ttdt,MultipartFile file) throws IOException {
         TravelTips tt = new TravelTips();
-        tt.setName(tipsd.getName());
-        tt.setCountry(tipsd.getCountry());
-        tt.setCity(tipsd.getCity());
-        tt.setDescription(tipsd.getDescription());
+        tt.setName(ttdt.getName());
+        tt.setCountry(ttdt.getCountry());
+        tt.setCity(ttdt.getCity());
+        tt.setDescription(ttdt.getDescription());
         tt.setFolder(file.getBytes());
         repos.save(tt);
 
