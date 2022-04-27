@@ -1,7 +1,6 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.TravelTipsDto;
-import com.graduation.backend.model.TravelTips;
 import com.graduation.backend.service.TravelTipsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.*;
 
@@ -32,11 +32,11 @@ public class TravelTipsController {
 
 
     @PostMapping("/travel-tips")
-    public ResponseEntity<Object> createTravelTips(@RequestBody MultipartFile tips) {
+    public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdt, MultipartFile tips) {
         try {
             if (Objects.equals(tips.getContentType(), "application/pdf")) {
-                TravelTips ttips = service.createTravelTips(tips);
-                return new ResponseEntity<>(ttips, HttpStatus.CREATED);
+                service.createTravelTips(ttdt, tips);
+                return new ResponseEntity<>("Tip is created", HttpStatus.CREATED);
             }
             return new ResponseEntity<>("Only pdf file upload possible", HttpStatus.BAD_REQUEST);
         } catch (IOException error) {
@@ -45,10 +45,10 @@ public class TravelTipsController {
     }
 
         @PutMapping("/travel-tips/{id}")
-        ResponseEntity<Object> updateTravelTips (@RequestBody MultipartFile tips, @PathVariable Long id) {
+        ResponseEntity<Object> updateTravelTips (@Valid @RequestBody TravelTipsDto ti, MultipartFile tips, @PathVariable Long id) {
             try {
-                String ti = service.updateTravelTips(tips, id);
-                return new ResponseEntity<>(ti, HttpStatus.OK);
+                String tip = service.updateTravelTips(ti, tips, id);
+                return new ResponseEntity<>(tip, HttpStatus.OK);
             } catch (IOException error) {
                 return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
             }
