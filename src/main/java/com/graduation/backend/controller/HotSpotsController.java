@@ -18,9 +18,12 @@ public class HotSpotsController {
     @Autowired
     HotSpotsService service;
 
+//    @GetMapping(value = "hotspots", produces = MediaType.APPLICATION_PDF_VALUE)
     @GetMapping("hotspots")
     ResponseEntity<Object> getHotSpots() {
+//    ResponseEntity<Object> getHotSpots(@PathVariable Long id) {
         List<HotSpotsDto> hpd = service.getHotSpots();
+//        byte[] flyer = service.getHotSpots(id);
         return new ResponseEntity<>(hpd, HttpStatus.OK);
     }
 

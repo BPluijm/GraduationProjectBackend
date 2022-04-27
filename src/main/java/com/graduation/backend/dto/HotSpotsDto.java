@@ -27,4 +27,9 @@ public class HotSpotsDto {
     @JsonIgnore
     private byte[] flyer;
 
+//    @OneToOne
+//    @JoinColumn(name = "users_id")
+//    @JsonManagedReference(value = "users-hotspots")
+//    private Users users;
+
 }
