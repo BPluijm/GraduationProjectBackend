@@ -51,10 +51,10 @@ public class FutureTravelsController {
 
 
     @PutMapping("future-travels/{id}")
-    ResponseEntity<Object> updateFutureTravels (@PathVariable Long id, @Valid @RequestBody FutureTravelsDto ftdto , BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
+    ResponseEntity<Object> updateFutureTravels (@PathVariable Long id, @Valid @RequestBody FutureTravelsDto ftdto , BindingResult br) {
+        if (br.hasErrors()) {
             StringBuilder sb = new StringBuilder();
-            for (FieldError error : bindingResult.getFieldErrors()) {
+            for (FieldError error : br.getFieldErrors()) {
                 sb.append(error);
                 sb.append("\n");
             }

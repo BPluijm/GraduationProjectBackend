@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface TravelsService {
     List<TravelsDto> getTravels();
-    TravelsDto createTravels(TravelsDto travelsDto);
     TravelsDto getTravelsById(Long id);
-    String addFavorites(Long travelsId);
+    TravelsDto createTravels(TravelsDto travelsDto);
+    String addFavorites(Long id);
     TravelsDto updateTravels(TravelsDto tdto, Long id);
     TravelsDto deleteTravels(Long id);
 }
