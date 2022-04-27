@@ -1,6 +1,7 @@
 package com.graduation.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.graduation.backend.model.Favorites;
 import lombok.*;
 
@@ -12,14 +13,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(Include.NON_NULL)
 public class TravelsDto {
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Please enter a country")
     private String country;
 
-    @NotBlank(message = "enter the year you were there")
+    @NotBlank(message = "Please enter the year you were there")
     private int years;
 
     @NotBlank
@@ -32,7 +33,7 @@ public class TravelsDto {
     private String description;
 
     @NotEmpty
-    @Max(value = 750, message = "travel time must be less than or equal to 750 days")
+    @Max(value = 750, message = "Travel time must be less than or equal to 750 days")
     private int duration;
 
     private Favorites favorites;

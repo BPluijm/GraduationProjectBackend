@@ -2,14 +2,12 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
-//import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 import java.util.*;
 

@@ -25,5 +25,5 @@ public class HotSpots {
 
     @Lob
     @JsonIgnore
-    private byte[] folder;
+    private byte[] flyer;
 }
