@@ -2,18 +2,15 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.FutureTravelsDto;
 import com.graduation.backend.dto.TravelTipsDto;
-import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.FutureTravels;
 import com.graduation.backend.model.TravelTips;
-import com.graduation.backend.model.Travels;
 import com.graduation.backend.repository.FutureTravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -60,15 +57,15 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         return mapper.map(ftrav, FutureTravelsDto.class);
     }
 
-//    @Override
-//    public String addTips(Long tipId, FutureTravelsDto ftdt, MultipartFile tips) {
-//        FutureTravels futu = repos.findById(tipId).get();
-//        TravelTips trt =  service.createTravelTips(ftdt, tips);
-//        trt.setFutureTravels(futu);
-//        futu.setTips(trt);
-//        repos.save(futu);
-//        return "Travel tips are added to the future trip";
-//    }
+    @Override
+    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+        FutureTravels futu = repos.findById(tipId).get();
+        TravelTips trt =  service.createTravelTips(ttdt, tips);
+        trt.setFutureTravels(futu);
+        futu.setTips(trt);
+        repos.save(futu);
+        return "Travel tips are added to the future trip";
+    }
 
 
     @Override

@@ -39,6 +39,5 @@ public class TravelTips {
     @OneToOne
     @JoinColumn(name = "future-travels-id")
     @JsonManagedReference(value = "future-travels-tip")
-    private FutureTravels future;
-
+    private FutureTravels futu;
 }

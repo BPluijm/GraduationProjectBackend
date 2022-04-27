@@ -1,6 +1,8 @@
 package com.graduation.backend.service;
 
 import com.graduation.backend.dto.FutureTravelsDto;
+import com.graduation.backend.dto.TravelTipsDto;
+import com.graduation.backend.model.TravelTips;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
