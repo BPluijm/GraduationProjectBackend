@@ -1,27 +1,44 @@
 package com.graduation.backend.dto;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.graduation.backend.model.FutureTravels;
+import com.graduation.backend.model.TravelTips;
+import lombok.*;
+
+import javax.persistence.OneToOne;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class FutureTravelsDto {
-    private final Long id;
 
-    @NotBlank(message = "please enter a country")
-    private final String country;
+    private Long id;
 
-    @NotBlank(message = "enter an area in this country")
-    private final String area;
+    @NotBlank(message = "Please enter a country")
+    private String country;
 
-    @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
-    private final String category;
+    @NotBlank(message = "Please enter an area in this country")
+    private String area;
+
+    @NotBlank(message = "Please enter a travel type like; summer, car, backpacking, citytrip, etc.")
+    private String category;
 
     @NotEmpty
-    @Max(value = 90, message = "travel time must be less than or equal to 90 days")
-    private final int duration;
+    @Max(value = 90, message = "Please enter a travel time that is less than or equal to 90 days")
+    private int duration;
 
-    @NotEmpty(message = "enter the expected costs")
-    private final int costs;
+    @NotEmpty(message = "Please enter the expected costs")
+    private int costs;
 
+    @OneToOne
+    private TravelTips tips;
+
+//    private Users users;
+
+
+    private List<FutureTravels> Future;
 
 }

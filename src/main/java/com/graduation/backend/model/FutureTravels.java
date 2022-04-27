@@ -1,74 +1,30 @@
 package com.graduation.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 import javax.persistence.*;
-import java.util.List;
 
-@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Table(name = "future-travels")
 public class FutureTravels {
+
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
-    String country;
+    private String country;
+    private String area;
+    private String category;
+    private int duration;
+    private int costs;
 
-    String area;
+    @OneToOne(mappedBy = "future")
+    @JsonBackReference(value = "future-travels-tip")
+    private TravelTips tips;
 
-    String category;
-
-    int duration;
-
-    int costs;
-
-
-    @OneToMany(mappedBy = "FutureTravels")
-    List<FutureTravels> FutureTravels;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
-    public void setArea(String area) {
-        this.area = area;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public int getCosts() {
-        return costs;
-    }
-
-    public void setCosts(int costs) {
-        this.costs = costs;
-    }
 
 }

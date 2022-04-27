@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 
 @Data
@@ -18,9 +19,17 @@ public class TravelTips {
     @Id
     @GeneratedValue
     Long id;
+
+    @NotBlank(message = "Please enter a name")
     String name;
+
+    @NotBlank(message = "Please enter a country")
     String country;
+
+    @NotBlank(message = "Please enter a city")
     String city;
+
+    @NotBlank(message = "Please enter a description")
     String description;
 
     @Lob
