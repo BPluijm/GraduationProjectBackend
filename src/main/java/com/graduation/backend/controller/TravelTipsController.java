@@ -1,22 +1,22 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.TravelTipsDto;
+import com.graduation.backend.model.TravelTips;
 import com.graduation.backend.service.TravelTipsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.MediaType;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.*;
-import java.util.List;
+import java.io.IOException;
+import java.util.*;
 
 @RestController
 public class TravelTipsController {
-    private final TravelTipsService service;
 
-    public TravelTipsController(TravelTipsService service) {
-
-        this.service = service;
-    }
+    @Autowired
+    TravelTipsService service;
 
     @GetMapping("/travel-tips")
     public ResponseEntity<Object> getTravelTips() {
@@ -24,18 +24,39 @@ public class TravelTipsController {
         return new ResponseEntity<>(ld, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/travel-tips/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
+    ResponseEntity<Object> getTravelTipsById (@PathVariable Long id) {
+        byte[] ttd = service.getTravelTipsById(id);
+        return new ResponseEntity<>(ttd, HttpStatus.OK);
+    }
+
+
     @PostMapping("/travel-tips")
-    public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdto, BindingResult br)  {
-        if (br.hasErrors()) {
-            StringBuilder sb = new StringBuilder();
-            for(FieldError fe : br.getFieldErrors()) {
-                sb.append(fe.getDefaultMessage());
-                sb.append("\n");
+    public ResponseEntity<Object> createTravelTips(@RequestBody MultipartFile tips) {
+        try {
+            if (Objects.equals(tips.getContentType(), "application/pdf")) {
+                TravelTips ttips = service.createTravelTips(tips);
+                return new ResponseEntity<>(ttips, HttpStatus.CREATED);
             }
-            return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
-        } else {
-            service.createTravelTips(ttdto);
-            return new ResponseEntity<>("Tip added!", HttpStatus.CREATED);
+            return new ResponseEntity<>("Only pdf file upload possible", HttpStatus.BAD_REQUEST);
+        } catch (IOException error) {
+            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
         }
     }
+
+        @PutMapping("/travel-tips/{id}")
+        ResponseEntity<Object> updateTravelTips (@RequestBody MultipartFile tips, @PathVariable Long id) {
+            try {
+                String ti = service.updateTravelTips(tips, id);
+                return new ResponseEntity<>(ti, HttpStatus.OK);
+            } catch (IOException error) {
+                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+            }
+        }
+
+        @DeleteMapping("travel-tips/{id}")
+        ResponseEntity<Object> deleteTravelTips (@PathVariable Long id) {
+           return new ResponseEntity<>(service.deleteTravelTips(id), HttpStatus.OK);
+        }
+
 }
