@@ -31,13 +31,13 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
     }
 
     @Override
-    public FutureTravels createFutureTravels(FutureTravelsDto futureTravelsDto) {
+    public FutureTravels createFutureTravels(FutureTravelsDto fut) {
         FutureTravels ft = new FutureTravels();
-        ft.setCountry(futureTravelsDto.getCountry());
-        ft.setArea(futureTravelsDto.getArea());
-        ft.setCategory(futureTravelsDto.getCategory());
-        ft.setDuration(futureTravelsDto.getDuration());
-        ft.setCosts(futureTravelsDto.getCosts());
+        ft.setCountry(fut.getCountry());
+        ft.setArea(fut.getArea());
+        ft.setCategory(fut.getCategory());
+        ft.setDuration(fut.getDuration());
+        ft.setCosts(fut.getCosts());
         return this.repos.save(ft);
     }
 }

@@ -2,6 +2,7 @@ package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.FutureTravelsDto;
 import com.graduation.backend.service.FutureTravelsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +12,9 @@ import java.util.List;
 
 @RestController
 public class FutureTravelsController {
-    private final FutureTravelsService service;
 
-    public FutureTravelsController(FutureTravelsService service) {
-
-        this.service = service;
-    }
+    @Autowired
+    FutureTravelsService service;
 
     @GetMapping("/future-travels")
     public ResponseEntity<Object> getFutureTravels() {
@@ -24,8 +22,14 @@ public class FutureTravelsController {
         return new ResponseEntity<>(fd, HttpStatus.OK);
     }
 
+    @GetMapping("/future-travels/{id}")
+    ResponseEntity<Object> getFutureTravelsById (@PathVariable Long id) {
+        FutureTravelsDto ftd = service.getFutureTravelsById(id);
+        return new ResponseEntity<>(ftd, HttpStatus.OK);
+    }
+
     @PostMapping("/future-travels")
-    public ResponseEntity<Object> createFutureTravels(@Valid @RequestBody FutureTravelsDto ftdto, BindingResult br) {
+    public ResponseEntity<Object> createFutureTravels(@Valid @RequestBody FutureTravelsDto fut, BindingResult br) {
         if (br.hasErrors()) {
             StringBuilder sb = new StringBuilder();
             for (FieldError fe : br.getFieldErrors()) {
@@ -34,8 +38,27 @@ public class FutureTravelsController {
             }
             return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
         } else {
-            service.createFutureTravels(ftdto);
+            service.createFutureTravels(fut);
             return new ResponseEntity<>("Future Travel created!", HttpStatus.CREATED);
         }
+    }
+
+    @PutMapping("future-travels/{id}")
+    ResponseEntity<Object> updateFutureTravels (@PathVariable Long id, @Valid @RequestBody FutureTravelsDto ftdto , BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            StringBuilder sb = new StringBuilder();
+            for (FieldError error : bindingResult.getFieldErrors()) {
+                sb.append(error);
+                sb.append("\n");
+            }
+            return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(service.updateFutureTravels(ftdto, id), HttpStatus.OK);
+        }
+    }
+
+    @DeleteMapping("future-travels/{id}")
+    ResponseEntity<Object> deleteFutureTravels (@PathVariable Long id) {
+        return new ResponseEntity<>(service.deleteFutureTravels(id), HttpStatus.OK);
     }
 }

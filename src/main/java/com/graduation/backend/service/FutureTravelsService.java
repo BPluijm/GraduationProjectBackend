@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface FutureTravelsService {
     List<FutureTravelsDto> getFutureTravels();
-    FutureTravels createFutureTravels(FutureTravelsDto futureTravelsDto);
+    FutureTravelsDto getFutureTravelsById(Long id);
+    FutureTravelsDto createFutureTravels(FutureTravelsDto fut);
+    FutureTravelsDto updateFutureTravels(FutureTravelsDto ftdto, Long id);
+    FutureTravelsDto deleteFutureTravels(Long id);
 }
