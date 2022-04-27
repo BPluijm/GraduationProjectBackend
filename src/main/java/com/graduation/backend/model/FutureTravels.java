@@ -23,8 +23,13 @@ public class FutureTravels {
     private int costs;
 
     @OneToOne(mappedBy = "future")
-    @JsonBackReference(value = "future-travels-tip")
+    @JsonBackReference(value = "future-travels-tips")
     private TravelTips tips;
+
+//    @ManyToOne
+//    @JsonBackReference(value = "users-tip")
+//    @JoinColumn(name = "users_id")
+//    private List<Users> users;
 
 
 }

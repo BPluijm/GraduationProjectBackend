@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -42,6 +43,12 @@ public class FutureTravelsController {
             return new ResponseEntity<>("Future Travel created!", HttpStatus.CREATED);
         }
     }
+
+    @PostMapping("/future-travels/{id}/tips")
+    ResponseEntity<Object> createFutureTravels(@PathVariable Long tipId, MultipartFile tips) {
+        return new ResponseEntity<>(service.addTips(tipId, tips), HttpStatus.CREATED);
+    }
+
 
     @PutMapping("future-travels/{id}")
     ResponseEntity<Object> updateFutureTravels (@PathVariable Long id, @Valid @RequestBody FutureTravelsDto ftdto , BindingResult bindingResult) {

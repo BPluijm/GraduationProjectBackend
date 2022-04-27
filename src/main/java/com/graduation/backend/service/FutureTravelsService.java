@@ -1,7 +1,7 @@
 package com.graduation.backend.service;
 
 import com.graduation.backend.dto.FutureTravelsDto;
-import com.graduation.backend.model.FutureTravels;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -11,4 +11,5 @@ public interface FutureTravelsService {
     FutureTravelsDto createFutureTravels(FutureTravelsDto fut);
     FutureTravelsDto updateFutureTravels(FutureTravelsDto ftdto, Long id);
     FutureTravelsDto deleteFutureTravels(Long id);
+    String addTips(Long tipId, MultipartFile tips);
 }
