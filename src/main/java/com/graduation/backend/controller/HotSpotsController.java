@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.io.IOException;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class HotSpotsController {
     }
 
     @PostMapping(value = "/hotspots")
-    ResponseEntity<Object> createHotSpots(@Valid @RequestBody HotSpotsDto hsd, MultipartFile flyer) throws IOException {
+    ResponseEntity<Object> createHotSpots(@Valid @RequestBody HotSpotsDto hsd, MultipartFile flyer) {
         if (Objects.equals(flyer.getContentType(), "application/pdf")) {
             service.createHotSpots(hsd, flyer);
             return new ResponseEntity<>("Hot spot added", HttpStatus.CREATED);

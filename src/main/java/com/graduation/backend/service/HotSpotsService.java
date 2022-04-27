@@ -9,7 +9,7 @@ import java.util.List;
 public interface HotSpotsService {
     List<HotSpotsDto> getHotSpots();
     byte[] getHotSpotsById(Long id);
-    HotSpots createHotSpots(HotSpotsDto hsd, MultipartFile flyer);
+    byte[] createHotSpots(HotSpotsDto hsd, MultipartFile flyer);
 //    String addHotSpots(Long id);
     String updateHotSpots(Long id, HotSpotsDto hs, MultipartFile flyer);
     String deleteHotSpots(Long id);
