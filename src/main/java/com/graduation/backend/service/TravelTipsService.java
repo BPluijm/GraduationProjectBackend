@@ -11,7 +11,6 @@ public interface TravelTipsService {
     List<TravelTipsDto> getTravelTips();
     byte[] getTravelTipsById(Long id);
     TravelTips createTravelTips(MultipartFile file) throws IOException;
-    String updateTravelTips(MultipartFile file, Long id);
+    String updateTravelTips(MultipartFile file, Long id) throws IOException;
     String deleteTravelTips(Long id);
-
 }
