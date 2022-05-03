@@ -31,6 +31,8 @@ public class TravelTipsController {
     }
 
 
+
+
     @PostMapping("/travel-tips")
     public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdt, MultipartFile tips) {
         try {
