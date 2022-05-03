@@ -57,14 +57,31 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         return mapper.map(ftrav, FutureTravelsDto.class);
     }
 
+//    @Override
+//    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+//        FutureTravels futu = repos.findById(tipId).get();
+//        TravelTips trt =  service.createTravelTips(ttdt, tips);
+//        trt.setFutureTravels(futu);
+//        futu.setTips(trt);
+//        repos.save(futu);
+//        return "Travel tips are added to the future trip";
+//    }
+
+
     @Override
-    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-        FutureTravels futu = repos.findById(tipId).get();
-        TravelTips trt =  service.createTravelTips(ttdt, tips);
-        trt.setFutureTravels(futu);
-        futu.setTips(trt);
-        repos.save(futu);
-        return "Travel tips are added to the future trip";
+    public List<TravelTipsDto> getFutureTravelTips(Long id) {
+        Optional<FutureTravels> ftips = repos.findById(id);
+        List<TravelTipsDto> fttips = new ArrayList<>();
+        if(ftips.isPresent()) {
+            List<TravelTips> cars =  ftips.get().getFutureTravelTips();
+            for(TravelTips ttips : cars){
+                TravelTipsDto carDTO = mapper.map(ttips, TravelTipsDto.class);
+                fttips.add(carDTO);
+            }
+            return fttips;
+        } else {
+            throw new RecordNotFoundException("no car found");
+        }
     }
 
 

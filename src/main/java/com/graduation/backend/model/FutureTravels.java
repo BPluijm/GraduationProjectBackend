@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -26,6 +27,10 @@ public class FutureTravels {
     @OneToOne(mappedBy = "future")
     @JsonBackReference(value = "future-travels-tips")
     private TravelTips tips;
+
+//
+//    public List<TravelTips> getFutureTravelTips() {
+//    }
 
 //    @ManyToOne
 //    @JsonBackReference(value = "users-tip")
