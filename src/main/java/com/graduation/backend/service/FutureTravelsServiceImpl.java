@@ -67,6 +67,11 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         return "Travel tips are added to the future trip";
     }
 
+    @Override
+    public TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile tips) {
+        return null;
+    }
+
 
     @Override
     public FutureTravelsDto updateFutureTravels(FutureTravelsDto ftd, Long id) {

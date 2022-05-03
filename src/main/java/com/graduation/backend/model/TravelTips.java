@@ -40,4 +40,7 @@ public class TravelTips {
     @JoinColumn(name = "future-travels-id")
     @JsonManagedReference(value = "future-travels-tip")
     private FutureTravels futu;
+
+    public void setFutureTravels(FutureTravels futu) {
+    }
 }

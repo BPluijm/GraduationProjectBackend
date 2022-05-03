@@ -44,10 +44,11 @@ public class TravelsController {
         }
     }
 
-    @PostMapping("/travels/{id}/favorites")
-    ResponseEntity<Object> createTravels(@PathVariable Long id) {
-        return new ResponseEntity<>(service.addFavorites(id), HttpStatus.CREATED);
-    }
+//    @PostMapping("/travels/{id}/favorites")
+//    ResponseEntity<Object> createTravels(@PathVariable Long id) {
+//        return new ResponseEntity<>(service.addFavorites(id), HttpStatus.CREATED);
+//    }
+
 
     @PutMapping("travels/{id}")
     ResponseEntity<Object> updateTravels (@PathVariable Long id, @Valid @RequestBody TravelsDto tdto , BindingResult br) {

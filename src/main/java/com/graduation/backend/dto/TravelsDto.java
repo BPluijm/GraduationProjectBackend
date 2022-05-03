@@ -36,9 +36,9 @@ public class TravelsDto {
     @Max(value = 750, message = "Travel time must be less than or equal to 750 days")
     private int duration;
 
-    private Favorites favorites;
-
-    private List<Favorites> favorite;
+//    private Favorites favorites;
+//
+//    private List<Favorites> favorite;
 
 }
 

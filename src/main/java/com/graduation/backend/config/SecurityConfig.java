@@ -45,8 +45,8 @@
 ////                .jdbcAuthentication()
 ////                .passwordEncoder(passwordEncoder)
 ////                .dataSource(dataSource)
-////                .usersByUsernameQuery("select username, password, enabled from employees where username=?")
-////                .authoritiesByUsernameQuery("select username, role from employees where username=?");
+////                .usersByUsernameQuery("select username, password, enabled from users where username=?")
+////                .authoritiesByUsernameQuery("select username, role from users where username=?");
 //    }
 //
 //    @Override
@@ -58,6 +58,13 @@
 //                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 //                .and()
 //                .authorizeRequests().antMatchers(HttpMethod.POST, "/auth").permitAll()
+//                .antMatchers(HttpMethod.GET,"/**").authenticated()
+//                .antMatchers("/favorites/**").hasAnyAuthority("ADMIN", "USERS")
+//                .antMatchers("/future-travels/**").hasAnyAuthority("ADMIN", "USERs")
+//                .antMatchers("/hotspots/**").hasAnyAuthority("ADMIN", "USERs")
+//                .antMatchers("/travels/**").hasAnyAuthority("ADMIN", "USERS")
+//                .antMatchers("/travel-tips/**").hasAnyAuthority("ADMIN", "USERS")
+//                .antMatchers("/users/**").hasAnyAuthority("ADMIN", "USERS")
 //                .and()
 //                .authorizeRequests().anyRequest().authenticated()
 //                .and()
@@ -65,27 +72,3 @@
 //                .csrf().disable();
 //    }
 //}
-//
-////             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-////                .and()
-////                .authorizeRequests()
-////                .antMatchers(HttpMethod.POST, "/auth").permitAll()
-////                .antMatchers(HttpMethod.GET,"/**").authenticated()
-////                .antMatchers("/appointments/**").hasAnyAuthority("ADMIN", "SUPERUSER")
-////                .antMatchers("/cars/**").hasAnyAuthority("ADMIN", "SUPERUSER")
-////                .antMatchers("/car-papers/**").hasAnyAuthority("ADMIN", "SUPERUSER")
-////                .antMatchers("/customers/**").hasAnyAuthority("ADMIN", "SUPERUSER")
-////                .antMatchers("/employees/**").hasAnyAuthority("ADMIN", "SUPERUSER")
-////                .antMatchers("/invoices/**").hasAnyAuthority("ADMIN", "SUPERUSER")
-////                .antMatchers("/maintenances/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
-////                .antMatchers("/maintenance-items/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
-////                .antMatchers("/parts/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
-////                .antMatchers("/repair-operations/**").hasAnyAuthority("MECHANIC", "SUPERUSER")
-////                .and()
-////                .authorizeRequests().anyRequest().authenticated()
-////                .and()
-////                .addFilterBefore(new JwtRequestFilter(jwtService, userDetailsService()), UsernamePasswordAuthenticationFilter.class)
-////            .csrf().disable();
-//
-//
-//

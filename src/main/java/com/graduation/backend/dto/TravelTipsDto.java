@@ -30,6 +30,6 @@ public class TravelTipsDto {
         @JsonIgnore
         private byte[] folder;
 
-        private FutureTravels future;
+        private FutureTravels futu;
 
 }

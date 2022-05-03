@@ -1,6 +1,7 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.FutureTravelsDto;
+import com.graduation.backend.dto.TravelTipsDto;
 import com.graduation.backend.service.FutureTravelsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -45,8 +46,8 @@ public class FutureTravelsController {
     }
 
     @PostMapping("/future-travels/{id}/tips")
-    ResponseEntity<Object> createFutureTravels(@PathVariable Long tipId, MultipartFile tips) {
-        return new ResponseEntity<>(service.addTips(tipId, tips), HttpStatus.CREATED);
+    ResponseEntity<Object> createFutureTravels(@PathVariable Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+        return new ResponseEntity<>(service.addTips(tipId,ttdt, tips), HttpStatus.CREATED);
     }
 
 

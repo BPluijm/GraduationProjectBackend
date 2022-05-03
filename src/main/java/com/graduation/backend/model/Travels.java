@@ -24,8 +24,8 @@ public class Travels {
     private String description;
     private int duration;
 
-    @OneToMany(mappedBy = "travels")
-    @JsonManagedReference(value = "travels-favorites")
-    private List<Favorites> favorites;
+//    @OneToMany(mappedBy = "travels")
+//    @JsonManagedReference(value = "travels-favorites")
+//    private List<Favorites> favorites;
 
 }
