@@ -34,7 +34,7 @@ public class FutureTravelsDto {
     private int costs;
 
     @OneToOne
-    private TravelTips tips;
+    private List<TravelTips> tips;
 
 //    private Users users;
 

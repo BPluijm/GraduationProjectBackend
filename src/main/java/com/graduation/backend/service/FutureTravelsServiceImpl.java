@@ -57,15 +57,17 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         return mapper.map(ftrav, FutureTravelsDto.class);
     }
 
-//    @Override
-//    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-//        FutureTravels futu = repos.findById(tipId).get();
-//        TravelTips trt =  service.createTravelTips(ttdt, tips);
-//        trt.setFutureTravels(futu);
-//        futu.setTips(trt);
-//        repos.save(futu);
-//        return "Travel tips are added to the future trip";
-//    }
+    @Override
+    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+        FutureTravels futu = repos.findById(tipId).get();
+        TravelTips trt =  service.createTravelTips(ttdt, tips);
+        trt.setFutureTravels(futu);
+        List<TravelTips> travelTipsList = new ArrayList<>();
+        travelTipsList.add(trt);
+        futu.setTips(travelTipsList);
+        repos.save(futu);
+        return "Travel tips are added to the future trip";
+    }
 
 
     @Override
@@ -73,14 +75,14 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         Optional<FutureTravels> ftips = repos.findById(id);
         List<TravelTipsDto> fttips = new ArrayList<>();
         if(ftips.isPresent()) {
-            List<TravelTips> cars =  ftips.get().getFutureTravelTips();
-            for(TravelTips ttips : cars){
-                TravelTipsDto carDTO = mapper.map(ttips, TravelTipsDto.class);
-                fttips.add(carDTO);
+            List<TravelTips> travelTips =  ftips.get().getTips();
+            for(TravelTips ttips : travelTips){
+                TravelTipsDto futureDto = mapper.map(ttips, TravelTipsDto.class);
+                fttips.add(futureDto);
             }
             return fttips;
         } else {
-            throw new RecordNotFoundException("no car found");
+            throw new RecordNotFoundException("no travel tips found");
         }
     }
 
@@ -112,4 +114,16 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
             throw new RecordNotFoundException("Unable to find future trip");
         }
     }
+
+//    @Override
+//    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+//        return null;
+//    }
+//
+//    @Override
+//    public TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile tips) {
+//        return null;
+//    }
+
+
 }
