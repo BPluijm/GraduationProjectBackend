@@ -1,5 +1,6 @@
 package com.graduation.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -32,9 +33,11 @@ public class TravelTips {
     @NotBlank(message = "Please enter a description")
     String description;
 
-    @Lob
-    @JsonIgnore
-    private byte[] folder;
+//    @JsonBackReference(value = "add pdf")
+//    private TravelTips addPdf;
+//    @Lob
+//    @JsonIgnore
+//    private byte[] folder;
 
 //    @OneToOne
 //    @JoinColumn(name = "future-travels-id")

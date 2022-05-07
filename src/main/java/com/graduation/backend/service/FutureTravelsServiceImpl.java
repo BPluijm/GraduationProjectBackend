@@ -1,15 +1,12 @@
 package com.graduation.backend.service;
 
 import com.graduation.backend.dto.FutureTravelsDto;
-import com.graduation.backend.dto.TravelTipsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.FutureTravels;
-import com.graduation.backend.model.TravelTips;
 import com.graduation.backend.repository.FutureTravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,11 +49,23 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         }
     }
 
+//    @Override
+//    public FutureTravelsDto createFutureTravels(FutureTravelsDto fut) {
+//        FutureTravels ftr = mapper.map(fut, FutureTravels.class);
+//        FutureTravels ftrav = repos.save(ftr);
+//        return mapper.map(ftrav, FutureTravelsDto.class);
+//    }
+
     @Override
-    public FutureTravelsDto createFutureTravels(FutureTravelsDto fut) {
-        FutureTravels ftr = mapper.map(fut, FutureTravels.class);
-        FutureTravels ftrav = repos.save(ftr);
-        return mapper.map(ftrav, FutureTravelsDto.class);
+    public FutureTravels createFutureTravels(FutureTravelsDto fut) {
+        FutureTravels ft = new FutureTravels();
+        ft.setCountry(fut.getCountry());
+        ft.setArea(fut.getArea());
+        ft.setCategory(fut.getCategory());
+        ft.setCategory(fut.getCategory());
+        ft.setDuration(fut.getDuration());
+        ft.setCosts(fut.getCosts());
+        return this.repos.save(ft);
     }
 
 //    @Override

@@ -39,23 +39,28 @@ public class TravelTipsServiceImpl implements TravelTipsService {
     public byte[] getTravelTipsById(Long id) {
         Optional<TravelTips> trtip = repos.findById(id);
         if (trtip.isPresent()) {
-            return trtip.get().getFolder();
+//            return trtip.get().getFolder();
+            return null;
         } else {
             throw new RecordNotFoundException("Travel tip not found");
         }
     }
 
     @Override
-    public TravelTips createTravelTips(TravelTipsDto ttdt,MultipartFile file) throws IOException {
+    public String addPdfToTravelTips(Long id, MultipartFile file) throws IOException {
+        return null;
+    }
+
+    @Override
+    public TravelTips createTravelTips(TravelTipsDto ttdt) throws IOException {
         TravelTips tt = new TravelTips();
         tt.setName(ttdt.getName());
         tt.setCountry(ttdt.getCountry());
         tt.setCity(ttdt.getCity());
         tt.setDescription(ttdt.getDescription());
-        tt.setFolder(file.getBytes());
-        repos.save(tt);
+//        tt.setFolder(ttdt.getBytes());
+        return this.repos.save(tt);
 
-        return tt;
     }
 
     @Override
@@ -65,7 +70,7 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         trt.setCountry(ti.getCountry());
         trt.setCity(ti.getCity());
         trt.setDescription(ti.getDescription());
-        trt.setFolder(file.getBytes());
+//        trt.setFolder(file.getBytes());
         repos.save(trt);
         return "Tips are updated";
     }

@@ -26,11 +26,11 @@ public class FutureTravelsDto {
     @NotBlank(message = "Please enter a travel type like; summer, car, backpacking, citytrip, etc.")
     private String category;
 
-    @NotEmpty
+    @NotNull
     @Max(value = 90, message = "Please enter a travel time that is less than or equal to 90 days")
     private int duration;
 
-    @NotEmpty(message = "Please enter the expected costs")
+    @NotNull(message = "Please enter the expected costs")
     private int costs;
 
 //    @OneToOne
