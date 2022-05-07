@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 //import com.graduation.backend.model.FutureTravels;
 import lombok.*;
+import net.bytebuddy.implementation.bind.annotation.Empty;
 
+import javax.persistence.Lob;
 import javax.validation.constraints.*;
 
 @Data
@@ -27,8 +29,13 @@ public class TravelTipsDto {
         @NotBlank(message = "Please enter a description.")
         private String description;
 
-        @JsonIgnore
-        private byte[] folder;
+        @Lob
+        @Null
+        private byte[] file;
+
+
+//        @JsonIgnore
+//        private byte[] folder;
 
 //        private FutureTravels futu;
 

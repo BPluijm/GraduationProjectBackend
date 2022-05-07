@@ -46,19 +46,19 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         }
     }
 
-    @Override
-    public String addPdfToTravelTips(Long id, MultipartFile file) throws IOException {
-        return null;
-    }
+//    @Override
+//    public String addPdfToTravelTips(Long id, MultipartFile file) throws IOException {
+//        return null;
+//    }
 
     @Override
-    public TravelTips createTravelTips(TravelTipsDto ttdt) throws IOException {
+    public TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile file) throws IOException {
         TravelTips tt = new TravelTips();
         tt.setName(ttdt.getName());
         tt.setCountry(ttdt.getCountry());
         tt.setCity(ttdt.getCity());
         tt.setDescription(ttdt.getDescription());
-//        tt.setFolder(ttdt.getBytes());
+        tt.setFile(ttdt.getFile());
         return this.repos.save(tt);
 
     }

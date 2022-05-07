@@ -20,24 +20,16 @@ public class TravelTips {
     @Id
     @GeneratedValue
     Long id;
-
-    @NotBlank(message = "Please enter a name")
     String name;
-
-    @NotBlank(message = "Please enter a country")
     String country;
-
-    @NotBlank(message = "Please enter a city")
     String city;
-
-    @NotBlank(message = "Please enter a description")
     String description;
 
 //    @JsonBackReference(value = "add pdf")
 //    private TravelTips addPdf;
-//    @Lob
-//    @JsonIgnore
-//    private byte[] folder;
+    @Lob
+    @JsonIgnore
+    private byte[] file;
 
 //    @OneToOne
 //    @JoinColumn(name = "future-travels-id")

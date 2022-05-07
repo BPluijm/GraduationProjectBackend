@@ -38,7 +38,7 @@ VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
 
 
 INSERT INTO travel_tips (id, name, country, city, description)
-VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'),
+VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging bridges'),
        (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
        (1003, 'Angkor Wat', 'Cambodja', 'Siem Reap area', 'Amazing temples taken over by the jungle');
 
