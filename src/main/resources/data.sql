@@ -31,13 +31,16 @@ INSERT INTO future_travels (id, country, area, category, duration, costs)
 VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
        (1002, 'USA', 'West Coast', 'Road trip', 21, 6000),
        (1003, 'Spain', 'Barcelona', 'City trip', 4, 500),
-       (1004, 'China', 'Beijing', 'Summer holiday', 14, 4000);
+       (1004, 'China', 'Beijing', 'Summer holiday', 14, 4000),
+       (1005, 'Australia', 'country', 'Road trip', 60, 10000),
+       (1006, 'Cambodja', 'country', 'Summer holiday', 21, 4000);
+
 
 
 INSERT INTO travel_tips (id, name, country, city, description)
 VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice city center'),
        (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
-       (1003, 'Angkor Wat', 'Colombia', 'Siem Reap area', 'Amazing temples taken over by the jungle');
+       (1003, 'Angkor Wat', 'Cambodja', 'Siem Reap area', 'Amazing temples taken over by the jungle');
 
 
 --INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)

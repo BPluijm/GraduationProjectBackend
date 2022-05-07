@@ -36,40 +36,40 @@
 //        return spots;
 //    }
 //
-//    @Override
-//    public byte[] getHotSpotsById(Long id) {
-//        Optional<HotSpots> spots = repos.findById(id);
-//        if (spots.isPresent()) {
-//            return spots.get().getHotSpots();
-//        } else {
-//            throw new RecordNotFoundException("Hot spot not found");
-//        }
-//    }
+////    @Override
+////    public byte[] getHotSpotsById(Long id) {
+////        Optional<HotSpots> spots = repos.findById(id);
+////        if (spots.isPresent()) {
+////            return spots.get().getHotSpots();
+////        } else {
+////            throw new RecordNotFoundException("Hot spot not found");
+////        }
+////    }
 //
 //
-//    @Override
-//    public byte[] createHotSpots(HotSpotsDto hsd, MultipartFile flyer) throws IOException{
-//        HotSpots hs = new HotSpots();
-//        hs.setHotSpots(flyer.getBytes());
-//        HotSpots hsp = repos.save(hs);
+////    @Override
+////    public byte[] createHotSpots(HotSpotsDto hsd, MultipartFile flyer) throws IOException{
+////        HotSpots hs = new HotSpots();
+////        hs.setHotSpots(flyer.getBytes());
+////        HotSpots hsp = repos.save(hs);
+////
+////        return hsp;
+////    }
+////
+////    @Override
+////    public String updateHotSpots(HotSpotsDto hs, MultipartFile flyer, Long id) throws IOException {
+////        HotSpots hot = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Hot spot not found"));
+////        hot.setHotSpots(flyer.getBytes());
+////        repos.save(hot);
+////        return "Hot spots are updated";
+////    }
 //
-//        return hsp;
-//    }
-//
-//    @Override
-//    public String updateHotSpots(HotSpotsDto hs, MultipartFile flyer, Long id) throws IOException {
-//        HotSpots hot = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Hot spot not found"));
-//        hot.setHotSpots(flyer.getBytes());
-//        repos.save(hot);
-//        return "Hot spots are updated";
-//    }
-//
-//    // DELETE
-//    @Override
-//    public String deleteHotSpot(Long id) {
-//        HotSpots spots = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Hot spot not found"));
-//        repos.deleteById(id);
-//        return "Hot spot deleted";
-//
-//    }
+////    // DELETE
+////    @Override
+////    public String deleteHotSpot(Long id) {
+////        HotSpots spots = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Hot spot not found"));
+////        repos.deleteById(id);
+////        return "Hot spot deleted";
+////
+////    }
 //}

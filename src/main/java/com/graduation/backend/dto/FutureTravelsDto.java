@@ -33,8 +33,8 @@ public class FutureTravelsDto {
     @NotEmpty(message = "Please enter the expected costs")
     private int costs;
 
-    @OneToOne
-    private List<TravelTips> tips;
+//    @OneToOne
+//    private TravelTips tips;
 
 //    private Users users;
 

@@ -2,7 +2,7 @@ package com.graduation.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.graduation.backend.model.FutureTravels;
+//import com.graduation.backend.model.FutureTravels;
 import lombok.*;
 
 import javax.validation.constraints.*;
@@ -30,6 +30,6 @@ public class TravelTipsDto {
         @JsonIgnore
         private byte[] folder;
 
-        private FutureTravels futu;
+//        private FutureTravels futu;
 
 }

@@ -18,6 +18,8 @@ public class FutureTravelsController {
     @Autowired
     FutureTravelsService service;
 
+//    private FutureTravelsService service = new FutureTravelsService();
+
     @GetMapping("/future-travels")
     public ResponseEntity<Object> getFutureTravels() {
         List<FutureTravelsDto> fd = service.getFutureTravels();
@@ -30,10 +32,10 @@ public class FutureTravelsController {
         return new ResponseEntity<>(ftd, HttpStatus.OK);
     }
 
-    @GetMapping("/future-travels/{id}/tips")
-    ResponseEntity<Object> getFutureTravelsTips(@PathVariable Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-        return new ResponseEntity<>(service.addTips(tipId,ttdt, tips), HttpStatus.CREATED);
-    }
+//    @GetMapping("/future-travels/{id}/tips")
+//    ResponseEntity<Object> getFutureTravelsTips(@PathVariable Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+//        return new ResponseEntity<>(service.addTips(tipId,ttdt, tips), HttpStatus.CREATED);
+//    }
 
     @PostMapping("/future-travels")
     public ResponseEntity<Object> createFutureTravels(@Valid @RequestBody FutureTravelsDto fut, BindingResult br) {

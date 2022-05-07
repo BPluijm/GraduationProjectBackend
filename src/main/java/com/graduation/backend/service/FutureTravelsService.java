@@ -10,11 +10,11 @@ import java.util.List;
 public interface FutureTravelsService {
     List<FutureTravelsDto> getFutureTravels();
     FutureTravelsDto getFutureTravelsById(Long id);
-    List<TravelTips> getFutureTravelTips(Long id);
+//    List<TravelTips> getFutureTravelTips(Long id);
     FutureTravelsDto createFutureTravels(FutureTravelsDto fut);
     FutureTravelsDto updateFutureTravels(FutureTravelsDto ftdto, Long id);
     FutureTravelsDto deleteFutureTravels(Long id);
-    String addTips(Long tipId,TravelTipsDto ttdt, MultipartFile tips);
+//    String addTips(Long tipId,TravelTipsDto ttdt, MultipartFile tips);
 
-    TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile tips);
+//    TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile tips);
 }

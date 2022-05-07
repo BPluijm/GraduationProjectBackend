@@ -36,11 +36,11 @@ public class TravelTips {
     @JsonIgnore
     private byte[] folder;
 
-    @OneToOne
-    @JoinColumn(name = "future-travels-id")
-    @JsonManagedReference(value = "future-travels-tip")
-    private FutureTravels futu;
-
-    public void setFutureTravels(FutureTravels futu) {
-    }
+//    @OneToOne
+//    @JoinColumn(name = "future-travels-id")
+//    @JsonManagedReference(value = "future-travels-tip")
+//    private FutureTravels futu;
+//
+//    public void setFutureTravels(FutureTravels futu) {
+//    }
 }

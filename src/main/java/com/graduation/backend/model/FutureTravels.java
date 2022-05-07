@@ -8,10 +8,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(Include.NON_NULL)
-@Table(name = "future-travels")
+@Table(name = "future_travels")
 public class FutureTravels {
 
     @Id
@@ -24,10 +25,13 @@ public class FutureTravels {
     private int duration;
     private int costs;
 
-    @OneToOne(mappedBy = "future")
-    @JsonBackReference(value = "future-travels-tips")
-    private List<TravelTips> tips;
+//    @OneToOne(mappedBy = "future")
+//    @JsonBackReference(value = "future-travels-tips")
+//    private TravelTips tips;
 
+//
+//    public List<TravelTips> getFutureTravelTips() {
+//    }
 
 //    @ManyToOne
 //    @JsonBackReference(value = "users-tip")

@@ -19,8 +19,8 @@ public class Favorites {
         @GeneratedValue
         private Long id;
 
-        @OneToOne
-        @JoinColumn(name = "favorites-id")
-        @JsonManagedReference(value = "travels")
-        private Travels travels;
+//        @OneToOne
+//        @JoinColumn(name = "favorites-id")
+//        @JsonManagedReference(value = "travels")
+//        private Travels travels;
 }

@@ -19,8 +19,8 @@ public class TravelsServiceImpl implements TravelsService {
     @Autowired
     TravelsRepository repos;
 
-    @Autowired
-    FavoritesService service;
+//    @Autowired
+//    FavoritesService service;
 
     @Autowired
     private ModelMapper mapper;

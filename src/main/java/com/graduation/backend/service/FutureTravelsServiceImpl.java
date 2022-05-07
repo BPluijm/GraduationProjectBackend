@@ -21,11 +21,13 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
     @Autowired
     FutureTravelsRepository repos;
 
-    @Autowired
-    FutureTravelsService service;
+//    @Autowired
+//    FutureTravelsService service;
 
     @Autowired
     private ModelMapper mapper;
+
+//    private ModelMapper mapper = new ModelMapper();
 
     @Override
     public List<FutureTravelsDto> getFutureTravels() {
@@ -57,34 +59,32 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         return mapper.map(ftrav, FutureTravelsDto.class);
     }
 
-    @Override
-    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-        FutureTravels futu = repos.findById(tipId).get();
-        TravelTips trt =  service.createTravelTips(ttdt, tips);
-        trt.setFutureTravels(futu);
-        List<TravelTips> travelTipsList = new ArrayList<>();
-        travelTipsList.add(trt);
-        futu.setTips(travelTipsList);
-        repos.save(futu);
-        return "Travel tips are added to the future trip";
-    }
+//    @Override
+//    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
+//        FutureTravels futu = repos.findById(tipId).get();
+//        TravelTips trt =  service.createTravelTips(ttdt, tips);
+//        trt.setFutureTravels(futu);
+//        futu.setTips(trt);
+//        repos.save(futu);
+//        return "Travel tips are added to the future trip";
+//    }
 
 
-    @Override
-    public List<TravelTipsDto> getFutureTravelTips(Long id) {
-        Optional<FutureTravels> ftips = repos.findById(id);
-        List<TravelTipsDto> fttips = new ArrayList<>();
-        if(ftips.isPresent()) {
-            List<TravelTips> travelTips =  ftips.get().getTips();
-            for(TravelTips ttips : travelTips){
-                TravelTipsDto futureDto = mapper.map(ttips, TravelTipsDto.class);
-                fttips.add(futureDto);
-            }
-            return fttips;
-        } else {
-            throw new RecordNotFoundException("no travel tips found");
-        }
-    }
+//    @Override
+//    public List<TravelTipsDto> getFutureTravelTips(Long id) {
+//        Optional<FutureTravels> ftips = repos.findById(id);
+//        List<TravelTipsDto> fttips = new ArrayList<>();
+//        if(ftips.isPresent()) {
+//            List<TravelTips> cars =  ftips.get().getFutureTravelTips();
+//            for(TravelTips ttips : cars){
+//                TravelTipsDto carDTO = mapper.map(ttips, TravelTipsDto.class);
+//                fttips.add(carDTO);
+//            }
+//            return fttips;
+//        } else {
+//            throw new RecordNotFoundException("no car found");
+//        }
+//    }
 
 
 
@@ -96,7 +96,7 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         ft.setCategory(ftd.getCategory());
         ft.setDuration(ftd.getDuration());
         ft.setCosts(ftd.getCosts());
-        ft.setTips(ftd.getTips());
+//        ft.setTips(ftd.getTips());
 //        ft.getUsers(ftd.getUsers());
         repos.save(ft);
         return mapper.map(ft, FutureTravelsDto.class);
@@ -114,16 +114,4 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
             throw new RecordNotFoundException("Unable to find future trip");
         }
     }
-
-//    @Override
-//    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-//        return null;
-//    }
-//
-//    @Override
-//    public TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile tips) {
-//        return null;
-//    }
-
-
 }
