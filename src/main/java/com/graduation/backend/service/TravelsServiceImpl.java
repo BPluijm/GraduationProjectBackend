@@ -3,7 +3,6 @@ package com.graduation.backend.service;
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 //import com.graduation.backend.model.Favorites;
-import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
@@ -47,11 +46,23 @@ public class TravelsServiceImpl implements TravelsService {
         }
     }
 
-   @Override
-    public TravelsDto createTravels(TravelsDto trip) {
-        Travels tr = mapper.map(trip, Travels.class);
-        Travels trav = repos.save(tr);
-        return mapper.map(trav, TravelsDto.class);
+//   @Override
+//    public TravelsDto createTravels(TravelsDto trip) {
+//        Travels tr = mapper.map(trip, Travels.class);
+//        Travels trav = repos.save(tr);
+//        return mapper.map(trav, TravelsDto.class);
+//    }
+
+    @Override
+    public Travels createTravels(TravelsDto trip) {
+        Travels t = new Travels();
+        t.setCountry(trip.getCountry());
+        t.setYears(trip.getYears());
+        t.setCity(trip.getCity());
+        t.setCategory(trip.getCategory());
+        t.setDescription(trip.getDescription());
+        t.setDuration(trip.getDuration());
+        return this.repos.save(t);
     }
 
 

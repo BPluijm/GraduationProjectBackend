@@ -20,7 +20,7 @@ public class TravelsDto {
     @NotBlank(message = "Please enter a country")
     private String country;
 
-    @NotBlank(message = "Please enter the year you were there")
+    @NotNull(message = "Please enter the year you were there")
     private int years;
 
     @NotBlank
@@ -32,7 +32,7 @@ public class TravelsDto {
     @NotBlank(message = "short description")
     private String description;
 
-    @NotEmpty
+    @NotNull
     @Max(value = 750, message = "Travel time must be less than or equal to 750 days")
     private int duration;
 
