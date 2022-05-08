@@ -46,13 +46,6 @@ public class TravelsServiceImpl implements TravelsService {
         }
     }
 
-//   @Override
-//    public TravelsDto createTravels(TravelsDto trip) {
-//        Travels tr = mapper.map(trip, Travels.class);
-//        Travels trav = repos.save(tr);
-//        return mapper.map(trav, TravelsDto.class);
-//    }
-
     @Override
     public Travels createTravels(TravelsDto trip) {
         Travels t = new Travels();
