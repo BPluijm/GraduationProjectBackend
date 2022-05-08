@@ -44,10 +44,17 @@ public class FavoritesServiceImpl implements FavoritesService {
     }
 
     @Override
-    public FavoritesDto createFavorites(FavoritesDto fdto) {
-        Favorites favo = mapper.map(fdto, Favorites.class);
-        Favorites favorite = repos.save(favo);
-        return mapper.map(favorite, FavoritesDto.class);
+    public Favorites createFavorites(FavoritesDto favo) {
+        Favorites f = new Favorites();
+        f.setId(favo.getId());
+
+        // link naar Travels en Users?
+
+//        f.setTravels(favo.getTravels());
+//        f.setUsers(favo.getUsers());
+
+
+        return this.repos.save(f);
     }
 
 

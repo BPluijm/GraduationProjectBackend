@@ -20,7 +20,15 @@ public class Favorites {
         private Long id;
 
 //        @OneToOne
-//        @JoinColumn(name = "favorites-id")
+//        @JoinColumn(name = "favorites_id")
+//        @JsonManagedReference(value = "users")
+//        private Users users;
+//
+//        @OneToOne
+//        @JoinColumn(name = "favorites_id")
 //        @JsonManagedReference(value = "travels")
 //        private Travels travels;
+
+
+
 }

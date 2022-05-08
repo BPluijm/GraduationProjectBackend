@@ -47,6 +47,17 @@ VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 
        (2002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
        (2003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
 
+--INSERT INTO favorites(id, users_id, travels_id)
+-- VALUES (3001, '2002', '1020'),
+--        (3002, '2002', '1024'),
+--        (3003, '2003', '1019'),
+--        (3004, '2003', '1020'),
+--        (3005, '2003', '1021'),
+--        (3006, '2003', '1024');
+
+
+
+
 --UPDATE users
 --SET username = 'Frits',
 --WHERE UsersID = 1001;
@@ -63,10 +74,4 @@ VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 
 --       ('', 'ROLE_MODERATOR'),
 
 
---INSERT INTO favorites(id, users_id, travels_id)
--- VALUES (1001, '2002', '1020'),
---        (1002, '2002', '1024'),
---        (1003, '2003', '1019'),
---        (1004, '2003', '1020'),
---        (1005, '2003', '1021'),
---        (1006, '2003', '1024');
+
