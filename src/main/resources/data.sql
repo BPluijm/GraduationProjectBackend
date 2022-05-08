@@ -36,6 +36,8 @@ VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
        (1006, 'Cambodja', 'country', 'Summer holiday', 21, 4000);
 
 
+--file insert toevoegen
+
 INSERT INTO travel_tips (id, name, country, city, description)
 VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging bridges'),
        (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
@@ -47,6 +49,9 @@ VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 
        (2002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
        (2003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
 
+
+-- werkt nog niet
+
 --INSERT INTO favorites(id, users_id, travels_id)
 -- VALUES (3001, '2002', '1020'),
 --        (3002, '2002', '1024'),
@@ -55,12 +60,6 @@ VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 
 --        (3005, '2003', '1021'),
 --        (3006, '2003', '1024');
 
-
-
-
---UPDATE users
---SET username = 'Frits',
---WHERE UsersID = 1001;
 
 
 --INSERT INTO authorities (username, authority)
