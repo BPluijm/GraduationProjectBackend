@@ -62,6 +62,16 @@ VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 
 
 
 
+--file insert toevoegen
+
+INSERT INTO hotspots(id, name, country, area)
+    VALUES (3001, 'Pyramids', 'Egypt', 'Cairo'),
+           (3002, 'Lightning storms', 'Venezuela', 'Lake Maracaibo'),
+           (3003, 'Tree of Knowledge', 'Australia', 'Barcaldine Queensland');
+
+
+
+
 --INSERT INTO authorities (username, authority)
 --VALUES ('Kasper', 'ROLE_USERS'),
 --       ('', 'ROLE_USER'),
