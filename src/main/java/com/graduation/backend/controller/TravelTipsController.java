@@ -1,25 +1,16 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.TravelTipsDto;
-import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.model.TravelTips;
 import com.graduation.backend.service.TravelTipsService;
-import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.validation.Valid;
-import javax.validation.constraints.Null;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.*;
 import org.springframework.mock.web.MockMultipartFile;
 

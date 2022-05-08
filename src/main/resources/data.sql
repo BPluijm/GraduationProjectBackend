@@ -36,7 +36,6 @@ VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
        (1006, 'Cambodja', 'country', 'Summer holiday', 21, 4000);
 
 
-
 INSERT INTO travel_tips (id, name, country, city, description)
 VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging bridges'),
        (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
@@ -44,27 +43,9 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging brid
 
 
 --INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)
---VALUES (1001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com' 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
---       (1002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
---       (1003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
-
---INSERT INTO users (id,username, password, enabled, lastname, role) VALUES (1005, 'Hans', '$2y$10$iuI2WO1n2GEQxQrME8/bp.Q6gp5aK2rYz/csUJFCABLZk7LRDIQcK', 'true' , 'de Sleutelaar', 'MECHANIC');
---INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1006, 'Jan', '$2y$10$XO2b/1YUiMcFdbRHhxl54OZV.BWPHp/FqVWlPipceAncU84JKahOy', 'true' , 'de Admin', 'ADMIN');
---INSERT INTO employees(id,username, password, enabled, lastname, role) VALUES (1007, 'ADMIN', '$2y$10$anxu85ksALH4vrX3wEBY/ed3BoAc/nlRatMe.ptGzkFBFLU2jMxhe', 'true' , 'de Admin', 'SUPERUSER');
-
-
---
---INSERT INTO favorites(id,brand, type, license_plate, customer_id) VALUES (1003, 'Seat', 'Leon', '3-srp-wx', '1001');
---INSERT INTO favorites(id,brand, type, license_plate, customer_id) VALUES (1004, 'Ford', 'Focus', '22-ll-sp', '1002');
-
---INSERT INTO customers (id, firstname, lastname, email, street, house_number, zipcode, city) VALUES (1001, 'harry', 'henkst', 'harry@henkst.com', 'mooieweg', 6, '5435ws', 'Oss');
---INSERT INTO customers (id, firstname, lastname, email, street, house_number, zipcode, city) VALUES (1002, 'frits', 'jansen', 'frits@jansen.com', 'kiviet', 25, '5254dr', 'Oss');
-
---INSERT INTO maintenances(id, car_id) VALUES (4001, 1003);
---INSERT INTO maintenances(id, car_id) VALUES (4002, 1004);
-
-
-
+--VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com' 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
+--       (2002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
+--       (2003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
 
 --UPDATE users
 --SET username = 'Frits',
@@ -72,7 +53,7 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging brid
 
 
 --INSERT INTO authorities (username, authority)
---VALUES ('Kasper', 'ROLE_USER'),
+--VALUES ('Kasper', 'ROLE_USERS'),
 --       ('', 'ROLE_USER'),
 --       ('', 'ROLE_USER'),
 --       ('', 'ROLE_USER'),
@@ -82,4 +63,10 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging brid
 --       ('', 'ROLE_MODERATOR'),
 
 
-
+--INSERT INTO favorites(id, users_id, travels_id)
+-- VALUES (1001, '2002', '1020'),
+--        (1002, '2002', '1024'),
+--        (1003, '2003', '1019'),
+--        (1004, '2003', '1020'),
+--        (1005, '2003', '1021'),
+--        (1006, '2003', '1024');
