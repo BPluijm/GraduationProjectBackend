@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "hotspots")
 @JsonInclude(Include.NON_NULL)
 public class HotSpots {
 
