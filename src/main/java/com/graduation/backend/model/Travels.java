@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "travels")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Travels {
     @Id

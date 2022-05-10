@@ -1,18 +1,15 @@
 package com.graduation.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+
 
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "travel_tips")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TravelTips {
 
@@ -24,11 +21,13 @@ public class TravelTips {
     String city;
     String description;
 
-//    @JsonBackReference(value = "add pdf")
-//    private TravelTips addPdf;
     @Lob
     @JsonIgnore
     private byte[] file;
+
+//    @JsonBackReference(value = "add pdf")
+//    private TravelTips addPdf;
+
 
 //    @OneToOne
 //    @JoinColumn(name = "future-travels-id")

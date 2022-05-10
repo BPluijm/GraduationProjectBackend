@@ -12,7 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(Include.NON_NULL)
-@Table(name = "future_travels")
 public class FutureTravels {
 
     @Id

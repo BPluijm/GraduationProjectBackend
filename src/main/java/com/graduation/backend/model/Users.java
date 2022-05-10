@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
 @JsonInclude(Include.NON_NULL)
 public class Users {
 
