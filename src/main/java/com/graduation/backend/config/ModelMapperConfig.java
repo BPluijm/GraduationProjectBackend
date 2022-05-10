@@ -1,4 +1,4 @@
-package com.graduation.backend.model;
+package com.graduation.backend.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.*;

@@ -74,11 +74,10 @@ INSERT INTO hotspots(id, name, country, area)
 
 --INSERT INTO authorities (username, authority)
 --VALUES ('Kasper', 'ROLE_USERS'),
---       ('', 'ROLE_USER'),
---       ('', 'ROLE_USER'),
---       ('', 'ROLE_USER'),
---       ('', 'ROLE_USER'),
+--       ('Manou', 'ROLE_USER'),
 --       ('TravelNerd', 'ROLE_ADMIN');
+
+
 --       ('', 'ROLE_MODERATOR'),
 --       ('', 'ROLE_MODERATOR'),
 
