@@ -8,7 +8,6 @@ import lombok.*;
 import javax.persistence.*;
 
 
-@Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +17,11 @@ public class Favorites {
         @Id
         @GeneratedValue
         private Long id;
+
+        @OneToOne
+        @PrimaryKeyJoinColumn(name= "travels_id")
+        Travels travels;
+
 
 //        @OneToOne
 //        @JoinColumn(name = "favorites_id")
@@ -30,5 +34,17 @@ public class Favorites {
 //        private Travels travels;
 
 
+        public Long getId() {
+                return id;
+        }
+        public void setId(Long id) {
+                this.id = id;
+        }
 
+        public Travels getTravels() {
+                return travels;
+        }
+        public void setTravels(Travels travels) {
+                this.travels = travels;
+        }
 }

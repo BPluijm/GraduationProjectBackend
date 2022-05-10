@@ -23,7 +23,7 @@ public class TravelsDto {
     @NotNull(message = "Please enter the year you were there")
     private int years;
 
-    @NotBlank
+    @NotBlank(message = "Please enter a city")
     private String city;
 
     @NotBlank(message = "summer, car, backpacking, citytrip, etc.")
@@ -35,6 +35,7 @@ public class TravelsDto {
     @NotNull
     @Max(value = 750, message = "Travel time must be less than or equal to 750 days")
     private int duration;
+
 
     private Favorites favorites;
 
