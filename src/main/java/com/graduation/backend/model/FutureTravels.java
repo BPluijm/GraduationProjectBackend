@@ -1,12 +1,9 @@
 package com.graduation.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 import javax.persistence.*;
-import java.util.List;
-
 
 @Entity
 @AllArgsConstructor
