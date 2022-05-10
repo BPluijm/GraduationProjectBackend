@@ -30,23 +30,21 @@
 //        return super.userDetailsService();
 //    }
 //
-////    @Autowired
-////    private PasswordEncoder passwordEncoder;
-////
-////    @Autowired
-////    private DataSource dataSource;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
+//
+//    @Autowired
+//    private DataSource dataSource;
 //
 //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        auth
-//                .inMemoryAuthentication()
-//                .withUser("karel").password("{noop}appel").roles("ARTIST");
 //
-////                .jdbcAuthentication()
-////                .passwordEncoder(passwordEncoder)
-////                .dataSource(dataSource)
-////                .usersByUsernameQuery("select username, password, enabled from users where username=?")
-////                .authoritiesByUsernameQuery("select username, role from users where username=?");
+//                .jdbcAuthentication()
+//                .passwordEncoder(passwordEncoder)
+//                .dataSource(dataSource)
+//                .usersByUsernameQuery("select username, password, enabled from users where username=?")
+//                .authoritiesByUsernameQuery("select username, role from users where username=?");
 //    }
 //
 //    @Override
@@ -64,7 +62,7 @@
 //                .antMatchers("/hotspots/**").hasAnyAuthority("ADMIN", "USERs")
 //                .antMatchers("/travels/**").hasAnyAuthority("ADMIN", "USERS")
 //                .antMatchers("/travel-tips/**").hasAnyAuthority("ADMIN", "USERS")
-//                .antMatchers("/users/**").hasAnyAuthority("ADMIN", "USERS")
+//                .antMatchers("/users/**").hasAnyAuthority("ADMIN")
 //                .and()
 //                .authorizeRequests().anyRequest().authenticated()
 //                .and()
