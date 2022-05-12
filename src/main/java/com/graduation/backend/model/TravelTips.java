@@ -25,6 +25,20 @@ public class TravelTips {
     @JsonIgnore
     private byte[] file;
 
+
+//    @Entity
+//    public class Image {
+//        @Id
+//        @GeneratedValue
+//        Long id;
+//
+//        @Lob
+//        public byte[] content;
+//    }
+
+
+
+
 //    @JsonBackReference(value = "add pdf")
 //    private TravelTips addPdf;
 

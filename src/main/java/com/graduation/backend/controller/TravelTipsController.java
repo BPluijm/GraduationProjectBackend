@@ -68,6 +68,31 @@ public class TravelTipsController {
 
     }
 
+//    @RestController
+//    public class ImageController {
+//        @Autowired
+//        ImageRepository imgRepos;
+//
+//        @PostMapping("/images")
+//        public String upload(@RequestBody MultipartFile file) {
+//            Image img = new Image();
+//            try {
+//                img.content = file.getBytes();
+//            }
+//            catch (IOException iex) {
+//                return "Error while uploading image...";
+//            }
+//
+//            imgRepos.save(img);
+//            return "Image uploaded";
+//        }
+//
+//        @GetMapping(value = "/images/{id}", produces = MediaType.IMAGE_PNG_VALUE)
+//        public @ResponseBody byte[] download(@PathVariable Long id) {
+//            Image img = imgRepos.findById(id).get();
+//            return img.content;
+//        }
+
 //    @PostMapping("/travel-tips/{id}/add-pdf")
 //    ResponseEntity<Object> createTravelTips(@PathVariable Long id, @RequestBody MultipartFile file) throws IOException {
 //        String message = service.addPdfToTravelTips(id, file);

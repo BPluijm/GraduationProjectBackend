@@ -71,7 +71,6 @@ INSERT INTO hotspots(id, name, country, area)
 
 
 
-
 --INSERT INTO authorities (username, authority)
 --VALUES ('Kasper', 'ROLE_USERS'),
 --       ('Manou', 'ROLE_USER'),
