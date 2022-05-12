@@ -8,7 +8,6 @@ import java.util.List;
 public interface FutureTravelsService {
     List<FutureTravelsDto> getFutureTravels();
     FutureTravelsDto getFutureTravelsById(Long id);
-//    List<TravelTips> getFutureTravelTips(Long id);
     FutureTravels createFutureTravels(FutureTravelsDto fut);
     FutureTravelsDto updateFutureTravels(FutureTravelsDto ftdto, Long id);
     FutureTravelsDto deleteFutureTravels(Long id);

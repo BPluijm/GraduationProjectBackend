@@ -13,7 +13,5 @@ import lombok.*;
 public class FavoritesDto {
 
         private Long id;
-//        private Travels travels;
-//        private Users users;
 
 }
