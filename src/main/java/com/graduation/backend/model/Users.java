@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -26,12 +27,10 @@ public class Users {
     private int housenumber;
     private String zipcode;
     private String city;
-//    private String favorites;
     private String role;
 
-//    @OneToMany(mappedBy = "users")
-//    @JsonBackReference
-//    private List<Users> users;
+    @OneToMany
+    private List<Favorites> favorites;
 
 
     public Long getId() { return id; }
@@ -67,8 +66,8 @@ public class Users {
     public String getCity() { return city; }
     public void setCity(String city) { this.city = city; }
 
-//    public String getFavorites() { return favorites; }
-//    public void setFavorites(String favorites) { this.favorites = favorites; }
+    public List<Favorites> getFavorites() { return favorites; }
+    public void setFavorites(List<Favorites> favorites) { this.favorites = favorites; }
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
