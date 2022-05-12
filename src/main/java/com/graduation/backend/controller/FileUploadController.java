@@ -1,21 +1,20 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.FileUploadDto;
+import com.graduation.backend.dto.FileUploadInputDto;
 import com.graduation.backend.model.FileUpload;
 import com.graduation.backend.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+import org.springframework.http.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
+
 
 @RestController
 @RequestMapping("/api/v1/files")
