@@ -33,10 +33,6 @@ public class TravelTipsDto {
         @Null
         private byte[] file;
 
-
-//        @JsonIgnore
-//        private byte[] folder;
-
 //        private FutureTravels futu;
 
 }

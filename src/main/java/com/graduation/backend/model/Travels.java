@@ -20,8 +20,8 @@ public class Travels {
     private String description;
     private int duration;
 
-//    @OneToOne(mappedBy = "travels")
-//    Favorites favorites;
+    @OneToOne
+    Favorites favorites;
 
 
 //    @OneToMany(mappedBy = "travels")

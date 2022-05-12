@@ -39,8 +39,8 @@ public class TravelTipsServiceImpl implements TravelTipsService {
     public byte[] getTravelTipsById(Long id) {
         Optional<TravelTips> trtip = repos.findById(id);
         if (trtip.isPresent()) {
-//            return trtip.get().getFolder();
-            return null;
+            return trtip.get().getFile();
+//            return null;
         } else {
             throw new RecordNotFoundException("Travel tip not found");
         }
@@ -70,7 +70,7 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         trt.setCountry(ti.getCountry());
         trt.setCity(ti.getCity());
         trt.setDescription(ti.getDescription());
-//        trt.setFolder(file.getBytes());
+//        trt.setFile(file.getFile());
         repos.save(trt);
         return "Tips are updated";
     }
