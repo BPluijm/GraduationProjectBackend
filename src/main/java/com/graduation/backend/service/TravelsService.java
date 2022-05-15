@@ -11,7 +11,7 @@ public interface TravelsService {
     Travels createTravels(TravelsDto travelsDto);
     TravelsDto updateTravels(TravelsDto tdto, Long id);
     TravelsDto deleteTravels(Long id);
-    //    String addFavorites(Long id);
+//    String addFavorites(Long id);
 }
 
 

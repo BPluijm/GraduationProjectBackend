@@ -21,11 +21,12 @@ public class Travels {
     private int duration;
 
     @OneToOne
+    @PrimaryKeyJoinColumn(name = "favorites_id")
     Favorites favorites;
 
-//    @OneToMany(mappedBy = "travels")
-//    @JsonManagedReference(value = "travels-favorites")
-//    private List<Favorites> favorites;
+    @ManyToOne
+    @PrimaryKeyJoinColumn(name = "users-id")
+    Users users;
 
 
     public Long getId() {
@@ -71,9 +72,11 @@ public class Travels {
         this.duration = duration;
     }
 
-//    public Favorites getFavorites() { return favorites; }
-//    public void setFavorites(Favorites favorites) { this.favorites = favorites; }
+    public Favorites getFavorites() { return favorites; }
+    public void setFavorites(Favorites favorites) { this.favorites = favorites; }
 
+    public Users getUsers() { return users; }
+    public void setUsers(Users users) { this.users = users; }
 
 
 }

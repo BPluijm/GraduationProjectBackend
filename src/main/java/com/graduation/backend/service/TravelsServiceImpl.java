@@ -1,8 +1,11 @@
 package com.graduation.backend.service;
 
+import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
+import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
+import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +20,8 @@ public class TravelsServiceImpl implements TravelsService {
     @Autowired
     TravelsRepository repos;
 
-//    @Autowired
-//    FavoritesService service;
+    @Autowired
+    FavoritesService service;
 
     @Override
     public List<TravelsDto> getTravels() {
@@ -72,8 +75,8 @@ public class TravelsServiceImpl implements TravelsService {
         tl.setCity(tvl.getCity());
         tl.setCategory(tvl.getCategory());
         tl.setDescription(tvl.getDescription());
-//        tl.setFavorites(tvl.getFavorite());
-//        tl.getUsers(tvl.getUsers());
+        tl.setFavorites((Favorites) tvl.getFavorites());
+        tl.setUsers((Users) tvl.getUsers());
         repos.save(tl);
         return mapper.map(tl, TravelsDto.class);
     }
@@ -86,7 +89,7 @@ public class TravelsServiceImpl implements TravelsService {
             repos.deleteById(id);
             return trav;
         } else {
-            throw new RecordNotFoundException("Unable to find trip");
+            throw new RecordNotFoundException("Unable to delete trip");
         }
     }
 

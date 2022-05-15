@@ -3,6 +3,7 @@ package com.graduation.backend.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.graduation.backend.model.Favorites;
+import com.graduation.backend.model.Users;
 import lombok.*;
 
 import javax.validation.constraints.*;
@@ -37,9 +38,9 @@ public class TravelsDto {
     private int duration;
 
 
-    private Favorites favorites;
+    private List<Users> users;
 
-    private List<Favorites> favorite;
+    private List<Favorites> favorites;
 
 }
 

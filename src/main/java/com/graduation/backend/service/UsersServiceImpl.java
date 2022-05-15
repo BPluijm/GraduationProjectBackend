@@ -66,7 +66,7 @@ public class UsersServiceImpl implements UsersService {
         u.setHousenumber(userDto.getHousenumber());
         u.setZipcode(userDto.getZipcode());
         u.setCity(userDto.getCity());
-//        u.setFavorites(userDto.getFavorites());
+        u.setFavorites(userDto.getFavorites());
         u.setEnabled(userDto.getEnabled());
         u.setRole(userDto.getRole().toString());
 
@@ -86,7 +86,7 @@ public class UsersServiceImpl implements UsersService {
             use.setHousenumber(usersDto.getHousenumber());
             use.setZipcode(usersDto.getZipcode());
             use.setCity(usersDto.getCity());
-//        use.setFavorites(usersDto.getFavorites());
+            use.setFavorites(usersDto.getFavorites());
             use.setEnabled(usersDto.getEnabled());
             use.setRole(usersDto.getRole().toString());
             repos.save(use);
@@ -101,7 +101,7 @@ public class UsersServiceImpl implements UsersService {
                 repos.deleteById(id);
                 return userDto;
             } else {
-                throw new RecordNotFoundException("Unable to find user");
+                throw new RecordNotFoundException("Unable to delete user");
             }
         }
 }

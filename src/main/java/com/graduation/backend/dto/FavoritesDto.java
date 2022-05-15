@@ -5,6 +5,8 @@ import com.graduation.backend.model.Travels;
 import com.graduation.backend.model.Users;
 import lombok.*;
 
+import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -13,4 +15,8 @@ import lombok.*;
 public class FavoritesDto {
 
         private Long id;
+
+        private List<Users> users;
+
+        private List<Travels> travels;
 }

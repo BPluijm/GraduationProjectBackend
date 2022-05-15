@@ -9,5 +9,5 @@ public interface FavoritesService {
     List<FavoritesDto> getFavorites ();
     FavoritesDto getFavoritesById(Long id);
     Favorites createFavorites(FavoritesDto favo);
-    String deleteFavorites(Long id);
+    FavoritesDto deleteFavorites(Long id);
 }
