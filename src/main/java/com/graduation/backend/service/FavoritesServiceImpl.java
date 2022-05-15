@@ -7,19 +7,16 @@ import com.graduation.backend.repository.FavoritesRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
 
 @Service
 public class FavoritesServiceImpl implements FavoritesService {
 
+    private final ModelMapper mapper = new ModelMapper();
 
     @Autowired
     FavoritesRepository repos;
-
-    @Autowired
-    private ModelMapper mapper;
 
         @Override
     public List<FavoritesDto> getFavorites() {

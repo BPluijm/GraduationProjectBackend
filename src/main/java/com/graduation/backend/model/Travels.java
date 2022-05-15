@@ -23,12 +23,9 @@ public class Travels {
     @OneToOne
     Favorites favorites;
 
-
 //    @OneToMany(mappedBy = "travels")
 //    @JsonManagedReference(value = "travels-favorites")
 //    private List<Favorites> favorites;
-
-
 
 
     public Long getId() {

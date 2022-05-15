@@ -32,7 +32,4 @@ public class TravelTipsDto {
         @Lob
         @Null
         private byte[] file;
-
-//        private FutureTravels futu;
-
 }

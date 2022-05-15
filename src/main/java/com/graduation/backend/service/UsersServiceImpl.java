@@ -8,7 +8,6 @@ import com.graduation.backend.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
 
@@ -27,8 +26,8 @@ public class UsersServiceImpl implements UsersService {
 //    @Autowired
 //    private PasswordEncoder encoder;
 //
-////        @Autowired
-////    FavoritesRepository favo;
+//        @Autowired
+//    FavoritesRepository repos;
 
     @Override
     public List<UsersDto> getUsers() {

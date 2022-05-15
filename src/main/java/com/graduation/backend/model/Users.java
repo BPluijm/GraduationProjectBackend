@@ -32,6 +32,9 @@ public class Users {
     @OneToMany
     private List<Favorites> favorites;
 
+    @OneToMany
+    private List<TravelTips> travelTips;
+
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -66,11 +69,14 @@ public class Users {
     public String getCity() { return city; }
     public void setCity(String city) { this.city = city; }
 
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
+
     public List<Favorites> getFavorites() { return favorites; }
     public void setFavorites(List<Favorites> favorites) { this.favorites = favorites; }
 
-    public String getRole() { return role; }
-    public void setRole(String role) { this.role = role; }
+    public List<TravelTips> getTravelTips() { return travelTips; }
+    public void setTravelTips(List<TravelTips> travelTips) { this.travelTips = travelTips; }
 }
 
 

@@ -36,20 +36,13 @@ public class TravelTips {
 //        public byte[] content;
 //    }
 
+    @OneToOne
+    @PrimaryKeyJoinColumn(name = "future_id")
+    FutureTravels futureTravels;
 
-
-
-//    @JsonBackReference(value = "add pdf")
-//    private TravelTips addPdf;
-
-
-//    @OneToOne
-//    @JoinColumn(name = "future-travels-id")
-//    @JsonManagedReference(value = "future-travels-tip")
-//    private FutureTravels futu;
-//
-//    public void setFutureTravels(FutureTravels futu) {
-//    }
+    @OneToOne
+    @PrimaryKeyJoinColumn(name = "users_id")
+    Users users;
 
 
     public Long getId() { return id; }
@@ -69,4 +62,14 @@ public class TravelTips {
 
     public byte[] getFile() { return file; }
     public void setFile(byte[] file) { this.file = file; }
+
+    public FutureTravels getFutureTravels() {
+        return futureTravels;
+    }
+    public void setFutureTravels(FutureTravels futureTravels) {
+        this.futureTravels = futureTravels;
+    }
+
+    public Users getUsers() { return users; }
+    public void setUsers(Users users) { this.users = users; }
 }

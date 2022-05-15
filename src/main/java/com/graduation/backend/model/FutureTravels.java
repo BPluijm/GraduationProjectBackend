@@ -21,13 +21,8 @@ public class FutureTravels {
     private int duration;
     private int costs;
 
-//    @OneToOne(mappedBy = "future")
-//    @JsonBackReference(value = "future-travels-tips")
-//    private TravelTips tips;
-
-//
-//    public List<TravelTips> getFutureTravelTips() {
-//    }
+    @OneToOne
+    TravelTips travelTips;
 
 //    @ManyToOne
 //    @JsonBackReference(value = "users-tip")

@@ -1,19 +1,19 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.FutureTravelsDto;
-import com.graduation.backend.dto.TravelTipsDto;
 import com.graduation.backend.service.FutureTravelsService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 public class FutureTravelsController {
+
+    private final ModelMapper mapper = new ModelMapper();
 
     @Autowired
     FutureTravelsService service;

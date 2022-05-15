@@ -2,27 +2,23 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
-//import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
-
 
 @Service
 public class TravelsServiceImpl implements TravelsService {
+
+    private final ModelMapper mapper = new ModelMapper();
 
     @Autowired
     TravelsRepository repos;
 
 //    @Autowired
 //    FavoritesService service;
-
-    @Autowired
-    private ModelMapper mapper;
 
     @Override
     public List<TravelsDto> getTravels() {
@@ -58,7 +54,6 @@ public class TravelsServiceImpl implements TravelsService {
         return this.repos.save(t);
     }
 
-
 //    @Override
 //    public String addFavorites(Long id) {
 //        Travels trad = repos.findById(id).get();
@@ -78,6 +73,7 @@ public class TravelsServiceImpl implements TravelsService {
         tl.setCategory(tvl.getCategory());
         tl.setDescription(tvl.getDescription());
 //        tl.setFavorites(tvl.getFavorite());
+//        tl.getUsers(tvl.getUsers());
         repos.save(tl);
         return mapper.map(tl, TravelsDto.class);
     }

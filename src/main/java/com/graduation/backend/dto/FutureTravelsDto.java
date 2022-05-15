@@ -33,12 +33,10 @@ public class FutureTravelsDto {
     @NotNull(message = "Please enter the expected costs")
     private int costs;
 
-//    @OneToOne
-//    private TravelTips tips;
+    private TravelTips travelTip;
 
-//    private Users users;
+    private List<TravelTips> travelTips;
 
-
-    private List<FutureTravels> Future;
+//    private List<FutureTravels> Future;
 
 }

@@ -1,6 +1,5 @@
 package com.graduation.backend.model;
 
-
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;

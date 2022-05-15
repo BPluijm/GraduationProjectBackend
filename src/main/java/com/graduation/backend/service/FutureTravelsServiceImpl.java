@@ -7,13 +7,12 @@ import com.graduation.backend.repository.FutureTravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class FutureTravelsServiceImpl implements FutureTravelsService {
+
+    private final ModelMapper mapper = new ModelMapper();
 
     @Autowired
     FutureTravelsRepository repos;
@@ -21,10 +20,7 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
 //    @Autowired
 //    FutureTravelsService service;
 
-    @Autowired
-    private ModelMapper mapper;
 
-//    private ModelMapper mapper = new ModelMapper();
 
     @Override
     public List<FutureTravelsDto> getFutureTravels() {
@@ -49,13 +45,6 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         }
     }
 
-//    @Override
-//    public FutureTravelsDto createFutureTravels(FutureTravelsDto fut) {
-//        FutureTravels ftr = mapper.map(fut, FutureTravels.class);
-//        FutureTravels ftrav = repos.save(ftr);
-//        return mapper.map(ftrav, FutureTravelsDto.class);
-//    }
-
     @Override
     public FutureTravels createFutureTravels(FutureTravelsDto fut) {
         FutureTravels ft = new FutureTravels();
@@ -77,24 +66,6 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
 //        repos.save(futu);
 //        return "Travel tips are added to the future trip";
 //    }
-
-
-//    @Override
-//    public List<TravelTipsDto> getFutureTravelTips(Long id) {
-//        Optional<FutureTravels> ftips = repos.findById(id);
-//        List<TravelTipsDto> fttips = new ArrayList<>();
-//        if(ftips.isPresent()) {
-//            List<TravelTips> cars =  ftips.get().getFutureTravelTips();
-//            for(TravelTips ttips : cars){
-//                TravelTipsDto carDTO = mapper.map(ttips, TravelTipsDto.class);
-//                fttips.add(carDTO);
-//            }
-//            return fttips;
-//        } else {
-//            throw new RecordNotFoundException("no car found");
-//        }
-//    }
-
 
 
     @Override

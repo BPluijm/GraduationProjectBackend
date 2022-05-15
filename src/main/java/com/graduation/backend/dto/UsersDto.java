@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.graduation.backend.enums.Role;
 import com.graduation.backend.model.Favorites;
+import com.graduation.backend.model.TravelTips;
 import lombok.*;
 
 import javax.persistence.Enumerated;
@@ -51,13 +52,14 @@ public class UsersDto {
     @NotBlank(message = "City must be filled in")
     private String city;
 
-    @NotBlank(message = "Favorites cant be blank")
-    private List<Favorites> favorites;
-
     private Boolean enabled = true;
 
     @Enumerated
     private Role role;
+
+    private List<Favorites> favorites;
+
+    private List<TravelTips> travelTips;
 
 }
 

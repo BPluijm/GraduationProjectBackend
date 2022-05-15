@@ -12,6 +12,5 @@ public interface FutureTravelsService {
     FutureTravelsDto updateFutureTravels(FutureTravelsDto ftdto, Long id);
     FutureTravelsDto deleteFutureTravels(Long id);
 //    String addTips(Long tipId,TravelTipsDto ttdt, MultipartFile tips);
-
 //    TravelTips createTravelTips(TravelTipsDto ttdt, MultipartFile tips);
 }

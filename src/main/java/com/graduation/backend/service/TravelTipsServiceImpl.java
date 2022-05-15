@@ -8,7 +8,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -16,13 +15,10 @@ import java.util.*;
 @Service
 public class TravelTipsServiceImpl implements TravelTipsService {
 
+    private final ModelMapper mapper = new ModelMapper();
+
     @Autowired
     TravelTipsRepository repos;
-
-    @Autowired
-    private ModelMapper mapper;
-
-
 
     @Override
     public List<TravelTipsDto> getTravelTips() {
@@ -80,7 +76,5 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Travel tip not found"));
         repos.deleteById(id);
         return "Travel tip is deleted";
-
     }
-
 }
