@@ -40,18 +40,13 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
         }
     }
 
-//    @Override
-//    public String addPdfToHotSpots(Long id, MultipartFile file) throws IOException {
-//        return null;
-//    }
-
-
     @Override
     public HotSpots createHotSpots(HotSpotsDto hsdt) throws IOException {
         HotSpots hs = new HotSpots();
         hs.setName(hsdt.getName());
         hs.setCountry(hsdt.getCountry());
         hs.setArea(hsdt.getArea());
+        hs.setFlyer(hsdt.getFlyer());
         return this.repos.save(hs);
 
     }
@@ -62,6 +57,7 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
         hots.setName(hotSpots.getName());
         hots.setCountry(hotSpots.getCountry());
         hots.setArea(hotSpots.getArea());
+        hots.setFlyer(hotSpots.getFlyer());
         repos.save(hots);
         return "Hotspots are updated";
     }

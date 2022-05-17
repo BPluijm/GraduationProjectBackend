@@ -62,10 +62,4 @@ public class HotSpotsController {
     ResponseEntity<Object> deleteHotSpots (@PathVariable Long id) {
         return new ResponseEntity<>(service.deleteHotSpots(id), HttpStatus.OK);
     }
-
-
-    //    @PostMapping("/hotspots/{id}/users")
-//    ResponseEntity<Object> createHotSpots(@PathVariable Long id) {
-//        return new ResponseEntity<>(service.addHotSpots(id), HttpStatus.CREATED);
-//    }
 }

@@ -2,6 +2,7 @@ package com.graduation.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
 
@@ -20,10 +21,10 @@ public class Flyer {
     @JsonIgnore
     private byte[] flyer;
 
-//    @OneToOne
-//    @JoinColumn(name = "travel_tip_id")
-//    @JsonManagedReference(value = "flyer-travel-tips")
-//    private TravelTips travelTips;
+//    @OneToMany
+//    @JoinColumn(name = "hotspots_id")
+//    @JsonManagedReference(value = "flyer-hotspots")
+//    private HotSpots hotSpots;
 
 
     public Long getId() { return id; }

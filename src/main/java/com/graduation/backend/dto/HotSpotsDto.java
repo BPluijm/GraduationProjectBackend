@@ -2,6 +2,7 @@ package com.graduation.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.graduation.backend.model.Flyer;
 import lombok.*;
 import javax.validation.constraints.*;
 
@@ -20,5 +21,7 @@ public class HotSpotsDto {
 
     @NotBlank(message = "Please enter an area in this country")
     private String area;
+
+    private Flyer flyer;
 
 }

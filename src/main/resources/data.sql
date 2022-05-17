@@ -48,6 +48,7 @@ INSERT INTO users (id, username, password, enabled, firstname, lastname, email, 
 VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
        (2002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
        (2003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
+       (2004, 'Henk',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Max', 'B', 'info@max.com', 'Smeetsstraat', 71, '6121PG', 'Heerlen', 'USERS');
 
 
 -- werkt nog niet
