@@ -25,11 +25,10 @@ public class TravelTipsController {
         return new ResponseEntity<>(ld, HttpStatus.OK);
     }
 
-//    @GetMapping(value = "/travel-tips/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
-//    ResponseEntity<Object> getTravelTipsById (@PathVariable Long id) {
-//        byte[] ttd = service.getTravelTipsById(id);
-//        return new ResponseEntity<>(ttd, HttpStatus.OK);
-//    }
+    @GetMapping("/travel-tips/{id}")
+    ResponseEntity<Object> getTravelTipsById (@PathVariable Long id) {
+        return new ResponseEntity<>(service.getTravelTipsById(id), HttpStatus.OK);
+    }
 
 
     @PostMapping("/travel-tips")
@@ -46,57 +45,6 @@ public class TravelTipsController {
             return new ResponseEntity<>("Tip added!", HttpStatus.CREATED);
         }
     }
-
-//    @PostMapping(value = "/travel-tips")
-//    ResponseEntity<Object> createTravelTips(@RequestBody TravelTipsDto ttdt, MultipartFile file) {
-//        try {
-//            if (file == null) {
-//                Path path = Paths.get("C:\\IdeaProjects\\backend\\src\\main\\java\\com\\graduation\\backend\\assets\\NotIncluded.pdf");
-//                byte[] content = null;
-//                content = Files.readAllBytes(path);
-//                file = new MockMultipartFile("NotIncluded.pdf", "NotIncluded.pdf", "text/pdf", content);
-//                TravelTips pdfTravel = service.createTravelTips(ttdt, file);
-//                return new ResponseEntity<>(pdfTravel, HttpStatus.CREATED);
-//            }
-//                TravelTips pdfTravel = service.createTravelTips(ttdt, file);
-//                return new ResponseEntity<>(pdfTravel, HttpStatus.CREATED);
-//
-//        } catch (IOException exception) {
-//            return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
-//        }
-//
-//    }
-
-//    @RestController
-//    public class ImageController {
-//        @Autowired
-//        ImageRepository imgRepos;
-//
-//        @PostMapping("/images")
-//        public String upload(@RequestBody MultipartFile file) {
-//            Image img = new Image();
-//            try {
-//                img.content = file.getBytes();
-//            }
-//            catch (IOException iex) {
-//                return "Error while uploading image...";
-//            }
-//
-//            imgRepos.save(img);
-//            return "Image uploaded";
-//        }
-//
-
-
-
-
-//        @GetMapping(value = "/images/{id}", produces = MediaType.IMAGE_PNG_VALUE)
-//        public @ResponseBody byte[] download(@PathVariable Long id) {
-//            Image img = imgRepos.findById(id).get();
-//            return img.content;
-//        }
-
-
 
 
 //    @PostMapping("/travel-tips/{id}/add-pdf")

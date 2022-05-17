@@ -21,20 +21,6 @@ public class TravelTips {
     String city;
     String description;
 
-//    @Lob
-//    @JsonIgnore
-//    private byte[] file;
-
-
-//    @Entity
-//    public class Image {
-//        @Id
-//        @GeneratedValue
-//        Long id;
-//
-//        @Lob
-//        public byte[] content;
-//    }
 
     @OneToOne
     @PrimaryKeyJoinColumn(name = "future_id")
@@ -59,9 +45,6 @@ public class TravelTips {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-
-//    public byte[] getFile() { return file; }
-//    public void setFile(byte[] file) { this.file = file; }
 
     public FutureTravels getFutureTravels() {
         return futureTravels;

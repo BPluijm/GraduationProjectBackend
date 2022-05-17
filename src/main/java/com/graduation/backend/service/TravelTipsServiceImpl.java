@@ -31,16 +31,16 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         return tips;
     }
 
-//    @Override
-//    public byte[] getTravelTipsById(Long id) {
-//        Optional<TravelTips> trtip = repos.findById(id);
-//        if (trtip.isPresent()) {
-////            return trtip.get().getFile();
-//            return null;
-//        } else {
-//            throw new RecordNotFoundException("Travel tip not found");
-//        }
-//    }
+    @Override
+    public TravelTipsDto getTravelTipsById(Long id) {
+        Optional<TravelTips> t = repos.findById(id);
+        if (t.isPresent()) {
+            TravelTips trvl = t.get();
+            return mapper.map(trvl, TravelTipsDto.class);
+        } else {
+            throw new RecordNotFoundException("Trip not found");
+        }
+    }
 
 //    @Override
 //    public String addPdfToTravelTips(Long id, MultipartFile file) throws IOException {
@@ -54,7 +54,6 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         tt.setCountry(ttdt.getCountry());
         tt.setCity(ttdt.getCity());
         tt.setDescription(ttdt.getDescription());
-//        tt.setFile(ttdt.getFile());
         return this.repos.save(tt);
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface TravelTipsService {
     List<TravelTipsDto> getTravelTips();
-//    byte[] getTravelTipsById(Long id);
+    TravelTipsDto getTravelTipsById(Long id);
     TravelTips createTravelTips(TravelTipsDto ttdt) throws IOException;
 //    String addPdfToTravelTips(Long id, MultipartFile file) throws IOException;
     String updateTravelTips(TravelTipsDto ti, MultipartFile file, Long id) throws IOException;
