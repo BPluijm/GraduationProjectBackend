@@ -34,10 +34,10 @@ public class TravelTipsServiceImpl implements TravelTipsService {
     public TravelTipsDto getTravelTipsById(Long id) {
         Optional<TravelTips> t = repos.findById(id);
         if (t.isPresent()) {
-            TravelTips trvl = t.get();
-            return mapper.map(trvl, TravelTipsDto.class);
+            TravelTips travelTips = t.get();
+            return mapper.map(travelTips, TravelTipsDto.class);
         } else {
-            throw new RecordNotFoundException("Trip not found");
+            throw new RecordNotFoundException("Tip not found");
         }
     }
 
