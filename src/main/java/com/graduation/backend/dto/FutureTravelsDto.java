@@ -1,11 +1,9 @@
 package com.graduation.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.graduation.backend.model.FutureTravels;
 import com.graduation.backend.model.TravelTips;
 import lombok.*;
 
-import javax.persistence.OneToOne;
 import javax.validation.constraints.*;
 import java.util.List;
 

@@ -3,7 +3,6 @@ package com.graduation.backend.model;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
-
 import javax.persistence.*;
 
 

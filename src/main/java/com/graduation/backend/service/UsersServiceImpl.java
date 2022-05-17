@@ -14,14 +14,14 @@ import java.util.*;
 @Service
 public class UsersServiceImpl implements UsersService {
 
+    private final ModelMapper mapper = new ModelMapper();
+
     private final UsersRepository repos;
 
     public UsersServiceImpl(UsersRepository repos) {
         this.repos = repos;
     }
 
-    @Autowired
-    private ModelMapper mapper;
 
 //    @Autowired
 //    private PasswordEncoder encoder;

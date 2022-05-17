@@ -1,6 +1,5 @@
 package com.graduation.backend.service;
 
-import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Favorites;

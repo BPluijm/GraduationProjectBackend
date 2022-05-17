@@ -7,8 +7,6 @@ import org.springframework.http.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.MediaType;
-import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.*;
@@ -68,9 +66,9 @@ public class TravelTipsController {
 //    }
 
         @PutMapping("/travel-tips/{id}")
-        ResponseEntity<Object> updateTravelTips (@Valid @RequestBody TravelTipsDto ti, MultipartFile tips, @PathVariable Long id) {
+        ResponseEntity<Object> updateTravelTips (@Valid @RequestBody TravelTipsDto ti, @PathVariable Long id) {
             try {
-                String tip = service.updateTravelTips(ti, tips, id);
+                String tip = service.updateTravelTips(ti, id);
                 return new ResponseEntity<>(tip, HttpStatus.OK);
             } catch (IOException error) {
                 return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);

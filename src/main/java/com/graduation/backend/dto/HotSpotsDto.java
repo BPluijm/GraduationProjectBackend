@@ -3,7 +3,6 @@ package com.graduation.backend.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
-import javax.persistence.Lob;
 import javax.validation.constraints.*;
 
 @Data

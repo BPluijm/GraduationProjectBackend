@@ -7,7 +7,6 @@ import com.graduation.backend.repository.TravelTipsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.*;
 
@@ -58,7 +57,7 @@ public class TravelTipsServiceImpl implements TravelTipsService {
     }
 
     @Override
-    public String updateTravelTips(TravelTipsDto ti, MultipartFile file, Long id) throws IOException {
+    public String updateTravelTips(TravelTipsDto ti, Long id) throws IOException {
         TravelTips trt = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Tip not found"));
         trt.setName(ti.getName());
         trt.setCountry(ti.getCountry());

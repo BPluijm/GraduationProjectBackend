@@ -12,6 +12,3 @@ public interface UsersService {
     UsersDto updateUsers(UsersDto userDto, Long id);
     UsersDto deleteUsers(Long id);
 }
-
-//    List<TravelTipsDto> getTravelTips();
-//    TravelTips createTravelTips(TravelTipsDto travelTipsDto);
