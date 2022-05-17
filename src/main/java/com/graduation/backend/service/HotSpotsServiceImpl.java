@@ -7,21 +7,16 @@ import com.graduation.backend.repository.HotSpotsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class HotSpotsServiceImpl  implements HotSpotsService {
 
-    @Autowired
-    HotSpotsRepository repos;
+    private final ModelMapper mapper = new ModelMapper();
 
     @Autowired
-    private ModelMapper mapper;
+    HotSpotsRepository repos;
 
     @Override
     public List<HotSpotsDto> getHotSpots() {
@@ -35,42 +30,40 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
     }
 
     @Override
-    public byte[] getHotSpotsById(Long id) {
-        Optional<HotSpots> spots = repos.findById(id);
-        if (spots.isPresent()) {
-//            return spots.get().getHotSpots();
-            return null;
+    public HotSpotsDto getHotSpotsById(Long id) {
+        Optional<HotSpots> t = repos.findById(id);
+        if (t.isPresent()) {
+            HotSpots hotspots = t.get();
+            return mapper.map(hotspots, HotSpotsDto.class);
         } else {
-            throw new RecordNotFoundException("Hotspot not found");
+            throw new RecordNotFoundException("Trip not found");
         }
     }
 
-    //    @Override
+//    @Override
 //    public String addPdfToHotSpots(Long id, MultipartFile file) throws IOException {
 //        return null;
 //    }
 
 
     @Override
-    public HotSpots createHotSpots(HotSpotsDto hsdt, MultipartFile file) throws IOException {
+    public HotSpots createHotSpots(HotSpotsDto hsdt) throws IOException {
         HotSpots hs = new HotSpots();
         hs.setName(hsdt.getName());
         hs.setCountry(hsdt.getCountry());
         hs.setArea(hsdt.getArea());
-        hs.setFile(hsdt.getFile());
         return this.repos.save(hs);
 
     }
 
     @Override
-    public String updateHotSpots(HotSpotsDto ti, MultipartFile file, Long id) throws IOException {
+    public String updateHotSpots(HotSpotsDto hotSpots, Long id) throws IOException {
         HotSpots hots = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Hotspot not found"));
-        hots.setName(ti.getName());
-        hots.setCountry(ti.getCountry());
-        hots.setArea(ti.getArea());
-        hots.setFile(file.getBytes());
+        hots.setName(hotSpots.getName());
+        hots.setCountry(hotSpots.getCountry());
+        hots.setArea(hotSpots.getArea());
         repos.save(hots);
-        return "Tips are updated";
+        return "Hotspots are updated";
     }
 
 

@@ -1,18 +1,15 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.HotSpotsDto;
-import com.graduation.backend.model.HotSpots;
 import com.graduation.backend.service.HotSpotsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.nio.file.*;
 import java.util.List;
-
 
 @RestController
 public class HotSpotsController {
@@ -26,56 +23,38 @@ public class HotSpotsController {
         return new ResponseEntity<>(hpd, HttpStatus.OK);
     }
 
-    @GetMapping(value  = "/hotspots/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping("/hotspots/{id}")
     ResponseEntity<Object> getHotSpotsById (@PathVariable Long id) {
-        byte[] flyer = service.getHotSpotsById(id);
-        return new ResponseEntity<>(flyer, HttpStatus.OK);
+        return new ResponseEntity<>(service.getHotSpotsById(id), HttpStatus.OK);
     }
 
-//    @PostMapping(value = "/hotspots")
-//    ResponseEntity<Object> createHotSpots(@Valid @RequestBody HotSpotsDto hsd, MultipartFile flyer) {
-//        if (Objects.equals(flyer.getContentType(), "application/pdf")) {
-//            service.createHotSpots(hsd, flyer);
-//            return new ResponseEntity<>("Hot spot added", HttpStatus.CREATED);
-//        }
-//        return new ResponseEntity<>("Only pdf file upload possible", HttpStatus.BAD_REQUEST);
-//
-//    }
 
-    @PostMapping(value = "/hotspots")
-    ResponseEntity<Object> createHotSpots(@RequestBody HotSpotsDto hsdt, MultipartFile file) {
-        try {
-            if (file == null) {
-                Path path = Paths.get("C:\\IdeaProjects\\backend\\src\\main\\java\\com\\graduation\\backend\\assets\\NotIncluded.pdf");
-                byte[] content = null;
-                content = Files.readAllBytes(path);
-                file = new MockMultipartFile("NotIncluded.pdf", "NotIncluded.pdf", "text/pdf", content);
-                HotSpots pdfHotSpot = service.createHotSpots(hsdt, file);
-                return new ResponseEntity<>(pdfHotSpot, HttpStatus.CREATED);
+    @PostMapping("/hotspots")
+    public ResponseEntity<Object> createHotSpots(@Valid @RequestBody HotSpotsDto hsdt, BindingResult br) throws IOException {
+        if (br.hasErrors()) {
+            StringBuilder sb = new StringBuilder();
+            for(FieldError fe : br.getFieldErrors()) {
+                sb.append(fe.getDefaultMessage());
+                sb.append("\n");
             }
-            HotSpots pdfHotSpot = service.createHotSpots(hsdt, file);
-            return new ResponseEntity<>(pdfHotSpot, HttpStatus.CREATED);
-
-        } catch (IOException exception) {
-            return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
+        } else {
+            service.createHotSpots(hsdt);
+            return new ResponseEntity<>("HotSpot created!", HttpStatus.CREATED);
         }
-
     }
 
-//    @PutMapping(value  = "/hotspots/{id}")
-//    ResponseEntity<Object> updateHotSpots (@PathVariable Long id, @Valid @RequestBody HotSpotsDto hs, MultipartFile flyer) {
-//        String message = service.updateHotSpots(id, hs, flyer);
-//        return new ResponseEntity<>(message, HttpStatus.OK);
-//    }
-
-
-    @PutMapping("/hotspots/{id}")
-    ResponseEntity<Object> updateHotSpots (@Valid @RequestBody HotSpotsDto hot, MultipartFile file, @PathVariable Long id) {
-        try {
-            String tip = service.updateHotSpots(hot, file, id);
-            return new ResponseEntity<>(tip, HttpStatus.OK);
-        } catch (IOException error) {
-            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    @PutMapping("hotspots/{id}")
+    ResponseEntity<Object> updateHotSpots (@PathVariable Long id, @Valid @RequestBody HotSpotsDto hotSpots , BindingResult br) throws IOException {
+        if (br.hasErrors()) {
+            StringBuilder sb = new StringBuilder();
+            for (FieldError error : br.getFieldErrors()) {
+                sb.append(error);
+                sb.append("\n");
+            }
+            return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(service.updateHotSpots(hotSpots, id), HttpStatus.OK);
         }
     }
 
@@ -89,6 +68,4 @@ public class HotSpotsController {
 //    ResponseEntity<Object> createHotSpots(@PathVariable Long id) {
 //        return new ResponseEntity<>(service.addHotSpots(id), HttpStatus.CREATED);
 //    }
-
-
 }

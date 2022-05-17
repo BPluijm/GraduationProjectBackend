@@ -1,6 +1,5 @@
 package com.graduation.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
@@ -23,9 +22,6 @@ public class HotSpots {
     private String country;
     private String area;
 
-    @Lob
-    @JsonIgnore
-    private byte[] file;
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -38,7 +34,4 @@ public class HotSpots {
 
     public String getArea() { return area; }
     public void setArea(String area) { this.area = area; }
-
-    public byte[] getFile() { return file; }
-    public void setFile(byte[] file) { this.file = file; }
 }

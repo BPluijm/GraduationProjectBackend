@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface HotSpotsService {
     List<HotSpotsDto> getHotSpots();
-    byte[] getHotSpotsById(Long id);
-    HotSpots createHotSpots(HotSpotsDto hsdt, MultipartFile file) throws IOException;
-    String updateHotSpots(HotSpotsDto hot, MultipartFile file, Long id) throws IOException;
+    HotSpotsDto getHotSpotsById(Long id);
+    HotSpots createHotSpots(HotSpotsDto hsdt) throws IOException;
+    String updateHotSpots(HotSpotsDto hotSpots, Long id) throws IOException;
     String deleteHotSpots(Long id);
 }

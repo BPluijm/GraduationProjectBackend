@@ -1,7 +1,5 @@
 package com.graduation.backend.dto;
 
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
@@ -23,14 +21,5 @@ public class HotSpotsDto {
 
     @NotBlank(message = "Please enter an area in this country")
     private String area;
-
-    @Lob
-    @Null
-    private byte[] file;
-
-//    @OneToOne
-//    @JoinColumn(name = "users_id")
-//    @JsonManagedReference(value = "users-hotspots")
-//    private Users users;
 
 }
