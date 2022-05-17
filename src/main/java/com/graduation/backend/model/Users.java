@@ -77,6 +77,7 @@ public class Users {
 
     public List<TravelTips> getTravelTips() { return travelTips; }
     public void setTravelTips(List<TravelTips> travelTips) { this.travelTips = travelTips; }
+
 }
 
 

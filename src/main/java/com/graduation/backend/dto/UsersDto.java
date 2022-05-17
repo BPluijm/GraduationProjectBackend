@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.graduation.backend.enums.Role;
 import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.TravelTips;
+import com.graduation.backend.model.Travels;
 import lombok.*;
 
 import javax.persistence.Enumerated;

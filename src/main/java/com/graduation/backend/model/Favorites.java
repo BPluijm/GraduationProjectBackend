@@ -25,7 +25,6 @@ public class Favorites {
         Users users;
 
 
-
         public Long getId() {
                 return id;
         }

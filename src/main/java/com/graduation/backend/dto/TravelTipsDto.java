@@ -29,7 +29,7 @@ public class TravelTipsDto {
         @NotBlank(message = "Please enter a description.")
         private String description;
 
-        @Lob
-        @Null
-        private byte[] file;
+//        @Lob
+//        @Null
+//        private byte[] file;
 }

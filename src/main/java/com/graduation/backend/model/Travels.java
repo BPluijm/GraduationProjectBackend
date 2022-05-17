@@ -9,6 +9,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Travels {
+
     @Id
     @GeneratedValue
     private Long id;

@@ -21,9 +21,9 @@ public class TravelTips {
     String city;
     String description;
 
-    @Lob
-    @JsonIgnore
-    private byte[] file;
+//    @Lob
+//    @JsonIgnore
+//    private byte[] file;
 
 
 //    @Entity

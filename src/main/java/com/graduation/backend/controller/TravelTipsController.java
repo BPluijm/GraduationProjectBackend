@@ -1,18 +1,17 @@
 package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.TravelTipsDto;
-import com.graduation.backend.model.TravelTips;
 import com.graduation.backend.service.TravelTipsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.nio.file.*;
 import java.util.*;
-import org.springframework.mock.web.MockMultipartFile;
 
 @RestController
 public class TravelTipsController {
@@ -26,47 +25,47 @@ public class TravelTipsController {
         return new ResponseEntity<>(ld, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/travel-tips/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
-    ResponseEntity<Object> getTravelTipsById (@PathVariable Long id) {
-        byte[] ttd = service.getTravelTipsById(id);
-        return new ResponseEntity<>(ttd, HttpStatus.OK);
-    }
-
-
-//    @PostMapping("/travel-tips")
-//    public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdt, BindingResult br) throws IOException {
-//        if (br.hasErrors()) {
-//            StringBuilder sb = new StringBuilder();
-//            for(FieldError fe : br.getFieldErrors()) {
-//                sb.append(fe.getDefaultMessage());
-//                sb.append("\n");
-//            }
-//            return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
-//        } else {
-//            service.createTravelTips(ttdt);
-//            return new ResponseEntity<>("Tip added!", HttpStatus.CREATED);
-//        }
+//    @GetMapping(value = "/travel-tips/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
+//    ResponseEntity<Object> getTravelTipsById (@PathVariable Long id) {
+//        byte[] ttd = service.getTravelTipsById(id);
+//        return new ResponseEntity<>(ttd, HttpStatus.OK);
 //    }
 
-    @PostMapping(value = "/travel-tips")
-    ResponseEntity<Object> createTravelTips(@RequestBody TravelTipsDto ttdt, MultipartFile file) {
-        try {
-            if (file == null) {
-                Path path = Paths.get("C:\\IdeaProjects\\backend\\src\\main\\java\\com\\graduation\\backend\\assets\\NotIncluded.pdf");
-                byte[] content = null;
-                content = Files.readAllBytes(path);
-                file = new MockMultipartFile("NotIncluded.pdf", "NotIncluded.pdf", "text/pdf", content);
-                TravelTips pdfTravel = service.createTravelTips(ttdt, file);
-                return new ResponseEntity<>(pdfTravel, HttpStatus.CREATED);
+
+    @PostMapping("/travel-tips")
+    public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdt, BindingResult br) throws IOException {
+        if (br.hasErrors()) {
+            StringBuilder sb = new StringBuilder();
+            for(FieldError fe : br.getFieldErrors()) {
+                sb.append(fe.getDefaultMessage());
+                sb.append("\n");
             }
-                TravelTips pdfTravel = service.createTravelTips(ttdt, file);
-                return new ResponseEntity<>(pdfTravel, HttpStatus.CREATED);
-
-        } catch (IOException exception) {
-            return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(sb.toString(), HttpStatus.BAD_REQUEST);
+        } else {
+            service.createTravelTips(ttdt);
+            return new ResponseEntity<>("Tip added!", HttpStatus.CREATED);
         }
-
     }
+
+//    @PostMapping(value = "/travel-tips")
+//    ResponseEntity<Object> createTravelTips(@RequestBody TravelTipsDto ttdt, MultipartFile file) {
+//        try {
+//            if (file == null) {
+//                Path path = Paths.get("C:\\IdeaProjects\\backend\\src\\main\\java\\com\\graduation\\backend\\assets\\NotIncluded.pdf");
+//                byte[] content = null;
+//                content = Files.readAllBytes(path);
+//                file = new MockMultipartFile("NotIncluded.pdf", "NotIncluded.pdf", "text/pdf", content);
+//                TravelTips pdfTravel = service.createTravelTips(ttdt, file);
+//                return new ResponseEntity<>(pdfTravel, HttpStatus.CREATED);
+//            }
+//                TravelTips pdfTravel = service.createTravelTips(ttdt, file);
+//                return new ResponseEntity<>(pdfTravel, HttpStatus.CREATED);
+//
+//        } catch (IOException exception) {
+//            return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+//        }
+//
+//    }
 
 //    @RestController
 //    public class ImageController {
@@ -87,11 +86,18 @@ public class TravelTipsController {
 //            return "Image uploaded";
 //        }
 //
+
+
+
+
 //        @GetMapping(value = "/images/{id}", produces = MediaType.IMAGE_PNG_VALUE)
 //        public @ResponseBody byte[] download(@PathVariable Long id) {
 //            Image img = imgRepos.findById(id).get();
 //            return img.content;
 //        }
+
+
+
 
 //    @PostMapping("/travel-tips/{id}/add-pdf")
 //    ResponseEntity<Object> createTravelTips(@PathVariable Long id, @RequestBody MultipartFile file) throws IOException {
