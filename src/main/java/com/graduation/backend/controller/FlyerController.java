@@ -1,5 +1,6 @@
 package com.graduation.backend.controller;
 
+import com.graduation.backend.dto.FlyerDto;
 import com.graduation.backend.model.Flyer;
 import com.graduation.backend.service.FlyerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +10,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
-import java.util.Objects;
+import java.util.*;
 
 @RestController
 public class FlyerController {
 
         @Autowired
         FlyerService service;
+
+    @GetMapping("flyer")
+    public ResponseEntity<Object> getFlyer() {
+        List<FlyerDto> flyer = service.getFlyer();
+        return new ResponseEntity<>(flyer, HttpStatus.OK);
+    }
+
+    @GetMapping(value  = "/flyer/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
+    ResponseEntity<Object> getFlyerById (@PathVariable Long id) {
+        byte[] flyer = service.getFlyerById(id);
+        return new ResponseEntity<>(flyer, HttpStatus.OK);
+    }
 
         @PostMapping(value = "/flyer")
         ResponseEntity<Object> createFlyer(@RequestBody MultipartFile file) {
@@ -28,13 +41,6 @@ public class FlyerController {
             } catch (IOException exception) {
                 return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
             }
-
-        }
-
-        @GetMapping(value  = "/flyer/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
-        ResponseEntity<Object> getFlyerById (@PathVariable Long id) {
-            byte[] flyer = service.getFlyerById(id);
-            return new ResponseEntity<>(flyer, HttpStatus.OK);
         }
 
         @PutMapping(value  = "/flyer/{id}")

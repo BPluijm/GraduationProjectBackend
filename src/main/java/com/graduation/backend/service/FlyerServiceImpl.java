@@ -1,5 +1,6 @@
 package com.graduation.backend.service;
 
+import com.graduation.backend.dto.FlyerDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Flyer;
 import com.graduation.backend.repository.FlyerRepository;
@@ -7,25 +8,26 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class FlyerServiceImpl implements FlyerService{
+
+    private final ModelMapper mapper = new ModelMapper();
+
     @Autowired
     FlyerRepository repos;
 
-    @Autowired
-    private ModelMapper modelMapper;
-
     @Override
-    public Flyer createFlyer(MultipartFile file) throws IOException {
-        Flyer newFlyer = new Flyer();
-        newFlyer.setFlyer(file.getBytes());
-        Flyer flyer = repos.save(newFlyer);
-
-        return flyer;
+    public List<FlyerDto> getFlyer() {
+        List<Flyer> ld = this.repos.findAll();
+        List<FlyerDto> flyers = new ArrayList<>();
+        for (Flyer flyer : ld) {
+            FlyerDto flyerDto = mapper.map(flyer, FlyerDto.class);
+            flyers.add(flyerDto);
+        }
+        return flyers;
     }
 
     @Override
@@ -36,6 +38,15 @@ public class FlyerServiceImpl implements FlyerService{
         } else {
             throw new RecordNotFoundException("Flyer not found");
         }
+    }
+
+    @Override
+    public Flyer createFlyer(MultipartFile file) throws IOException {
+        Flyer newFlyer = new Flyer();
+        newFlyer.setFlyer(file.getBytes());
+        Flyer flyer = repos.save(newFlyer);
+
+        return flyer;
     }
 
     @Override
