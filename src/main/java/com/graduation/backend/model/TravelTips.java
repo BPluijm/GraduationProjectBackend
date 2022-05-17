@@ -60,8 +60,8 @@ public class TravelTips {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
-    public byte[] getFile() { return file; }
-    public void setFile(byte[] file) { this.file = file; }
+//    public byte[] getFile() { return file; }
+//    public void setFile(byte[] file) { this.file = file; }
 
     public FutureTravels getFutureTravels() {
         return futureTravels;
