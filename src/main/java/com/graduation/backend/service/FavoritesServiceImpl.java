@@ -48,6 +48,9 @@ public class FavoritesServiceImpl implements FavoritesService {
         f.setId(favo.getId());
         f.setTravels((Travels) favo.getTravels());
         f.setUsers((Users) favo.getUsers());
+
+//        Travels t = getTravelByID();
+
         return this.repos.save(f);
     }
 

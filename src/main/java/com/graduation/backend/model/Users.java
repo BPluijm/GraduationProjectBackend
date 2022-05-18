@@ -14,6 +14,7 @@ public class Users {
 
     @Id
     @GeneratedValue
+    @JoinColumn(name = "users_id")
     private Long id;
 
     private String username;

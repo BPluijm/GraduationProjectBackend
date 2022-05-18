@@ -48,19 +48,16 @@ INSERT INTO users (id, username, password, enabled, firstname, lastname, email, 
 VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
        (2002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
        (2003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
-       (2004, 'Henk',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Max', 'B', 'info@max.com', 'Smeetsstraat', 71, '6121PG', 'Heerlen', 'USERS');
+--       (2004, 'Henk',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Max', 'B', 'info@max.com', 'Smeetsstraat', 71, '6121PG', 'Heerlen', 'USERS');
 
 
--- werkt nog niet
-
---INSERT INTO favorites(id, users_id, travels_id)
--- VALUES (3001, '2002', '1020'),
---        (3002, '2002', '1024'),
---        (3003, '2003', '1019'),
---        (3004, '2003', '1020'),
---        (3005, '2003', '1021'),
---        (3006, '2003', '1024');
-
+INSERT INTO favorites(id, users_id, travels_id)
+ VALUES (3001, '2002', '1020'),
+        (3002, '2002', '1024'),
+        (3003, '2003', '1019'),
+        (3004, '2003', '1020'),
+        (3005, '2003', '1021'),
+        (3006, '2003', '1024');
 
 
 --file insert toevoegen

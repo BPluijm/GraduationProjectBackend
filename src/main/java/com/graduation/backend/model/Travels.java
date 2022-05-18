@@ -12,6 +12,7 @@ public class Travels {
 
     @Id
     @GeneratedValue
+    @JoinColumn(name = "travels_id")
     private Long id;
 
     private String country;
@@ -22,11 +23,11 @@ public class Travels {
     private int duration;
 
     @OneToOne
-    @PrimaryKeyJoinColumn(name = "favorites_id")
+//    @PrimaryKeyJoinColumn(name = "favorites_id")
     Favorites favorites;
 
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "users-id")
+//    @PrimaryKeyJoinColumn(name = "users_id")
     Users users;
 
 

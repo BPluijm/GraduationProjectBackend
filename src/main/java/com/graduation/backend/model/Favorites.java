@@ -17,11 +17,11 @@ public class Favorites {
         private Long id;
 
         @OneToOne
-        @PrimaryKeyJoinColumn(name= "travels_id")
+//        @PrimaryKeyJoinColumn(name= "travels_id")
         Travels travels;
 
         @ManyToOne
-        @PrimaryKeyJoinColumn(name = "users-id")
+//        @PrimaryKeyJoinColumn(name = "users_id")
         Users users;
 
 

@@ -15,7 +15,7 @@ public class FavoritesDto {
 
         private Long id;
 
-        private List<Users> users;
+        private Users users;
 
-        private List<Travels> travels;
+        private Travels travels;
 }
