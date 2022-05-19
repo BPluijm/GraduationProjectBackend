@@ -1,11 +1,12 @@
 package com.graduation.backend.service;
 
+import com.graduation.backend.dto.FavoritesDto;
+import com.graduation.backend.model.Favorites;
 import org.modelmapper.ModelMapper;
 import com.graduation.backend.dto.UsersDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -72,6 +73,37 @@ public class UsersServiceImpl implements UsersService {
 
         return this.repos.save(u);
     }
+
+
+
+
+
+
+
+    @Override
+    public List<FavoritesDto> getUsersFavorites(Long id) {
+        Optional<Users> users = repos.findById(id);
+        List<FavoritesDto> favorite = new ArrayList<>();
+        if(users.isPresent()) {
+            List<Favorites> favorites =  users.get().getFavorites();
+            for(Favorites fav : favorites){
+                FavoritesDto favoritesDto = mapper.map(fav, FavoritesDto.class);
+                favorite.add(favoritesDto);
+            }
+            return favorite;
+        } else {
+            throw new RecordNotFoundException("No favorites found");
+        }
+    }
+
+
+
+
+
+
+
+
+
 
         @Override
         public UsersDto updateUsers(UsersDto usersDto, Long id) {

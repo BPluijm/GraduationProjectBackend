@@ -1,10 +1,12 @@
 package com.graduation.backend.service;
 
+import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.model.Users;
+import com.graduation.backend.repository.FavoritesRepository;
 import com.graduation.backend.repository.TravelsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class TravelsServiceImpl implements TravelsService {
 
     @Autowired
     TravelsRepository repos;
+
+    @Autowired
+    FavoritesRepository fRepos;
 
     @Autowired
     FavoritesService service;
@@ -54,6 +59,15 @@ public class TravelsServiceImpl implements TravelsService {
         t.setDescription(trip.getDescription());
         t.setDuration(trip.getDuration());
         return this.repos.save(t);
+    }
+
+    public Favorites addFavorites(FavoritesDto favo) {
+        Favorites f = new Favorites();
+        f.setId(favo.getId());
+        f.setTravels(favo.getTravels());
+        f.setUsers((Users) favo.getUsers());
+
+        return this.fRepos.save(f);
     }
 
 //    @Override

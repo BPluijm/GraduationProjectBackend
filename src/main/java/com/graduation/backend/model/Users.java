@@ -2,6 +2,7 @@ package com.graduation.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
 import java.util.List;
@@ -29,8 +30,13 @@ public class Users {
     private String city;
     private String role;
 
-    @OneToMany
+//    @OneToMany
+//    private List<Favorites> favorites;
+
+    @OneToMany(mappedBy = "users")
+    @JsonManagedReference(value = "users-favorites")
     private List<Favorites> favorites;
+
 
     @OneToMany
     private List<TravelTips> travelTips;

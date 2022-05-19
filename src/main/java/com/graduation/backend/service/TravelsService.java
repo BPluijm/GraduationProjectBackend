@@ -1,6 +1,8 @@
 package com.graduation.backend.service;
 
+import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.dto.TravelsDto;
+import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 
 import java.util.List;
@@ -11,7 +13,7 @@ public interface TravelsService {
     Travels createTravels(TravelsDto travelsDto);
     TravelsDto updateTravels(TravelsDto tdto, Long id);
     TravelsDto deleteTravels(Long id);
-//    String addFavorites(Long id);
+    Favorites addFavorites(FavoritesDto favo);
 }
 
 

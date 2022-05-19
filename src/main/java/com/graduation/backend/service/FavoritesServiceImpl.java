@@ -6,6 +6,8 @@ import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.Travels;
 import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.FavoritesRepository;
+import com.graduation.backend.repository.TravelsRepository;
+import com.graduation.backend.repository.UsersRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,13 @@ public class FavoritesServiceImpl implements FavoritesService {
     @Autowired
     FavoritesRepository repos;
 
-        @Override
+    @Autowired
+    TravelsRepository tRepo;
+
+    @Autowired
+    UsersRepository uRepo;
+
+    @Override
     public List<FavoritesDto> getFavorites() {
         List<Favorites> fav = repos.findAll();
         List<FavoritesDto> fdto = new ArrayList<>();
@@ -42,6 +50,28 @@ public class FavoritesServiceImpl implements FavoritesService {
         }
     }
 
+//    @Override
+//    public Favorites createFavorites(FavoritesDto favo) {
+//        Favorites f = new Favorites();
+//        f.setId(favo.getId());
+//        f.setTravels((Travels) favo.getTravels());
+//        f.setUsers((Users) favo.getUsers());
+//        Travels t = tRepo.findById(0);
+//        //add
+//        t.setFavorites(favo.getId());
+//        Users u = uRepo.findById(0);
+//        //add
+//        u.setFavorites(favo.getId());
+//        return this.repos.save(f);
+//    }
+
+//    @Override
+//    public FavoritesDto createFavorites(FavoritesDto favoritesDto) {
+//        Favorites favorite = mapper.map(favoritesDto, Favorites.class);
+//        Favorites favo = repos.save(favorite);
+//        return mapper.map(favo, FavoritesDto.class);
+//    }
+
     @Override
     public Favorites createFavorites(FavoritesDto favo) {
         Favorites f = new Favorites();
@@ -53,6 +83,7 @@ public class FavoritesServiceImpl implements FavoritesService {
 
         return this.repos.save(f);
     }
+
 
     @Override
     public FavoritesDto deleteFavorites(Long id) {

@@ -17,12 +17,18 @@ public class Favorites {
         private Long id;
 
         @OneToOne
+//        @OneToOne(mappedBy = "users")
 //        @PrimaryKeyJoinColumn(name= "travels_id")
         Travels travels;
 
+//        @ManyToOne
+////        @PrimaryKeyJoinColumn(name = "users_id")
+//        Users users;
+
         @ManyToOne
-//        @PrimaryKeyJoinColumn(name = "users_id")
-        Users users;
+        @JsonBackReference(value = "users-favorites")
+        @JoinColumn(name = "users_id")
+        private Users users;
 
 
         public Long getId() {

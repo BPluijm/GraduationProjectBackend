@@ -30,6 +30,18 @@ public class UsersController {
 
 
 
+    @GetMapping("/customers/{id}/favorites")
+    ResponseEntity<Object> getUsersFavorites (@PathVariable Long id) {
+        return new ResponseEntity<>(service.getUsersFavorites(id), HttpStatus.OK);
+    }
+
+
+
+
+
+
+
+
     @PostMapping("users")
     ResponseEntity<Object> createUsers (@Valid @RequestBody UsersDto cdto, BindingResult br) {
         if (br.hasErrors()) {

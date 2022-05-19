@@ -1,5 +1,6 @@
 package com.graduation.backend.controller;
 
+import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.dto.TravelsDto;
 import com.graduation.backend.service.TravelsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,10 +43,16 @@ public class TravelsController {
         }
     }
 
-//    @PostMapping("/travels/{id}/favorites")
-//    ResponseEntity<Object> createTravels(@PathVariable Long id) {
-//        return new ResponseEntity<>(service.addFavorites(id), HttpStatus.CREATED);
-//    }
+
+
+
+    @PostMapping("/travels/{id}/favorites")
+    ResponseEntity<Object> createTravels(@PathVariable FavoritesDto favo) {
+        return new ResponseEntity<>(service.addFavorites(favo), HttpStatus.CREATED);
+    }
+
+
+
 
 
     @PutMapping("travels/{id}")
