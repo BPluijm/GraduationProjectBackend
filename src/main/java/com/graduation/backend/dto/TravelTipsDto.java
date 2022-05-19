@@ -1,8 +1,11 @@
 package com.graduation.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.graduation.backend.model.FutureTravels;
+import com.graduation.backend.model.Users;
 import lombok.*;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,5 +26,9 @@ public class TravelTipsDto {
 
         @NotBlank(message = "Please enter a description.")
         private String description;
+
+        private List<Users> users;
+
+        private List<FutureTravels> futureTravels;
 
 }

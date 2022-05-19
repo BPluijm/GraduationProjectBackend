@@ -29,6 +29,22 @@ public class TravelTipsController {
     }
 
 
+
+
+
+//    @GetMapping("/users/{id}/traveltips")
+//    ResponseEntity<Object> getUsersTravelTips (@PathVariable Long id) {
+//        return new ResponseEntity<>(service.getUsersTravelTips(id), HttpStatus.OK);
+//    }
+
+
+
+
+
+
+
+
+
     @PostMapping("/travel-tips")
     public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdt, BindingResult br) throws IOException {
         if (br.hasErrors()) {

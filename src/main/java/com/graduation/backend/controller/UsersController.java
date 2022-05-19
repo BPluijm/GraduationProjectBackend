@@ -30,7 +30,7 @@ public class UsersController {
 
 
 
-    @GetMapping("/customers/{id}/favorites")
+    @GetMapping("/users/{id}/favorites")
     ResponseEntity<Object> getUsersFavorites (@PathVariable Long id) {
         return new ResponseEntity<>(service.getUsersFavorites(id), HttpStatus.OK);
     }

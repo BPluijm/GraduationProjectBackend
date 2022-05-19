@@ -1,8 +1,10 @@
 package com.graduation.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -26,6 +28,17 @@ public class TravelTips {
     @OneToOne
     @PrimaryKeyJoinColumn(name = "users_id")
     Users users;
+
+////    @OneToMany(mappedBy = "futuretravels")
+//    @JsonManagedReference(value = "users-futuretravels")
+//    private List<FutureTravels> futureTravels;
+//
+////    @OneToMany(mappedBy = "users")
+//    @JsonManagedReference(value = "users-traveltips")
+//    private List<Users> users;
+
+
+
 
 
     public Long getId() { return id; }

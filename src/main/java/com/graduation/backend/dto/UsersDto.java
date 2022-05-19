@@ -59,7 +59,7 @@ public class UsersDto {
 
     private List<Favorites> favorites;
 
-    private List<TravelTips> travelTips;
+//    private List<TravelTips> travelTips;
 
 }
 
