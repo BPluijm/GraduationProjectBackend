@@ -46,10 +46,10 @@ public class TravelsController {
 
 
 
-    @PostMapping("/travels/{id}/favorites")
-    ResponseEntity<Object> createTravels(@PathVariable FavoritesDto favo) {
-        return new ResponseEntity<>(service.addFavorites(favo), HttpStatus.CREATED);
-    }
+//    @PostMapping("/travels/{id}/favorites")
+//    ResponseEntity<Object> createTravels(@PathVariable FavoritesDto favo) {
+//        return new ResponseEntity<>(service.addFavorites(favo), HttpStatus.CREATED);
+//    }
 
 
 

@@ -30,17 +30,11 @@ public class Users {
     private String city;
     private String role;
 
-//    @OneToMany
-//    private List<Favorites> favorites;
-
-    @OneToMany(mappedBy = "users")
-    @JsonManagedReference(value = "users-favorites")
+    @OneToMany
     private List<Favorites> favorites;
 
-
-//    @OneToMany(mappedBy = "users")
-//    @JsonManagedReference(value = "users-traveltips")
-//    private List<TravelTips> travelTips;
+    @OneToMany
+    private List<TravelTips> travelTips;
 
 
     public Long getId() { return id; }
@@ -82,8 +76,8 @@ public class Users {
     public List<Favorites> getFavorites() { return favorites; }
     public void setFavorites(List<Favorites> favorites) { this.favorites = favorites; }
 
-//    public List<TravelTips> getTravelTips() { return travelTips; }
-//    public void setTravelTips(List<TravelTips> travelTips) { this.travelTips = travelTips; }
+    public List<TravelTips> getTravelTips() { return travelTips; }
+    public void setTravelTips(List<TravelTips> travelTips) { this.travelTips = travelTips; }
 
 }
 

@@ -11,7 +11,7 @@ public interface UsersService {
     UsersDto getUsersById(Long id);
     Users createUsers(UsersDto usersDto);
 
-    List<FavoritesDto> getUsersFavorites(Long id);
+//    List<FavoritesDto> getUsersFavorites(Long id);
 
     UsersDto updateUsers(UsersDto userDto, Long id);
     UsersDto deleteUsers(Long id);

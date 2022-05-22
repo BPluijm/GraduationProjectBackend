@@ -22,11 +22,14 @@ public class FavoritesServiceImpl implements FavoritesService {
     @Autowired
     FavoritesRepository repos;
 
-    @Autowired
-    TravelsRepository tRepo;
-
-    @Autowired
-    UsersRepository uRepo;
+//    @Autowired
+//    TravelsRepository tRepo;
+//
+//    @Autowired
+//    UsersRepository uRepo;
+//
+//    @Autowired
+//    TravelsService tService;
 
     @Override
     public List<FavoritesDto> getFavorites() {
@@ -53,24 +56,28 @@ public class FavoritesServiceImpl implements FavoritesService {
 //    @Override
 //    public Favorites createFavorites(FavoritesDto favo) {
 //        Favorites f = new Favorites();
+//        //Get actual object instead of DTO object
+//        //add null check for error handling
+//        //return error for null
+//        Travels t = favo.getTravels();
+//        Users u = favo.getUsers();
 //        f.setId(favo.getId());
-//        f.setTravels((Travels) favo.getTravels());
-//        f.setUsers((Users) favo.getUsers());
-//        Travels t = tRepo.findById(0);
-//        //add
-//        t.setFavorites(favo.getId());
-//        Users u = uRepo.findById(0);
-//        //add
-//        u.setFavorites(favo.getId());
+//        f.setTravels(t);
+//        f.setUsers(u);
+//        List<Favorites> favoritesTravelList = t.getFavorites();
+//        favoritesTravelList.add(f);
+//        t.setFavorites(favoritesTravelList);
+//        List<Favorites> favoritesUserList = u.getFavorites();
+//        favoritesUserList.add(f);
+//        u.setFavorites(favoritesUserList);
+//        tRepo.save(t);
+//        uRepo.save(u);
 //        return this.repos.save(f);
 //    }
 
-//    @Override
-//    public FavoritesDto createFavorites(FavoritesDto favoritesDto) {
-//        Favorites favorite = mapper.map(favoritesDto, Favorites.class);
-//        Favorites favo = repos.save(favorite);
-//        return mapper.map(favo, FavoritesDto.class);
-//    }
+
+
+
 
     @Override
     public Favorites createFavorites(FavoritesDto favo) {
@@ -79,10 +86,29 @@ public class FavoritesServiceImpl implements FavoritesService {
         f.setTravels((Travels) favo.getTravels());
         f.setUsers((Users) favo.getUsers());
 
-//        Travels t = getTravelByID();
+//        Travels t = tService.getTravelsById(favo.getTravels());
 
         return this.repos.save(f);
     }
+
+//    @Override
+//    public FavoritesDto createFavorites(FavoritesDto favoritesDto) {
+//        Favorites favorite = mapper.map(favoritesDto, Favorites.class);
+//        Favorites favo = repos.save(favorite);
+//        return mapper.map(favo, FavoritesDto.class);
+//    }
+
+//    @Override
+//    public Favorites createFavorites(FavoritesDto favo) {
+//        Favorites f = new Favorites();
+//        f.setId(favo.getId());
+//        f.setTravels((Travels) favo.getTravels());
+//        f.setUsers((Users) favo.getUsers());
+//
+////        Travels t = getTravelByID();
+//
+//        return this.repos.save(f);
+//    }
 
 
     @Override

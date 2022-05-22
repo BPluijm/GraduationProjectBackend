@@ -61,14 +61,14 @@ public class TravelsServiceImpl implements TravelsService {
         return this.repos.save(t);
     }
 
-    public Favorites addFavorites(FavoritesDto favo) {
-        Favorites f = new Favorites();
-        f.setId(favo.getId());
-        f.setTravels(favo.getTravels());
-        f.setUsers((Users) favo.getUsers());
-
-        return this.fRepos.save(f);
-    }
+//    public Favorites addFavorites(FavoritesDto favo) {
+//        Favorites f = new Favorites();
+//        f.setId(favo.getId());
+//        f.setTravels(favo.getTravels());
+//        f.setUsers((Users) favo.getUsers());
+//
+//        return this.fRepos.save(f);
+//    }
 
 //    @Override
 //    public String addFavorites(Long id) {

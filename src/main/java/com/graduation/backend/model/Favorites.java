@@ -21,14 +21,10 @@ public class Favorites {
 //        @PrimaryKeyJoinColumn(name= "travels_id")
         Travels travels;
 
-//        @ManyToOne
-////        @PrimaryKeyJoinColumn(name = "users_id")
-//        Users users;
-
         @ManyToOne
-        @JsonBackReference(value = "users-favorites")
-        @JoinColumn(name = "users_id")
-        private Users users;
+//        @PrimaryKeyJoinColumn(name = "users_id")
+        Users users;
+
 
 
         public Long getId() {

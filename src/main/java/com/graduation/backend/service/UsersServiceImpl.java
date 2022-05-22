@@ -80,21 +80,21 @@ public class UsersServiceImpl implements UsersService {
 
 
 
-    @Override
-    public List<FavoritesDto> getUsersFavorites(Long id) {
-        Optional<Users> users = repos.findById(id);
-        List<FavoritesDto> favorite = new ArrayList<>();
-        if(users.isPresent()) {
-            List<Favorites> favorites =  users.get().getFavorites();
-            for(Favorites fav : favorites){
-                FavoritesDto favoritesDto = mapper.map(fav, FavoritesDto.class);
-                favorite.add(favoritesDto);
-            }
-            return favorite;
-        } else {
-            throw new RecordNotFoundException("No favorites found");
-        }
-    }
+//    @Override
+//    public List<FavoritesDto> getUsersFavorites(Long id) {
+//        Optional<Users> users = repos.findById(id);
+//        List<FavoritesDto> favorite = new ArrayList<>();
+//        if(users.isPresent()) {
+//            List<Favorites> favorites =  users.get().getFavorites();
+//            for(Favorites fav : favorites){
+//                FavoritesDto favoritesDto = mapper.map(fav, FavoritesDto.class);
+//                favorite.add(favoritesDto);
+//            }
+//            return favorite;
+//        } else {
+//            throw new RecordNotFoundException("No favorites found");
+//        }
+//    }
 
 
 
