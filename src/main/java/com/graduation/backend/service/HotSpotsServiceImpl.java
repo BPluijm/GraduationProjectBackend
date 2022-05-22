@@ -46,6 +46,7 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
         hs.setName(hsdt.getName());
         hs.setCountry(hsdt.getCountry());
         hs.setArea(hsdt.getArea());
+        hs.setRemark(hsdt.getRemark());
         hs.setFlyer(hsdt.getFlyer());
         return this.repos.save(hs);
 

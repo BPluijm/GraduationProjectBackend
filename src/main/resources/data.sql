@@ -62,10 +62,10 @@ INSERT INTO favorites(id, users_id, travels_id)
 
 --file insert toevoegen
 
-INSERT INTO hotspots(id, name, country, area)
-    VALUES (3001, 'Pyramids', 'Egypt', 'Cairo'),
-           (3002, 'Lightning storms', 'Venezuela', 'Lake Maracaibo'),
-           (3003, 'Tree of Knowledge', 'Australia', 'Barcaldine Queensland');
+INSERT INTO hotspots(id, name, country, area, remark)
+    VALUES (3001, 'Pyramids', 'Egypt', 'Cairo', 'Amazing view from the city of Cairo'),
+           (3002, 'Lightning storms', 'Venezuela', 'Lake Maracaibo', 'Storm chasers must see'),
+           (3003, 'Tree of Knowledge', 'Australia', 'Barcaldine Queensland', 'just a dead tree in the middle of nowhere.');
 
 
 

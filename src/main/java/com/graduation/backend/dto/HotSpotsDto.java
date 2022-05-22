@@ -22,6 +22,8 @@ public class HotSpotsDto {
     @NotBlank(message = "Please enter an area in this country")
     private String area;
 
+    private String remark;
+
     private Flyer flyer;
 
 }

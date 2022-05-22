@@ -20,6 +20,7 @@ public class HotSpots {
     private String name;
     private String country;
     private String area;
+    private String remark;
 
     @ManyToOne
     @PrimaryKeyJoinColumn(name = "flyer_id")
@@ -37,6 +38,9 @@ public class HotSpots {
 
     public String getArea() { return area; }
     public void setArea(String area) { this.area = area; }
+
+    public String getRemark() { return remark; }
+    public void setRemark(String remark) { this.remark = remark; }
 
     public Flyer getFlyer() { return flyer; }
     public void setFlyer(Flyer flyer) { this.flyer = flyer; }
