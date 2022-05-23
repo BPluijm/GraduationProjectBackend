@@ -45,10 +45,9 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging brid
 
 
 INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)
-VALUES (2001, 'TravelNerd', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
-       (2002, 'Kasper', 'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USERS'),
-       (2003, 'Manou',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 71, '6666CA', 'Swalmen', 'USERS');
---       (2004, 'Henk',  'HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Max', 'B', 'info@max.com', 'Smeetsstraat', 71, '6121PG', 'Heerlen', 'USERS');
+VALUES (2001, 'TravelNerd', 'ADMIN HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
+       (2002, 'Kasper', 'BANAAN HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USER'),
+       (2003, 'Manou',  'APPEL HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 37, '6666CA', 'Swalmen', 'USER');
 
 
 INSERT INTO favorites(id, users_id, travels_id)
@@ -66,7 +65,6 @@ INSERT INTO hotspots(id, name, country, area, remark)
     VALUES (3001, 'Pyramids', 'Egypt', 'Cairo', 'Amazing view from the city of Cairo'),
            (3002, 'Lightning storms', 'Venezuela', 'Lake Maracaibo', 'Storm chasers must see'),
            (3003, 'Tree of Knowledge', 'Australia', 'Barcaldine Queensland', 'just a dead tree in the middle of nowhere.');
-
 
 
 --INSERT INTO authorities (username, authority)
