@@ -57,5 +57,4 @@ public class FlyerController {
         ResponseEntity<Object> deleteFlyer (@PathVariable Long id) {
             return new ResponseEntity<>(service.deleteFlyer(id), HttpStatus.OK);
         }
-
 }

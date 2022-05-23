@@ -3,6 +3,7 @@ package com.graduation.backend.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -22,8 +23,8 @@ public class Travels {
     private String description;
     private int duration;
 
-    @OneToOne
-//    @PrimaryKeyJoinColumn(name = "favorites_id")
+    @OneToMany
+    //    @PrimaryKeyJoinColumn(name = "favorites_id")
     Favorites favorites;
 
     @ManyToOne
