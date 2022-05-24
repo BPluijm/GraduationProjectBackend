@@ -35,11 +35,8 @@ public class Users {
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TravelTips> travelTips;
 
-
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HotSpots> hotspots;
-
-
 
 
     public Long getId() { return id; }
@@ -86,6 +83,7 @@ public class Users {
 
     public List<HotSpots> getHotSpots() { return hotspots; }
     public void setHotSpots(List<HotSpots> hotspots) { this.hotspots = hotspots; }
+
 }
 
 

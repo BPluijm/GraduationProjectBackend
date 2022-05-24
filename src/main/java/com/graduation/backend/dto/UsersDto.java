@@ -7,10 +7,9 @@ import com.graduation.backend.model.Favorites;
 import com.graduation.backend.model.HotSpots;
 import com.graduation.backend.model.TravelTips;
 import lombok.*;
-
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.util.List;
+import java.util.*;
 
 
 @Data

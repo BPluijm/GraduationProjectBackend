@@ -2,6 +2,7 @@ package com.graduation.backend.controller;
 
 import com.graduation.backend.dto.UsersDto;
 import com.graduation.backend.service.UsersService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
@@ -10,12 +11,9 @@ import java.util.List;
 
 @RestController
 public class UsersController {
-    private final UsersService service;
 
-    public UsersController(UsersService service) {
-        this.service = service;
-
-    }
+    @Autowired
+    UsersService service;
 
     @GetMapping("/users")
     ResponseEntity<Object> getUsers () {
