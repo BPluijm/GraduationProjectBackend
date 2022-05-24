@@ -1,6 +1,5 @@
 package com.graduation.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
@@ -24,13 +23,11 @@ public class FutureTravels {
     private int duration;
     private int costs;
 
- 
     @OneToMany(mappedBy = "futureTravels", cascade = CascadeType.ALL, orphanRemoval = true)
     List<TravelTips> travelTips;
 
     @ManyToOne
     Users users;
-
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

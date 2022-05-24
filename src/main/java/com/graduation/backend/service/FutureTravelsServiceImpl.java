@@ -59,12 +59,9 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         ft.setCategory(ftd.getCategory());
         ft.setDuration(ftd.getDuration());
         ft.setCosts(ftd.getCosts());
-//        ft.setTips(ftd.getTips());
-//        ft.getUsers(ftd.getUsers());
         repos.save(ft);
         return mapper.map(ft, FutureTravelsDto.class);
     }
-
 
     @Override
     public FutureTravelsDto deleteFutureTravels(Long id) {

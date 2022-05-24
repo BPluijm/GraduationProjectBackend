@@ -1,7 +1,5 @@
 package com.graduation.backend.service;
 
-import com.graduation.backend.dto.FavoritesDto;
-import com.graduation.backend.dto.FutureTravelsDto;
 import com.graduation.backend.dto.TravelTipsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.*;
@@ -50,32 +48,6 @@ public class TravelTipsServiceImpl implements TravelTipsService {
             throw new RecordNotFoundException("Tip not found");
         }
     }
-
-
-//
-//    @Override
-//    public List<FutureTravelsDto> getUsersTravelTips(Long id) {
-//        Optional<TravelTips> travelTips = repos.findById(id);
-//        List<FutureTravelsDto> futureTravels = new ArrayList<>();
-//        if(travelTips.isPresent()) {
-//            List<FutureTravels> future = (List<FutureTravels>) travelTips.get().getFutureTravels();
-//            for(FutureTravels fut : future){
-//                FutureTravelsDto futureTravelsDto = mapper.map(fut, FutureTravelsDto.class);
-//                futureTravels.add(futureTravelsDto);
-//            }
-//            return futureTravels;
-//        } else {
-//            throw new RecordNotFoundException("No future travels found");
-//        }
-//    }
-
-
-
-
-//    @Override
-//    public String addPdfToTravelTips(Long id, MultipartFile file) throws IOException {
-//        return null;
-//    }
 
     @Override
     public TravelTips createTravelTips(TravelTipsDto ttdt) throws IOException {
