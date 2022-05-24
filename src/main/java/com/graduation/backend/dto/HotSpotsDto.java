@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.graduation.backend.model.Flyer;
+import com.graduation.backend.model.Users;
 import lombok.*;
 import javax.validation.constraints.*;
 import java.util.List;
@@ -27,6 +28,12 @@ public class HotSpotsDto {
     private String remark;
 
 
-//    private Flyer flyer;
+    @JsonIgnore
+    private Users users;
+    private Long users_id;
+
+    @JsonIgnore
+    private Flyer flyer;
+    private Long flyer_id;
 
 }

@@ -36,7 +36,7 @@ public class Users {
     private List<TravelTips> travelTips;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HotSpots> hotspots;
 
 

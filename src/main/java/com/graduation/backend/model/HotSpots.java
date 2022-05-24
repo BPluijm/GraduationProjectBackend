@@ -23,9 +23,13 @@ public class HotSpots {
     private String area;
     private String remark;
 
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "flyer", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Flyer flyer;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    Users users;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    Flyer flyer;
 
 
 
@@ -44,6 +48,9 @@ public class HotSpots {
     public String getRemark() { return remark; }
     public void setRemark(String remark) { this.remark = remark; }
 
-//    public Flyer getFlyer() { return flyer; }
-//    public void setFlyer(Flyer flyer) { this.flyer = flyer; }
+    public Users getUsers() { return users; }
+    public void setUsers(Users users) { this.users = users; }
+
+    public Flyer getFlyer() { return flyer; }
+    public void setFlyer(Flyer flyer) { this.flyer = flyer; }
 }
