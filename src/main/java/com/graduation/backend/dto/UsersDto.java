@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.graduation.backend.enums.Role;
 import com.graduation.backend.model.Favorites;
+import com.graduation.backend.model.HotSpots;
 import com.graduation.backend.model.TravelTips;
 import lombok.*;
 
@@ -60,6 +61,8 @@ public class UsersDto {
     private List<Favorites> favorites;
 
     private List<TravelTips> travelTips;
+
+    private List<HotSpots> hotspots;
 
 }
 

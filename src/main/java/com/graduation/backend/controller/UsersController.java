@@ -27,21 +27,6 @@ public class UsersController {
         return new ResponseEntity<>(service.getUsersById(id), HttpStatus.OK);
     }
 
-
-
-//
-//    @GetMapping("/users/{id}/favorites")
-//    ResponseEntity<Object> getUsersFavorites (@PathVariable Long id) {
-//        return new ResponseEntity<>(service.getUsersFavorites(id), HttpStatus.OK);
-//    }
-
-
-
-
-
-
-
-
     @PostMapping("users")
     ResponseEntity<Object> createUsers (@Valid @RequestBody UsersDto cdto, BindingResult br) {
         if (br.hasErrors()) {
@@ -78,17 +63,5 @@ public class UsersController {
     ResponseEntity<Object> deleteUsers (@PathVariable Long id) {
         return new ResponseEntity<>(service.deleteUsers(id), HttpStatus.OK);
     }
-
-
-//    @GetMapping("/users/{id}/favorites")
-//    ResponseEntity<Object> getFavorites (@PathVariable Long id) {
-//        return new ResponseEntity<>(service.findFavorites(id), HttpStatus.OK);
-//    }
-//    @GetMapping("/users/{id}/favorites")
-//    ResponseEntity<Object> getFavoritesById (@PathVariable Long id) {
-//        return new ResponseEntity<>(service.findByFavoriteId(id), HttpStatus.OK);
-//}
-
-
 }
 

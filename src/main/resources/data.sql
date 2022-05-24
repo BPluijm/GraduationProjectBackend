@@ -36,8 +36,6 @@ VALUES (1001, 'Costa Rica', 'country', 'Road trip', 21, 5000),
        (1006, 'Cambodja', 'country', 'Summer holiday', 21, 4000);
 
 
---file insert toevoegen
-
 INSERT INTO travel_tips (id, name, country, city, description)
 VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging bridges'),
        (1002, 'Frikandellen', 'Australia', 'Melbourne', 'We used to buy Frikandellen at the Dutch shop'),
@@ -59,22 +57,7 @@ INSERT INTO favorites(id, users_id, travels_id)
         (3006, '2003', '1024');
 
 
---file insert toevoegen
-
 INSERT INTO hotspots(id, name, country, area, remark)
     VALUES (3001, 'Pyramids', 'Egypt', 'Cairo', 'Amazing view from the city of Cairo'),
            (3002, 'Lightning storms', 'Venezuela', 'Lake Maracaibo', 'Storm chasers must see'),
            (3003, 'Tree of Knowledge', 'Australia', 'Barcaldine Queensland', 'just a dead tree in the middle of nowhere.');
-
-
---INSERT INTO authorities (username, authority)
---VALUES ('Kasper', 'ROLE_USERS'),
---       ('Manou', 'ROLE_USER'),
---       ('TravelNerd', 'ROLE_ADMIN');
-
-
---       ('', 'ROLE_MODERATOR'),
---       ('', 'ROLE_MODERATOR'),
-
-
-

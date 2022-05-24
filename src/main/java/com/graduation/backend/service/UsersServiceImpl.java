@@ -1,13 +1,12 @@
 package com.graduation.backend.service;
 
-import com.graduation.backend.dto.FavoritesDto;
-import com.graduation.backend.model.Favorites;
 import org.modelmapper.ModelMapper;
 import com.graduation.backend.dto.UsersDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.UsersRepository;
 //import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
@@ -17,18 +16,11 @@ public class UsersServiceImpl implements UsersService {
 
     private final ModelMapper mapper = new ModelMapper();
 
-    private final UsersRepository repos;
-
-    public UsersServiceImpl(UsersRepository repos) {
-        this.repos = repos;
-    }
-
+    @Autowired
+    UsersRepository repos;
 
 //    @Autowired
 //    private PasswordEncoder encoder;
-//
-//        @Autowired
-//    FavoritesRepository repos;
 
     @Override
     public List<UsersDto> getUsers() {
@@ -53,7 +45,6 @@ public class UsersServiceImpl implements UsersService {
         }
     }
 
-
     @Override
     public Users createUsers(UsersDto userDto) {
         Users u = new Users();
@@ -67,43 +58,11 @@ public class UsersServiceImpl implements UsersService {
         u.setHousenumber(userDto.getHousenumber());
         u.setZipcode(userDto.getZipcode());
         u.setCity(userDto.getCity());
-        u.setFavorites(userDto.getFavorites());
         u.setEnabled(userDto.getEnabled());
         u.setRole(userDto.getRole().toString());
 
         return this.repos.save(u);
     }
-
-
-
-
-
-
-
-//    @Override
-//    public List<FavoritesDto> getUsersFavorites(Long id) {
-//        Optional<Users> users = repos.findById(id);
-//        List<FavoritesDto> favorite = new ArrayList<>();
-//        if(users.isPresent()) {
-//            List<Favorites> favorites =  users.get().getFavorites();
-//            for(Favorites fav : favorites){
-//                FavoritesDto favoritesDto = mapper.map(fav, FavoritesDto.class);
-//                favorite.add(favoritesDto);
-//            }
-//            return favorite;
-//        } else {
-//            throw new RecordNotFoundException("No favorites found");
-//        }
-//    }
-
-
-
-
-
-
-
-
-
 
         @Override
         public UsersDto updateUsers(UsersDto usersDto, Long id) {
@@ -118,9 +77,11 @@ public class UsersServiceImpl implements UsersService {
             use.setHousenumber(usersDto.getHousenumber());
             use.setZipcode(usersDto.getZipcode());
             use.setCity(usersDto.getCity());
-            use.setFavorites(usersDto.getFavorites());
             use.setEnabled(usersDto.getEnabled());
             use.setRole(usersDto.getRole().toString());
+            use.setFavorites(usersDto.getFavorites());
+            use.setTravelTips(usersDto.getTravelTips());
+            use.setHotSpots(usersDto.getHotspots());
             repos.save(use);
             return mapper.map(use, UsersDto.class);
         }
