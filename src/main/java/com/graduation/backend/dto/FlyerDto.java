@@ -20,4 +20,8 @@ public class FlyerDto {
     private HotSpots hotspots;
     private Long hotspots_id;
 
+    @JsonIgnore
+    private TravelTips travelTips;
+    private Long travelTips_id;
+
 }

@@ -1,5 +1,6 @@
 package com.graduation.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
@@ -22,8 +23,9 @@ public class HotSpots {
     private String area;
     private String remark;
 
-    @OneToMany(mappedBy = "flyer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Flyer flyer;
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "flyer", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Flyer flyer;
 
 
 
@@ -42,6 +44,6 @@ public class HotSpots {
     public String getRemark() { return remark; }
     public void setRemark(String remark) { this.remark = remark; }
 
-    public Flyer getFlyer() { return flyer; }
-    public void setFlyer(Flyer flyer) { this.flyer = flyer; }
+//    public Flyer getFlyer() { return flyer; }
+//    public void setFlyer(Flyer flyer) { this.flyer = flyer; }
 }

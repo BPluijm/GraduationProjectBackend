@@ -30,6 +30,10 @@ public class TravelTips {
     @ManyToOne(fetch = FetchType.LAZY)
     Users users;
 
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    Flyer flyer;
+
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -55,4 +59,7 @@ public class TravelTips {
 
     public Users getUsers() { return users; }
     public void setUsers(Users users) { this.users = users; }
+
+    public Flyer getFlyer() { return flyer; }
+    public void setFlyer(Flyer flyer) { this.flyer = flyer; }
 }

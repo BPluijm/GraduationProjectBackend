@@ -47,7 +47,7 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
         hs.setCountry(hsdt.getCountry());
         hs.setArea(hsdt.getArea());
         hs.setRemark(hsdt.getRemark());
-        hs.setFlyer(hsdt.getFlyer());
+//        hs.setFlyer(hsdt.getFlyer());
         return this.repos.save(hs);
 
     }
@@ -58,7 +58,7 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
         hots.setName(hotSpots.getName());
         hots.setCountry(hotSpots.getCountry());
         hots.setArea(hotSpots.getArea());
-        hots.setFlyer(hotSpots.getFlyer());
+//        hots.setFlyer(hotSpots.getFlyer());
         repos.save(hots);
         return "Hotspots are updated";
     }
