@@ -45,9 +45,9 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging brid
 
 
 INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)
-VALUES (2001, 'TravelNerd', 'ADMIN', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
-       (2002, 'Kasper', 'BANAAN', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USER'),
-       (2003, 'Manou',  'APPEL', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 37, '6666CA', 'Swalmen', 'USER');
+VALUES (2001, 'TravelNerd', '$2a$12$GsGcGcEh1kMeG8PPtm5jguCDa9FGzT.TZHej2IhM7D7FJ8X68Y3EO', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
+       (2002, 'Kasper', '$2a$12$4FT9H/FZxHAlTdFyGeL8xO12sApnzAPZvd1Ph4BYmYa9V.sOKKznC', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USER'),
+       (2003, 'Manou', '$2a$12$wOQdSrdoY3fSkFAPzBTYeeYmADOQw0XLzEQ5a/oYMmMWM8hL802pq', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 37, '6666CA', 'Swalmen', 'USER');
 
 
 INSERT INTO favorites(id, users_id, travels_id)
