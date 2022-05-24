@@ -30,10 +30,10 @@ public class Users {
     private String city;
     private String role;
 
-    @OneToMany
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Favorites> favorites;
 
-    @OneToMany
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TravelTips> travelTips;
 
 

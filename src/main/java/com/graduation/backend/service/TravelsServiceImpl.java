@@ -88,7 +88,7 @@ public class TravelsServiceImpl implements TravelsService {
         tl.setCity(tvl.getCity());
         tl.setCategory(tvl.getCategory());
         tl.setDescription(tvl.getDescription());
-        tl.setFavorites((Favorites) tvl.getFavorites());
+        tl.setFavorites(tvl.getFavorites());
         tl.setUsers((Users) tvl.getUsers());
         repos.save(tl);
         return mapper.map(tl, TravelsDto.class);

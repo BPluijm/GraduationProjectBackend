@@ -67,13 +67,6 @@ public class TravelTipsServiceImpl implements TravelTipsService {
 
 
 
-
-
-
-
-
-
-
 //    @Override
 //    public String addPdfToTravelTips(Long id, MultipartFile file) throws IOException {
 //        return null;

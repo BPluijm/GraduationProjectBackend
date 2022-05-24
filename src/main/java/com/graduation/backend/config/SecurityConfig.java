@@ -67,30 +67,23 @@
 //                .antMatchers(HttpMethod.GET,"/flyer/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.POST,"/flyer/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.PUT,"/flyer/**").hasAnyAuthority("ADMIN", "USER")
-//                .antMatchers(HttpMethod.DELETE,"/flyer/**").hasAnyAuthority("ADMIN", "USER")
+//                .antMatchers(HttpMethod.DELETE,"/flyer/**").hasAnyAuthority("ADMIN")
 //                .antMatchers(HttpMethod.GET,"/future-travels/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.POST,"/future-travels/**").hasAnyAuthority("ADMIN")
 //                .antMatchers(HttpMethod.PUT,"/future-travels/**").hasAnyAuthority("ADMIN")
 //                .antMatchers(HttpMethod.DELETE,"/future-travels/**").hasAnyAuthority("ADMIN")
 //                .antMatchers(HttpMethod.GET,"/hotspots/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.POST,"/hotspots/**").hasAnyAuthority("ADMIN", "USER")
-//                .antMatchers(HttpMethod.PUT,"/hotspots/**").hasAnyAuthority("ADMIN", "USER")
+//                .antMatchers(HttpMethod.PUT,"/hotspots/**").hasAnyAuthority("ADMIN")
 //                .antMatchers(HttpMethod.DELETE,"/hotspots/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.GET,"/travel-tips/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.POST,"/travel-tips/**").hasAnyAuthority("ADMIN", "USER")
 //                .antMatchers(HttpMethod.PUT,"/travel-tips/**").hasAnyAuthority("ADMIN", "USER")
-//                .antMatchers(HttpMethod.DELETE,"/travel-tips/**").hasAnyAuthority("ADMIN", "USER")
-
-
-
-//  Users mogen alleen ZICHZELF: POST / PUT / DELETE
-
-//                    .antMatchers(HttpMethod.GET,"/users/**").hasAnyAuthority("ADMIN")
-//                    .antMatchers(HttpMethod.POST,"/users/**").hasAnyAuthority("ADMIN", "USER")
-//                    .antMatchers(HttpMethod.PUT,"/users/**").hasAnyAuthority("ADMIN", "USER")
-//                    .antMatchers(HttpMethod.DELETE,"/users/**").hasAnyAuthority("ADMIN", "USER")
-
-
+//                .antMatchers(HttpMethod.DELETE,"/travel-tips/**").hasAnyAuthority("ADMIN")
+//                .antMatchers(HttpMethod.GET,"/users/**").hasAnyAuthority("ADMIN")
+//                .antMatchers(HttpMethod.POST,"/users/**").hasAnyAuthority("ADMIN")
+//                .antMatchers(HttpMethod.PUT,"/users/**").hasAnyAuthority("ADMIN")
+//                .antMatchers(HttpMethod.DELETE,"/users/**").hasAnyAuthority("ADMIN")
 //                .and()
 //                .authorizeRequests().anyRequest().authenticated()
 //                .and()

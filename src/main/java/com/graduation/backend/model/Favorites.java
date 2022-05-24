@@ -16,13 +16,12 @@ public class Favorites {
         @GeneratedValue
         private Long id;
 
-        @OneToOne
-//        @OneToOne(mappedBy = "users")
-//        @PrimaryKeyJoinColumn(name= "travels_id")
+        @JsonIgnore
+        @ManyToOne(fetch = FetchType.LAZY)
         Travels travels;
 
-        @ManyToOne
-//        @PrimaryKeyJoinColumn(name = "users_id")
+        @JsonIgnore
+        @ManyToOne(fetch = FetchType.LAZY)
         Users users;
 
 

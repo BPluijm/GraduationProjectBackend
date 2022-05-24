@@ -1,5 +1,6 @@
 package com.graduation.backend.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.graduation.backend.model.FutureTravels;
 import com.graduation.backend.model.Users;
@@ -27,8 +28,11 @@ public class TravelTipsDto {
         @NotBlank(message = "Please enter a description.")
         private String description;
 
+        @JsonIgnore
         private List<Users> users;
+        private Long users_id;
 
         private List<FutureTravels> futureTravels;
+        private Long futuretravels_id;
 
 }

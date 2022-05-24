@@ -25,7 +25,7 @@ public class Travels {
 
     @OneToMany
     //    @PrimaryKeyJoinColumn(name = "favorites_id")
-    Favorites favorites;
+    List<Favorites> favorites;
 
     @ManyToOne
 //    @PrimaryKeyJoinColumn(name = "users_id")
@@ -75,8 +75,8 @@ public class Travels {
         this.duration = duration;
     }
 
-    public Favorites getFavorites() { return favorites; }
-    public void setFavorites(Favorites favorites) { this.favorites = favorites; }
+    public List<Favorites> getFavorites() { return favorites; }
+    public void setFavorites(List<Favorites> favorites) { this.favorites = favorites; }
 
     public Users getUsers() { return users; }
     public void setUsers(Users users) { this.users = users; }
