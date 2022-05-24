@@ -22,9 +22,9 @@ public class HotSpots {
     private String area;
     private String remark;
 
-    @ManyToOne
-    @PrimaryKeyJoinColumn(name = "flyer_id")
+    @OneToMany(mappedBy = "flyer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Flyer flyer;
+
 
 
     public Long getId() { return id; }

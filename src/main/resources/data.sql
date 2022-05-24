@@ -45,9 +45,9 @@ VALUES (1001, 'Awesome experience', 'Costa Rica', 'San Jose', 'Nice hanging brid
 
 
 INSERT INTO users (id, username, password, enabled, firstname, lastname, email, street, housenumber, zipcode, city, role)
-VALUES (2001, 'TravelNerd', 'ADMIN HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
-       (2002, 'Kasper', 'BANAAN HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USER'),
-       (2003, 'Manou',  'APPEL HOE KRIJG IK HIER EEN GECODEERD WACHTWOORD', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 37, '6666CA', 'Swalmen', 'USER');
+VALUES (2001, 'TravelNerd', 'ADMIN', TRUE, 'Bas', 'Pluijm', 'info@travelnerd.com', 'Pietjepukweg', 71, '1234AA', 'Groningen', 'ADMIN'),
+       (2002, 'Kasper', 'BANAAN', TRUE, 'Kasper', 'Simons', 'info@kasper.nl', 'Puinhoop', 5, '8008SS', 'IJmuiden', 'USER'),
+       (2003, 'Manou',  'APPEL', TRUE, 'Manou', 'Van Lent', 'info@manou.com', 'Kampweg', 37, '6666CA', 'Swalmen', 'USER');
 
 
 INSERT INTO favorites(id, users_id, travels_id)

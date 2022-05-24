@@ -24,6 +24,9 @@ public class HotSpotsDto {
 
     private String remark;
 
+
+
+
     private Flyer flyer;
 
 }

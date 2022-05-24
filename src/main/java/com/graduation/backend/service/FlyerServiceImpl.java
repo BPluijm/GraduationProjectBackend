@@ -3,7 +3,9 @@ package com.graduation.backend.service;
 import com.graduation.backend.dto.FlyerDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Flyer;
+import com.graduation.backend.model.HotSpots;
 import com.graduation.backend.repository.FlyerRepository;
+import com.graduation.backend.repository.HotSpotsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,9 @@ public class FlyerServiceImpl implements FlyerService{
 
     @Autowired
     FlyerRepository repos;
+
+    @Autowired
+    HotSpotsRepository hRepo;
 
     @Override
     public List<FlyerDto> getFlyer() {
@@ -44,9 +49,11 @@ public class FlyerServiceImpl implements FlyerService{
     public Flyer createFlyer(MultipartFile file) throws IOException {
         Flyer newFlyer = new Flyer();
         newFlyer.setFlyer(file.getBytes());
-        Flyer flyer = repos.save(newFlyer);
 
-        return flyer;
+//        HotSpots h = hRepo.getById(file.getHotSpots_id());
+//        newFlyer.setHotSpots(h);
+
+        return this.repos.save(newFlyer);
     }
 
     @Override

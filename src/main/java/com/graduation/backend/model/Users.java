@@ -2,7 +2,6 @@ package com.graduation.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
 import java.util.List;
@@ -35,6 +34,12 @@ public class Users {
 
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TravelTips> travelTips;
+
+
+    @OneToMany
+    private List<HotSpots> hotspots;
+
+
 
 
     public Long getId() { return id; }
@@ -79,6 +84,8 @@ public class Users {
     public List<TravelTips> getTravelTips() { return travelTips; }
     public void setTravelTips(List<TravelTips> travelTips) { this.travelTips = travelTips; }
 
+    public List<HotSpots> getHotSpots() { return hotspots; }
+    public void setHotSpots(List<HotSpots> hotspots) { this.hotspots = hotspots; }
 }
 
 
