@@ -17,11 +17,6 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
     @Autowired
     FutureTravelsRepository repos;
 
-//    @Autowired
-//    FutureTravelsService service;
-
-
-
     @Override
     public List<FutureTravelsDto> getFutureTravels() {
         List<FutureTravels> ld = repos.findAll();
@@ -30,7 +25,6 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
             FutureTravelsDto ftdto = mapper.map(ft, FutureTravelsDto.class);
             fut.add(ftdto);
         }
-
         return fut;
     }
 
@@ -56,17 +50,6 @@ public class FutureTravelsServiceImpl implements FutureTravelsService {
         ft.setCosts(fut.getCosts());
         return this.repos.save(ft);
     }
-
-//    @Override
-//    public String addTips(Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-//        FutureTravels futu = repos.findById(tipId).get();
-//        TravelTips trt =  service.createTravelTips(ttdt, tips);
-//        trt.setFutureTravels(futu);
-//        futu.setTips(trt);
-//        repos.save(futu);
-//        return "Travel tips are added to the future trip";
-//    }
-
 
     @Override
     public FutureTravelsDto updateFutureTravels(FutureTravelsDto ftd, Long id) {

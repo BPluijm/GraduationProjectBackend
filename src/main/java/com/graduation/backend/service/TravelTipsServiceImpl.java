@@ -4,11 +4,10 @@ import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.dto.FutureTravelsDto;
 import com.graduation.backend.dto.TravelTipsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
-import com.graduation.backend.model.Favorites;
-import com.graduation.backend.model.FutureTravels;
-import com.graduation.backend.model.TravelTips;
-import com.graduation.backend.model.Users;
+import com.graduation.backend.model.*;
+import com.graduation.backend.repository.FutureTravelsRepository;
 import com.graduation.backend.repository.TravelTipsRepository;
+import com.graduation.backend.repository.UsersRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +22,12 @@ public class TravelTipsServiceImpl implements TravelTipsService {
 
     @Autowired
     TravelTipsRepository repos;
+
+    @Autowired
+    UsersRepository uRepo;
+
+    @Autowired
+    FutureTravelsRepository ftRepo;
 
     @Override
     public List<TravelTipsDto> getTravelTips() {
@@ -79,6 +84,11 @@ public class TravelTipsServiceImpl implements TravelTipsService {
         tt.setCountry(ttdt.getCountry());
         tt.setCity(ttdt.getCity());
         tt.setDescription(ttdt.getDescription());
+
+        FutureTravels ft = ftRepo.getById(ttdt.getFutureTravels_id());
+        Users u = uRepo.getById(ttdt.getUsers_id());
+        tt.setFutureTravels(ft);
+        tt.setUsers(u);
         return this.repos.save(tt);
     }
 

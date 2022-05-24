@@ -23,7 +23,7 @@ public class TravelTips {
 
 
     @JsonIgnore
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     FutureTravels futureTravels;
 
     @JsonIgnore

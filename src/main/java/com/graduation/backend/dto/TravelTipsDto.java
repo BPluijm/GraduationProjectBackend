@@ -29,10 +29,11 @@ public class TravelTipsDto {
         private String description;
 
         @JsonIgnore
-        private List<Users> users;
+        private Users users;
         private Long users_id;
 
-        private List<FutureTravels> futureTravels;
-        private Long futuretravels_id;
+        @JsonIgnore
+        private FutureTravels futureTravels;
+        private Long futureTravels_id;
 
 }

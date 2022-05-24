@@ -1,9 +1,11 @@
 package com.graduation.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -13,6 +15,7 @@ public class FutureTravels {
 
     @Id
     @GeneratedValue
+    @JoinColumn(name = "travelTips_id")
     private Long id;
 
     private String country;
@@ -21,13 +24,12 @@ public class FutureTravels {
     private int duration;
     private int costs;
 
-    @OneToOne
-    TravelTips travelTips;
+ 
+    @OneToMany(mappedBy = "futureTravels", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<TravelTips> travelTips;
 
-//    @ManyToOne
-//    @JsonBackReference(value = "users-tip")
-//    @JoinColumn(name = "users_id")
-//    private List<Users> users;
+    @ManyToOne
+    Users users;
 
 
     public Long getId() { return id; }
@@ -47,5 +49,15 @@ public class FutureTravels {
 
     public int getCosts() { return costs; }
     public void setCosts(int costs) { this.costs = costs; }
+
+    public List<TravelTips> getTravelTips() {
+        return travelTips;
+    }
+    public void setTravels(List<TravelTips> travelTips) {
+        this.travelTips = travelTips;
+    }
+
+    public Users getUsers() { return users; }
+    public void setUsers(Users users) { this.users = users; }
 
 }

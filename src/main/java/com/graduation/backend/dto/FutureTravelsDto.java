@@ -1,7 +1,9 @@
 package com.graduation.backend.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.graduation.backend.model.TravelTips;
+import com.graduation.backend.model.Users;
 import lombok.*;
 
 import javax.validation.constraints.*;
@@ -31,10 +33,11 @@ public class FutureTravelsDto {
     @NotNull(message = "Please enter the expected costs")
     private int costs;
 
-    private TravelTips travelTip;
+
 
     private List<TravelTips> travelTips;
 
-//    private List<FutureTravels> Future;
+    private List<Users> users;
+
 
 }
