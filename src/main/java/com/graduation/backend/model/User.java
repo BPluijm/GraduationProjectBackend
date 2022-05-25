@@ -8,6 +8,6 @@ public abstract class User {
     @JoinColumn(name = "users-id")
     private Long id;
 
-    private String username
+    private String username;
     private String password;
 }

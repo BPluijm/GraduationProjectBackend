@@ -23,12 +23,10 @@ public class Travels {
     private String description;
     private int duration;
 
-    @OneToMany
-    //    @PrimaryKeyJoinColumn(name = "favorites_id")
+    @OneToMany(mappedBy = "travels", cascade = CascadeType.ALL, orphanRemoval = true)
     List<Favorites> favorites;
 
     @ManyToOne
-//    @PrimaryKeyJoinColumn(name = "users_id")
     Users users;
 
 
