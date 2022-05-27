@@ -49,7 +49,6 @@ public class UsersServiceImpl implements UsersService {
     public Users createUsers(UsersDto userDto) {
         Users u = new Users();
         u.setUsername(userDto.getUsername());
-        u.setPassword(userDto.getPassword());
         u.setPassword(encoder.encode(userDto.getPassword()));
         u.setFirstname(userDto.getFirstname());
         u.setLastname(userDto.getLastname());
@@ -68,7 +67,6 @@ public class UsersServiceImpl implements UsersService {
     public UsersDto updateUsers(UsersDto usersDto, Long id) {
         Users use = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("User not found"));
         use.setUsername(usersDto.getUsername());
-        use.setPassword(usersDto.getPassword());
         use.setPassword(encoder.encode(usersDto.getPassword()));
         use.setFirstname(usersDto.getFirstname());
         use.setLastname(usersDto.getLastname());
