@@ -30,12 +30,6 @@ public class FutureTravelsController {
         return new ResponseEntity<>(ftd, HttpStatus.OK);
     }
 
-//    @GetMapping("/future-travels/{id}/tips")
-//    ResponseEntity<Object> getFutureTravelsTips(@PathVariable Long tipId, TravelTipsDto ttdt, MultipartFile tips) {
-//        return new ResponseEntity<>(service.addTips(tipId,ttdt, tips), HttpStatus.CREATED);
-//    }
-
-
     @PostMapping("/future-travels")
     public ResponseEntity<Object> createFutureTravels(@Valid @RequestBody FutureTravelsDto fut, BindingResult br) {
         if (br.hasErrors()) {

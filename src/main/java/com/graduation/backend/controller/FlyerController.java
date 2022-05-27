@@ -15,8 +15,8 @@ import java.util.*;
 @RestController
 public class FlyerController {
 
-        @Autowired
-        FlyerService service;
+    @Autowired
+    FlyerService service;
 
     @GetMapping("flyer")
     public ResponseEntity<Object> getFlyer() {
@@ -30,18 +30,18 @@ public class FlyerController {
         return new ResponseEntity<>(flyer, HttpStatus.OK);
     }
 
-        @PostMapping(value = "/flyer")
-        ResponseEntity<Object> createFlyer(@RequestBody MultipartFile file) {
-            try {
-                if (Objects.equals(file.getContentType(), "application/pdf")) {
-                    Flyer flyer = service.createFlyer(file);
-                    return new ResponseEntity<>(flyer, HttpStatus.CREATED);
-                }
-                return new ResponseEntity<>("Please upload a pdf file", HttpStatus.BAD_REQUEST);
-            } catch (IOException exception) {
-                return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
-            }
-        }
+    @PostMapping(value = "/flyer")
+    ResponseEntity<Object> createFlyer(@RequestBody MultipartFile file) {
+       try {
+         if (Objects.equals(file.getContentType(), "application/pdf")) {
+         Flyer flyer = service.createFlyer(file);
+         return new ResponseEntity<>(flyer, HttpStatus.CREATED);
+       }
+         return new ResponseEntity<>("Please upload a pdf file", HttpStatus.BAD_REQUEST);
+       } catch (IOException exception) {
+         return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+       }
+    }
 
         @PutMapping(value  = "/flyer/{id}")
         ResponseEntity<Object> updateFlyer (@RequestBody MultipartFile file, @PathVariable Long id) {
@@ -56,5 +56,5 @@ public class FlyerController {
         @DeleteMapping("flyer/{id}")
         ResponseEntity<Object> deleteFlyer (@PathVariable Long id) {
             return new ResponseEntity<>(service.deleteFlyer(id), HttpStatus.OK);
-        }
+    }
 }

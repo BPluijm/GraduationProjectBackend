@@ -26,7 +26,6 @@ public class FavoritesController {
         return new ResponseEntity<>(service.getFavoritesById(id), HttpStatus.OK);
     }
 
-
         @PostMapping("/favorites")
         ResponseEntity<Object> createFavorites (@Valid @RequestBody FavoritesDto favo, BindingResult br) {
             if(br.hasErrors()){

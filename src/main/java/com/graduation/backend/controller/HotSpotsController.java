@@ -28,7 +28,6 @@ public class HotSpotsController {
         return new ResponseEntity<>(service.getHotSpotsById(id), HttpStatus.OK);
     }
 
-
     @PostMapping("/hotspots")
     public ResponseEntity<Object> createHotSpots(@Valid @RequestBody HotSpotsDto hsdt, BindingResult br) throws IOException {
         if (br.hasErrors()) {

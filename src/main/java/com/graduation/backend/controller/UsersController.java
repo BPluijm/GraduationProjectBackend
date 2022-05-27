@@ -40,7 +40,6 @@ public class UsersController {
         }
     }
 
-
     @PutMapping("/users/{id}")
     ResponseEntity<Object> updateUsers (@PathVariable Long id, @Valid @RequestBody UsersDto udto , BindingResult br) {
         if(br.hasErrors()){

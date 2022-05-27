@@ -43,20 +43,18 @@ public class TravelTipsController {
         }
     }
 
+    @PutMapping("/travel-tips/{id}")
+    ResponseEntity<Object> updateTravelTips (@Valid @RequestBody TravelTipsDto ti, @PathVariable Long id) {
+       try {
+            String tip = service.updateTravelTips(ti, id);
+            return new ResponseEntity<>(tip, HttpStatus.OK);
+       } catch (IOException error) {
+            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+       }
+    }
 
-        @PutMapping("/travel-tips/{id}")
-        ResponseEntity<Object> updateTravelTips (@Valid @RequestBody TravelTipsDto ti, @PathVariable Long id) {
-            try {
-                String tip = service.updateTravelTips(ti, id);
-                return new ResponseEntity<>(tip, HttpStatus.OK);
-            } catch (IOException error) {
-                return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-            }
-        }
-
-        @DeleteMapping("travel-tips/{id}")
-        ResponseEntity<Object> deleteTravelTips (@PathVariable Long id) {
-           return new ResponseEntity<>(service.deleteTravelTips(id), HttpStatus.OK);
-        }
-
+    @DeleteMapping("travel-tips/{id}")
+    ResponseEntity<Object> deleteTravelTips (@PathVariable Long id) {
+       return new ResponseEntity<>(service.deleteTravelTips(id), HttpStatus.OK);
+    }
 }
