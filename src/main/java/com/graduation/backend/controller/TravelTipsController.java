@@ -28,23 +28,6 @@ public class TravelTipsController {
         return new ResponseEntity<>(service.getTravelTipsById(id), HttpStatus.OK);
     }
 
-
-
-
-
-//    @GetMapping("/users/{id}/traveltips")
-//    ResponseEntity<Object> getUsersTravelTips (@PathVariable Long id) {
-//        return new ResponseEntity<>(service.getUsersTravelTips(id), HttpStatus.OK);
-//    }
-
-
-
-
-
-
-
-
-
     @PostMapping("/travel-tips")
     public ResponseEntity<Object> createTravelTips(@Valid @RequestBody TravelTipsDto ttdt, BindingResult br) throws IOException {
         if (br.hasErrors()) {
@@ -60,26 +43,6 @@ public class TravelTipsController {
         }
     }
 
-
-//    @PostMapping("/travel-tips/{id}/add-pdf")
-//    ResponseEntity<Object> createTravelTips(@PathVariable Long id, @RequestBody MultipartFile file) throws IOException {
-//        String message = service.addPdfToTravelTips(id, file);
-//        return new ResponseEntity<>(message, HttpStatus.CREATED);
-//    }
-
-
-//    @PostMapping("/travel-tips/{id}/add-pdf")
-//    public ResponseEntity<Object> createTravelTips(@Valid @RequestBody MultipartFile tips) {
-//        try {
-//            if (Objects.equals(tips.getContentType(), "application/pdf")) {
-//                service.createTravelTips(tips);
-//                return new ResponseEntity<>("Tip is added", HttpStatus.CREATED);
-//            }
-//            return new ResponseEntity<>("Only pdf file upload possible", HttpStatus.BAD_REQUEST);
-//        } catch (IOException error) {
-//            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-//        }
-//    }
 
         @PutMapping("/travel-tips/{id}")
         ResponseEntity<Object> updateTravelTips (@Valid @RequestBody TravelTipsDto ti, @PathVariable Long id) {

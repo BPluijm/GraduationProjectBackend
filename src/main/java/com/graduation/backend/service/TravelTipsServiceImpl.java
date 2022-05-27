@@ -3,7 +3,6 @@ package com.graduation.backend.service;
 import com.graduation.backend.dto.TravelTipsDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.*;
-import com.graduation.backend.repository.FlyerRepository;
 import com.graduation.backend.repository.FutureTravelsRepository;
 import com.graduation.backend.repository.TravelTipsRepository;
 import com.graduation.backend.repository.UsersRepository;
@@ -27,9 +26,6 @@ public class TravelTipsServiceImpl implements TravelTipsService {
 
     @Autowired
     FutureTravelsRepository ftRepo;
-
-    @Autowired
-    FlyerRepository fRepo;
 
     @Override
     public List<TravelTipsDto> getTravelTips() {
@@ -63,10 +59,8 @@ public class TravelTipsServiceImpl implements TravelTipsService {
 
         FutureTravels ft = ftRepo.getById(ttdt.getFutureTravels_id());
         Users u = uRepo.getById(ttdt.getUsers_id());
-        Flyer f = fRepo.getById(ttdt.getFlyer_id());
         tt.setFutureTravels(ft);
         tt.setUsers(u);
-        tt.setFlyer(f);
         return this.repos.save(tt);
     }
 

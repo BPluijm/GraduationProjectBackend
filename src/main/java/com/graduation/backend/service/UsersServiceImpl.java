@@ -5,7 +5,7 @@ import com.graduation.backend.dto.UsersDto;
 import com.graduation.backend.exceptions.RecordNotFoundException;
 import com.graduation.backend.model.Users;
 import com.graduation.backend.repository.UsersRepository;
-//import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -19,8 +19,8 @@ public class UsersServiceImpl implements UsersService {
     @Autowired
     UsersRepository repos;
 
-//    @Autowired
-//    private PasswordEncoder encoder;
+    @Autowired
+    private PasswordEncoder encoder;
 
     @Override
     public List<UsersDto> getUsers() {
@@ -50,7 +50,7 @@ public class UsersServiceImpl implements UsersService {
         Users u = new Users();
         u.setUsername(userDto.getUsername());
         u.setPassword(userDto.getPassword());
-//        u.setPassword(encoder.encode(usersDto.getPassword()));
+        u.setPassword(encoder.encode(userDto.getPassword()));
         u.setFirstname(userDto.getFirstname());
         u.setLastname(userDto.getLastname());
         u.setEmail(userDto.getEmail());
@@ -69,7 +69,7 @@ public class UsersServiceImpl implements UsersService {
             Users use = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("User not found"));
             use.setUsername(usersDto.getUsername());
             use.setPassword(usersDto.getPassword());
-//            use.setPassword(encoder.encode(usersDto.getPassword()));
+            use.setPassword(encoder.encode(usersDto.getPassword()));
             use.setFirstname(usersDto.getFirstname());
             use.setLastname(usersDto.getLastname());
             use.setEmail(usersDto.getEmail());

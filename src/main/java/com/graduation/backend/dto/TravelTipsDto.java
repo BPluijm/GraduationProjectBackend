@@ -2,12 +2,11 @@ package com.graduation.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.graduation.backend.model.Flyer;
 import com.graduation.backend.model.FutureTravels;
 import com.graduation.backend.model.Users;
 import lombok.*;
 import javax.validation.constraints.*;
-import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -36,9 +35,4 @@ public class TravelTipsDto {
         @JsonIgnore
         private FutureTravels futureTravels;
         private Long futureTravels_id;
-
-        @JsonIgnore
-        private Flyer flyer;
-        private Long flyer_id;
-
 }
