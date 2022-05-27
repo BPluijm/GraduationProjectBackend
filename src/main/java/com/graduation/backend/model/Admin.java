@@ -3,10 +3,7 @@ package com.graduation.backend.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
@@ -22,8 +19,6 @@ public class Admin extends User {
     private String username;
     private String password;
 
-
-
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -31,6 +26,5 @@ public class Admin extends User {
     public void setUsername(String username) { this.username = username; }
 
     public String getPassword() { return password; }
-    public void setAdminPassword(String password) { this.password = password; }
-
+    public void setPassword(String password) { this.password = password; }
 }

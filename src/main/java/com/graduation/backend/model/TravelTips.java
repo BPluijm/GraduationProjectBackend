@@ -2,10 +2,8 @@ package com.graduation.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -21,7 +19,6 @@ public class TravelTips {
     String city;
     String description;
 
-
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     FutureTravels futureTravels;
@@ -29,7 +26,6 @@ public class TravelTips {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     Users users;
-
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

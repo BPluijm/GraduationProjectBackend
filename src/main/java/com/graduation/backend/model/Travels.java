@@ -29,7 +29,6 @@ public class Travels {
     @ManyToOne
     Users users;
 
-
     public Long getId() {
         return id;
     }
@@ -78,6 +77,4 @@ public class Travels {
 
     public Users getUsers() { return users; }
     public void setUsers(Users users) { this.users = users; }
-
-
 }

@@ -19,11 +19,9 @@ public class Flyer {
     @JsonIgnore
     private byte[] flyer;
 
-
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
     public byte[] getFlyer() { return flyer; }
     public void setFlyer(byte[] flyer) { this.flyer = flyer; }
-
 }

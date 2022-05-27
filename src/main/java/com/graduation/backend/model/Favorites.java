@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 import javax.persistence.*;
 
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,8 +22,6 @@ public class Favorites {
         @JsonIgnore
         @ManyToOne(fetch = FetchType.LAZY)
         Users users;
-
-
 
         public Long getId() {
                 return id;
