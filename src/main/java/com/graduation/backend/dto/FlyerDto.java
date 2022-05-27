@@ -1,9 +1,6 @@
 package com.graduation.backend.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.graduation.backend.model.HotSpots;
-import com.graduation.backend.model.TravelTips;
 import lombok.*;
 
 @Data
@@ -15,5 +12,4 @@ public class FlyerDto {
     private Long id;
 
     private byte[] flyer;
-
 }

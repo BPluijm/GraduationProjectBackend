@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.*;
 import javax.validation.constraints.*;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,5 +22,4 @@ public class HotSpotsDto {
     private String area;
 
     private String remark;
-
 }

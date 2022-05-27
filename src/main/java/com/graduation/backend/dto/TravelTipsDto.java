@@ -7,7 +7,6 @@ import com.graduation.backend.model.Users;
 import lombok.*;
 import javax.validation.constraints.*;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

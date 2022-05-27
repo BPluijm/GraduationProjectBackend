@@ -34,5 +34,4 @@ public class FutureTravelsDto {
     private List<TravelTips> travelTips;
 
     private List<Users> users;
-
 }

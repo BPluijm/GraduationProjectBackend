@@ -11,7 +11,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.*;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
