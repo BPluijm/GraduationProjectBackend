@@ -99,8 +99,6 @@ class UsersServiceImplTest {
 //        tdto.add(tips1);
 //        tdto.add(tips2);
 //
-//
-//
 //        Mockito
 //                .when(repos.findById(usersDto.getId()))
 //                .thenReturn(Optional.of(users));
@@ -109,8 +107,6 @@ class UsersServiceImplTest {
 //        List<TravelTipsDto> expected = tdto;
 //
 //        List<TravelTipsDto> found = service.getTravelTips(1001L);
-//
-//
 //    }
 
 //    @Test
@@ -138,9 +134,6 @@ class UsersServiceImplTest {
         Mockito
                 .when(repos.findById(usersDto.getId()))
                 .thenReturn(Optional.of(users));
-
-
-
         UsersDto expected = usersDto;
         UsersDto found = service.deleteUsers(usersDto.getId());
 
