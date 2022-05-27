@@ -1,38 +1,11 @@
 package com.graduation.backend.controller;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import com.graduation.backend.BackendApplication;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.ContextConfiguration;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@WebMvcTest
+@ContextConfiguration(classes={BackendApplication.class})
 class FlyerControllerTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
-    @Test
-    void getFlyer() {
-    }
-
-    @Test
-    void getFlyerById() {
-    }
-
-    @Test
-    void createFlyer() {
-    }
-
-    @Test
-    void updateFlyer() {
-    }
-
-    @Test
-    void deleteFlyer() {
-    }
 }

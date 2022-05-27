@@ -1,38 +1,35 @@
 package com.graduation.backend.controller;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import com.graduation.backend.BackendApplication;
+import com.graduation.backend.model.TravelTips;
+import com.graduation.backend.service.TravelsService;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
+
+@WebMvcTest
+@ContextConfiguration(classes={BackendApplication.class})
 class TravelTipsControllerTest {
+    @Autowired
+    private MockMvc mvc;
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
+    @MockBean
+    private TravelsService service;
 
     @Test
-    void getTravelTips() {
-    }
+    public void testEndpointGetTravelTips() throws Exception {
 
-    @Test
-    void getTravelTipsById() {
-    }
-
-    @Test
-    void createTravelTips() {
-    }
-
-    @Test
-    void updateTravelTips() {
-    }
-
-    @Test
-    void deleteTravelTips() {
+//        TravelTips travelTips = new TravelTips("Frikandellen");
+//        List<TravelTips> allTravelTips = List.of(travelTips);
+//
+//    @Test
+//    void deleteTravelTips() {
+//    }
     }
 }

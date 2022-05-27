@@ -46,6 +46,4 @@ public class FavoritesController {
     ResponseEntity<Object> deleteFavorites (@PathVariable Long id) {
         return new ResponseEntity<>(service.deleteFavorites(id), HttpStatus.OK);
     }
-
 }
-
