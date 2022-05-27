@@ -2,8 +2,6 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.HotSpotsDto;
 import com.graduation.backend.model.HotSpots;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.util.List;
 

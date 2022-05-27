@@ -2,7 +2,6 @@ package com.graduation.backend.service;
 
 import com.graduation.backend.dto.FavoritesDto;
 import com.graduation.backend.model.Favorites;
-
 import java.util.List;
 
 public interface FavoritesService {

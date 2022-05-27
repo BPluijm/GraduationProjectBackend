@@ -66,6 +66,5 @@ public class HotSpotsServiceImpl  implements HotSpotsService {
         repos.findById(id).orElseThrow(() -> new RecordNotFoundException("Hotspot not found"));
         repos.deleteById(id);
         return "Hotspot is deleted";
-
     }
 }

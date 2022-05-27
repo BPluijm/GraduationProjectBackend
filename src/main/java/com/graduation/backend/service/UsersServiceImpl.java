@@ -8,8 +8,8 @@ import com.graduation.backend.repository.UsersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.*;
 
+import java.util.*;
 
 @Service
 public class UsersServiceImpl implements UsersService {
@@ -24,10 +24,10 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public List<UsersDto> getUsers() {
-        List<Users> users =  repos.findAll();
+        List<Users> users = repos.findAll();
         List<UsersDto> usersd = new ArrayList<>();
 
-        for(Users us : users) {
+        for (Users us : users) {
             UsersDto user = mapper.map(us, UsersDto.class);
             usersd.add(user);
         }
@@ -64,38 +64,38 @@ public class UsersServiceImpl implements UsersService {
         return this.repos.save(u);
     }
 
-        @Override
-        public UsersDto updateUsers(UsersDto usersDto, Long id) {
-            Users use = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("User not found"));
-            use.setUsername(usersDto.getUsername());
-            use.setPassword(usersDto.getPassword());
-            use.setPassword(encoder.encode(usersDto.getPassword()));
-            use.setFirstname(usersDto.getFirstname());
-            use.setLastname(usersDto.getLastname());
-            use.setEmail(usersDto.getEmail());
-            use.setStreet(usersDto.getStreet());
-            use.setHousenumber(usersDto.getHousenumber());
-            use.setZipcode(usersDto.getZipcode());
-            use.setCity(usersDto.getCity());
-            use.setEnabled(usersDto.getEnabled());
-            use.setRole(usersDto.getRole().toString());
-            use.setFavorites(usersDto.getFavorites());
-            use.setTravelTips(usersDto.getTravelTips());
-            use.setHotSpots(usersDto.getHotspots());
-            repos.save(use);
-            return mapper.map(use, UsersDto.class);
-        }
+    @Override
+    public UsersDto updateUsers(UsersDto usersDto, Long id) {
+        Users use = repos.findById(id).orElseThrow(() -> new RecordNotFoundException("User not found"));
+        use.setUsername(usersDto.getUsername());
+        use.setPassword(usersDto.getPassword());
+        use.setPassword(encoder.encode(usersDto.getPassword()));
+        use.setFirstname(usersDto.getFirstname());
+        use.setLastname(usersDto.getLastname());
+        use.setEmail(usersDto.getEmail());
+        use.setStreet(usersDto.getStreet());
+        use.setHousenumber(usersDto.getHousenumber());
+        use.setZipcode(usersDto.getZipcode());
+        use.setCity(usersDto.getCity());
+        use.setEnabled(usersDto.getEnabled());
+        use.setRole(usersDto.getRole().toString());
+        use.setFavorites(usersDto.getFavorites());
+        use.setTravelTips(usersDto.getTravelTips());
+        use.setHotSpots(usersDto.getHotspots());
+        repos.save(use);
+        return mapper.map(use, UsersDto.class);
+    }
 
-        @Override
-        public UsersDto deleteUsers(Long id) {
-            Optional<Users> user = repos.findById(id);
-            if(user.isPresent()){
-                UsersDto userDto = mapper.map(user.get(), UsersDto.class);
-                repos.deleteById(id);
-                return userDto;
-            } else {
-                throw new RecordNotFoundException("Unable to delete user");
-            }
+    @Override
+    public UsersDto deleteUsers(Long id) {
+        Optional<Users> user = repos.findById(id);
+        if (user.isPresent()) {
+            UsersDto userDto = mapper.map(user.get(), UsersDto.class);
+            repos.deleteById(id);
+            return userDto;
+        } else {
+            throw new RecordNotFoundException("Unable to delete user");
         }
+    }
 }
 
